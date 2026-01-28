@@ -70,7 +70,8 @@ text = "Mädchen"
 show_behind_parent = true
 position = Vector2(41, -29)
 sprite_frames = SubResource("SpriteFrames_t87id")
-frame_progress = 0.06874469
+autoplay = "default"
+frame_progress = 0.03909449
 
 [node name="Male" type="Button" parent="CanvasLayer"]
 offset_left = 327.0
@@ -83,7 +84,8 @@ text = "Junge"
 show_behind_parent = true
 position = Vector2(42, -28)
 sprite_frames = SubResource("SpriteFrames_swmlp")
-frame_progress = 0.56779265
+autoplay = "default"
+frame_progress = 0.5916638
 
 [connection signal="pressed" from="CanvasLayer/Female" to="." method="_on_female_pressed"]
 [connection signal="pressed" from="CanvasLayer/Male" to="." method="_on_male_pressed"]
