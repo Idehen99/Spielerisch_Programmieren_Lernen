@@ -1,4 +1,4 @@
-[gd_scene load_steps=239 format=3 uid="uid://ce83ryaq60g6k"]
+[gd_scene load_steps=222 format=3 uid="uid://ce83ryaq60g6k"]
 
 [ext_resource type="Script" uid="uid://gb2re3svn42q" path="res://Scripts/player/player.gd" id="1_fvsbo"]
 [ext_resource type="Texture2D" uid="uid://dx371s517cawi" path="res://Assets/Farm RPG - Tiny Asset Pack - (All in One)/Character and Portrait/Character/Pre-made/Tori/Axe.png" id="2_qdjdy"]
@@ -9,8 +9,12 @@
 [ext_resource type="Texture2D" uid="uid://brk14n7e1oq2g" path="res://Assets/Farm RPG - Tiny Asset Pack - (All in One)/Character and Portrait/Character/Pre-made/Tori/Run.png" id="4_qx5g0"]
 [ext_resource type="Texture2D" uid="uid://cq8weca56vyce" path="res://Assets/Farm RPG - Tiny Asset Pack - (All in One)/Character and Portrait/Character/Pre-made/Alex/Walk.png" id="5_4wg6r"]
 [ext_resource type="Texture2D" uid="uid://kjul7k3o4xtk" path="res://Assets/Farm RPG - Tiny Asset Pack - (All in One)/Character and Portrait/Character/Pre-made/Tori/Walk.png" id="5_wmao3"]
+[ext_resource type="FontFile" uid="uid://bdpe6ysm1e8u7" path="res://Assets/Font/ScareEmAway.ttf" id="11_0ctly"]
+[ext_resource type="PackedScene" uid="uid://bo0h7nhg2w0xn" path="res://Scenes/control/save_game.tscn" id="11_4wg6r"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4klla"]
+radius = 6.0
+height = 16.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_k13hx"]
 atlas = ExtResource("2_wmao3")
@@ -329,7 +333,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_sxan2")
 }],
-"loop": true,
+"loop": false,
 "name": &"axeDown",
 "speed": 5.0
 }, {
@@ -352,7 +356,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_6ua3s")
 }],
-"loop": true,
+"loop": false,
 "name": &"axeRight",
 "speed": 5.0
 }, {
@@ -375,7 +379,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_m0ajx")
 }],
-"loop": true,
+"loop": false,
 "name": &"axeUp",
 "speed": 5.0
 }, {
@@ -904,7 +908,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_hinxy")
 }],
-"loop": true,
+"loop": false,
 "name": &"axeDown",
 "speed": 5.0
 }, {
@@ -927,7 +931,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_0w2h1")
 }],
-"loop": true,
+"loop": false,
 "name": &"axeRight",
 "speed": 5.0
 }, {
@@ -950,7 +954,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_p6uyb")
 }],
-"loop": true,
+"loop": false,
 "name": &"axeUp",
 "speed": 5.0
 }, {
@@ -1764,31 +1768,25 @@ animation = &"female/walkUp"
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_0ctly"]
 advance_mode = 2
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_4wg6r"]
-advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_e2cdf"]
-advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_72ukl"]
-advance_mode = 2
-
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_8xeoa"]
 advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_q1n24"]
+switch_mode = 2
 advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_0w2h1"]
 advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_og1w1"]
+switch_mode = 2
 advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_df70w"]
 advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_24ytt"]
+switch_mode = 2
 advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_pc7aq"]
@@ -1807,24 +1805,6 @@ advance_mode = 2
 advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_tvtc5"]
-advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_7amyd"]
-advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_idr2n"]
-advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_btx34"]
-advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_vs5fi"]
-advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_fica8"]
-advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ibhko"]
 advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_8tasy"]
@@ -1851,41 +1831,11 @@ advance_mode = 2
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_go4te"]
 advance_mode = 2
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_oynxj"]
-advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_q4qxe"]
-advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_bhywk"]
-advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_en01j"]
-advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ltwm1"]
-advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_r30wu"]
-advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_m0mmi"]
-advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_n14ux"]
-advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_82hwh"]
-advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_juuop"]
-advance_mode = 2
-
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_hinxy"]
-states/End/position = Vector2(506, 613)
+states/End/position = Vector2(273, 258)
 states/Start/position = Vector2(127, 82)
 states/female_axeDown/node = SubResource("AnimationNodeAnimation_btx34")
-states/female_axeDown/position = Vector2(967, 41)
+states/female_axeDown/position = Vector2(970, 38)
 states/female_axeRight/node = SubResource("AnimationNodeAnimation_0ctly")
 states/female_axeRight/position = Vector2(977, 522.6771)
 states/female_axeUp/node = SubResource("AnimationNodeAnimation_4wg6r")
@@ -1908,18 +1858,19 @@ states/female_walkRight/node = SubResource("AnimationNodeAnimation_hq72a")
 states/female_walkRight/position = Vector2(977, 376.67712)
 states/female_walkUp/node = SubResource("AnimationNodeAnimation_11eh2")
 states/female_walkUp/position = Vector2(291, 408.67712)
-transitions = ["Start", "female_idleDown", SubResource("AnimationNodeStateMachineTransition_0ctly"), "Start", "female_idleUp", SubResource("AnimationNodeStateMachineTransition_4wg6r"), "Start", "female_idleRight", SubResource("AnimationNodeStateMachineTransition_e2cdf"), "female_idleRight", "End", SubResource("AnimationNodeStateMachineTransition_72ukl"), "female_idleDown", "female_axeDown", SubResource("AnimationNodeStateMachineTransition_8xeoa"), "female_axeDown", "female_idleDown", SubResource("AnimationNodeStateMachineTransition_q1n24"), "female_idleRight", "female_axeRight", SubResource("AnimationNodeStateMachineTransition_0w2h1"), "female_axeRight", "female_idleRight", SubResource("AnimationNodeStateMachineTransition_og1w1"), "female_idleUp", "female_axeUp", SubResource("AnimationNodeStateMachineTransition_df70w"), "female_axeUp", "female_idleUp", SubResource("AnimationNodeStateMachineTransition_24ytt"), "female_idleUp", "female_walkUp", SubResource("AnimationNodeStateMachineTransition_pc7aq"), "female_walkUp", "female_idleUp", SubResource("AnimationNodeStateMachineTransition_0kvab"), "female_walkRight", "female_idleRight", SubResource("AnimationNodeStateMachineTransition_p6uyb"), "female_idleRight", "female_walkRight", SubResource("AnimationNodeStateMachineTransition_xs10y"), "female_idleDown", "female_walkDown", SubResource("AnimationNodeStateMachineTransition_4bx8y"), "female_walkDown", "female_idleDown", SubResource("AnimationNodeStateMachineTransition_tvtc5"), "female_walkDown", "female_walkRight", SubResource("AnimationNodeStateMachineTransition_7amyd"), "female_walkUp", "female_walkRight", SubResource("AnimationNodeStateMachineTransition_idr2n"), "female_walkUp", "female_walkDown", SubResource("AnimationNodeStateMachineTransition_btx34"), "female_walkDown", "female_walkUp", SubResource("AnimationNodeStateMachineTransition_vs5fi"), "female_walkRight", "female_walkUp", SubResource("AnimationNodeStateMachineTransition_fica8"), "female_walkRight", "female_walkDown", SubResource("AnimationNodeStateMachineTransition_ibhko"), "female_runUp", "female_walkUp", SubResource("AnimationNodeStateMachineTransition_8tasy"), "female_walkUp", "female_runUp", SubResource("AnimationNodeStateMachineTransition_xpms6"), "female_runRight", "female_walkRight", SubResource("AnimationNodeStateMachineTransition_i15h4"), "female_walkRight", "female_runRight", SubResource("AnimationNodeStateMachineTransition_kpu01"), "female_walkDown", "female_runDown", SubResource("AnimationNodeStateMachineTransition_2wlnf"), "female_runDown", "female_walkDown", SubResource("AnimationNodeStateMachineTransition_wn1kf"), "female_runUp", "female_runRight", SubResource("AnimationNodeStateMachineTransition_5w6ea"), "female_runRight", "female_runUp", SubResource("AnimationNodeStateMachineTransition_go4te"), "female_runRight", "female_runDown", SubResource("AnimationNodeStateMachineTransition_oynxj"), "female_runDown", "female_runRight", SubResource("AnimationNodeStateMachineTransition_q4qxe"), "female_runUp", "female_runDown", SubResource("AnimationNodeStateMachineTransition_bhywk"), "female_runDown", "female_runUp", SubResource("AnimationNodeStateMachineTransition_en01j"), "female_runUp", "female_idleUp", SubResource("AnimationNodeStateMachineTransition_ltwm1"), "female_runDown", "female_idleDown", SubResource("AnimationNodeStateMachineTransition_r30wu"), "female_idleDown", "female_runDown", SubResource("AnimationNodeStateMachineTransition_m0mmi"), "female_idleUp", "female_runUp", SubResource("AnimationNodeStateMachineTransition_n14ux"), "female_runRight", "female_idleRight", SubResource("AnimationNodeStateMachineTransition_82hwh"), "female_idleRight", "female_runRight", SubResource("AnimationNodeStateMachineTransition_juuop")]
+transitions = ["Start", "female_idleDown", SubResource("AnimationNodeStateMachineTransition_0ctly"), "female_idleDown", "female_axeDown", SubResource("AnimationNodeStateMachineTransition_8xeoa"), "female_axeDown", "female_idleDown", SubResource("AnimationNodeStateMachineTransition_q1n24"), "female_idleRight", "female_axeRight", SubResource("AnimationNodeStateMachineTransition_0w2h1"), "female_axeRight", "female_idleRight", SubResource("AnimationNodeStateMachineTransition_og1w1"), "female_idleUp", "female_axeUp", SubResource("AnimationNodeStateMachineTransition_df70w"), "female_axeUp", "female_idleUp", SubResource("AnimationNodeStateMachineTransition_24ytt"), "female_idleUp", "female_walkUp", SubResource("AnimationNodeStateMachineTransition_pc7aq"), "female_walkUp", "female_idleUp", SubResource("AnimationNodeStateMachineTransition_0kvab"), "female_walkRight", "female_idleRight", SubResource("AnimationNodeStateMachineTransition_p6uyb"), "female_idleRight", "female_walkRight", SubResource("AnimationNodeStateMachineTransition_xs10y"), "female_idleDown", "female_walkDown", SubResource("AnimationNodeStateMachineTransition_4bx8y"), "female_walkDown", "female_idleDown", SubResource("AnimationNodeStateMachineTransition_tvtc5"), "female_runUp", "female_walkUp", SubResource("AnimationNodeStateMachineTransition_8tasy"), "female_walkUp", "female_runUp", SubResource("AnimationNodeStateMachineTransition_xpms6"), "female_runRight", "female_walkRight", SubResource("AnimationNodeStateMachineTransition_i15h4"), "female_walkRight", "female_runRight", SubResource("AnimationNodeStateMachineTransition_kpu01"), "female_walkDown", "female_runDown", SubResource("AnimationNodeStateMachineTransition_2wlnf"), "female_runDown", "female_walkDown", SubResource("AnimationNodeStateMachineTransition_wn1kf"), "female_runUp", "female_runRight", SubResource("AnimationNodeStateMachineTransition_5w6ea"), "female_runRight", "female_runUp", SubResource("AnimationNodeStateMachineTransition_go4te")]
 graph_offset = Vector2(0, -23.322878)
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_fvsbo")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1)
 shape = SubResource("CapsuleShape2D_4klla")
 
 [node name="MaleSprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_0ctly")
-animation = &""
+animation = &"axeDown"
 
 [node name="FemaleSprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_k13hx")
@@ -1933,6 +1884,30 @@ libraries = {
 }
 
 [node name="AnimationTree" type="AnimationTree" parent="AnimationPlayer"]
+active = false
 root_node = NodePath("../..")
 tree_root = SubResource("AnimationNodeStateMachine_hinxy")
 anim_player = NodePath("..")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(8, 0)
+zoom = Vector2(3.5, 3.5)
+
+[node name="VBoxContainer" parent="." instance=ExtResource("11_4wg6r")]
+anchors_preset = 0
+offset_left = -81.0
+offset_top = -23.0
+offset_right = 163.0
+offset_bottom = 78.0
+scale = Vector2(0.6, 0.6)
+
+[node name="Menu" type="Button" parent="."]
+offset_left = 138.0
+offset_top = -114.0
+offset_right = 178.0
+offset_bottom = -90.0
+theme_override_fonts/font = ExtResource("11_0ctly")
+theme_override_font_sizes/font_size = 11
+text = "Menü"
+
+[connection signal="pressed" from="Menu" to="VBoxContainer" method="_on_menu_pressed"]

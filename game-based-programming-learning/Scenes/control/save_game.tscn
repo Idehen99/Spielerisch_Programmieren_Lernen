@@ -1,0 +1,36 @@
+[gd_scene load_steps=3 format=3 uid="uid://bo0h7nhg2w0xn"]
+
+[ext_resource type="Script" uid="uid://du3rdufg004sy" path="res://Scripts/Interface/save_game.gd" id="1_mtdse"]
+[ext_resource type="FontFile" uid="uid://bdpe6ysm1e8u7" path="res://Assets/Font/ScareEmAway.ttf" id="2_upwxg"]
+
+[node name="VBoxContainer" type="VBoxContainer"]
+light_mask = 64
+visibility_layer = 64
+anchors_preset = -1
+offset_left = 409.0
+offset_top = 314.0
+offset_right = 653.0
+offset_bottom = 415.0
+script = ExtResource("1_mtdse")
+
+[node name="Continue" type="Button" parent="."]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_upwxg")
+theme_override_font_sizes/font_size = 11
+text = "Weiterspielen"
+
+[node name="SaveNContinue" type="Button" parent="."]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_upwxg")
+theme_override_font_sizes/font_size = 11
+text = "Speichern & Weiterspielen"
+
+[node name="SaveNExit" type="Button" parent="."]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_upwxg")
+theme_override_font_sizes/font_size = 11
+text = "Speichern & zurück zum Startbildschirm"
+
+[connection signal="pressed" from="Continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="SaveNContinue" to="." method="_on_save_n_continue_pressed"]
+[connection signal="pressed" from="SaveNExit" to="." method="_on_save_n_exit_pressed"]

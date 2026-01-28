@@ -477,6 +477,7 @@ texture_pressed = SubResource("AtlasTexture_yhp7g")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(574, 319)
+zoom = Vector2(1.2, 1.2)
 
 [connection signal="pressed" from="VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

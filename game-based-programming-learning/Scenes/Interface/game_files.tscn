@@ -1,0 +1,68 @@
+[gd_scene load_steps=2 format=3 uid="uid://csskufrktxrdt"]
+
+[ext_resource type="Script" uid="uid://bl5dmikjivkqw" path="res://Scripts/Interface/game_files.gd" id="1_esynb"]
+
+[node name="gameFile" type="CanvasLayer"]
+layer = 0
+script = ExtResource("1_esynb")
+
+[node name="Files" type="VBoxContainer" parent="."]
+offset_left = 449.0
+offset_top = 378.0
+offset_right = 627.0
+offset_bottom = 444.0
+
+[node name="File1" type="HBoxContainer" parent="Files"]
+layout_mode = 2
+
+[node name="First" type="Button" parent="Files/File1"]
+layout_mode = 2
+text = "Spielstand 1"
+
+[node name="Delete1" type="Button" parent="Files/File1"]
+layout_mode = 2
+text = "Löschen"
+
+[node name="File2" type="HBoxContainer" parent="Files"]
+layout_mode = 2
+
+[node name="Second" type="Button" parent="Files/File2"]
+layout_mode = 2
+text = "Spielstand 2"
+
+[node name="Delete2" type="Button" parent="Files/File2"]
+layout_mode = 2
+text = "Löschen"
+
+[node name="Sure" type="VBoxContainer" parent="."]
+visible = false
+offset_left = 449.0
+offset_top = 314.0
+offset_right = 489.0
+offset_bottom = 354.0
+
+[node name="Label" type="Label" parent="Sure"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "yolo"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Sure"]
+layout_mode = 2
+
+[node name="Yes" type="Button" parent="Sure/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 11
+text = "Ja"
+
+[node name="No" type="Button" parent="Sure/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 11
+text = "Nein
+"
+
+[connection signal="pressed" from="Files/File1/First" to="." method="_on_first_pressed"]
+[connection signal="pressed" from="Files/File1/Delete1" to="." method="_on_delete_1_pressed"]
+[connection signal="pressed" from="Files/File2/Second" to="." method="_on_second_pressed"]
+[connection signal="pressed" from="Files/File2/Delete2" to="." method="_on_delete_2_pressed"]
+[connection signal="pressed" from="Sure/HBoxContainer/Yes" to="." method="_on_yes_pressed"]
+[connection signal="pressed" from="Sure/HBoxContainer/No" to="." method="_on_no_pressed"]

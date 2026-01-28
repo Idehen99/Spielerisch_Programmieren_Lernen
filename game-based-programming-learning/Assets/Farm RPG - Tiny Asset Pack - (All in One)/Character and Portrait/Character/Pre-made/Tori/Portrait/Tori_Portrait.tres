@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://b8lubl8tgw52l"]
+
+[ext_resource type="Texture2D" uid="uid://osb7er84ejd3" path="res://Assets/Farm RPG - Tiny Asset Pack - (All in One)/Character and Portrait/Portrait/Premade/2.png" id="1_7tccu"]
+
+[resource]
+atlas = ExtResource("1_7tccu")
+region = Rect2(0, 64, 64, 64)

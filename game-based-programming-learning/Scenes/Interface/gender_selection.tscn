@@ -1,4 +1,52 @@
-[gd_scene format=3 uid="uid://dnwvatq4kpevo"]
+[gd_scene load_steps=10 format=3 uid="uid://dnwvatq4kpevo"]
+
+[ext_resource type="Script" uid="uid://cn6ekrnrnpbwc" path="res://Scripts/Interface/gender_selection.gd" id="1_7awwp"]
+[ext_resource type="Texture2D" uid="uid://osb7er84ejd3" path="res://Assets/Farm RPG - Tiny Asset Pack - (All in One)/Character and Portrait/Portrait/Premade/2.png" id="2_tlb4n"]
+[ext_resource type="Texture2D" uid="uid://bfyay607fqeqv" path="res://Assets/Farm RPG - Tiny Asset Pack - (All in One)/Character and Portrait/Portrait/Premade/1.png" id="3_tlb4n"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_582mj"]
+atlas = ExtResource("2_tlb4n")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pmxy2"]
+atlas = ExtResource("2_tlb4n")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_t87id"]
+animations = [{
+"frames": [{
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_582mj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pmxy2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2u42i"]
+atlas = ExtResource("3_tlb4n")
+region = Rect2(128, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ygwxj"]
+atlas = ExtResource("3_tlb4n")
+region = Rect2(128, 64, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_swmlp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2u42i")
+}, {
+"duration": 10.0,
+"texture": SubResource("AtlasTexture_ygwxj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -7,3 +55,35 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_7awwp")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Female" type="Button" parent="CanvasLayer"]
+offset_left = 190.0
+offset_top = 250.0
+offset_right = 270.0
+offset_bottom = 281.0
+text = "Mädchen"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/Female"]
+show_behind_parent = true
+position = Vector2(41, -29)
+sprite_frames = SubResource("SpriteFrames_t87id")
+frame_progress = 0.06874469
+
+[node name="Male" type="Button" parent="CanvasLayer"]
+offset_left = 327.0
+offset_top = 248.0
+offset_right = 407.0
+offset_bottom = 279.0
+text = "Junge"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/Male"]
+show_behind_parent = true
+position = Vector2(42, -28)
+sprite_frames = SubResource("SpriteFrames_swmlp")
+frame_progress = 0.56779265
+
+[connection signal="pressed" from="CanvasLayer/Female" to="." method="_on_female_pressed"]
+[connection signal="pressed" from="CanvasLayer/Male" to="." method="_on_male_pressed"]
