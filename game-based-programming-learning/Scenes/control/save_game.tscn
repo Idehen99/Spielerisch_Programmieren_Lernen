@@ -6,7 +6,6 @@
 [node name="VBoxContainer" type="VBoxContainer"]
 light_mask = 64
 visibility_layer = 64
-anchors_preset = -1
 offset_left = 409.0
 offset_top = 314.0
 offset_right = 653.0

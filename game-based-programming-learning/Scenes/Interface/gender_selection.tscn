@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://dnwvatq4kpevo"]
+[gd_scene load_steps=11 format=3 uid="uid://dnwvatq4kpevo"]
 
 [ext_resource type="Script" uid="uid://cn6ekrnrnpbwc" path="res://Scripts/Interface/gender_selection.gd" id="1_7awwp"]
+[ext_resource type="Texture2D" uid="uid://crg6poamdqco3" path="res://Assets/Backgrounds/snow_background.png" id="2_582mj"]
 [ext_resource type="Texture2D" uid="uid://osb7er84ejd3" path="res://Assets/Farm RPG - Tiny Asset Pack - (All in One)/Character and Portrait/Portrait/Premade/2.png" id="2_tlb4n"]
 [ext_resource type="Texture2D" uid="uid://bfyay607fqeqv" path="res://Assets/Farm RPG - Tiny Asset Pack - (All in One)/Character and Portrait/Portrait/Premade/1.png" id="3_tlb4n"]
 
@@ -59,33 +60,45 @@ script = ExtResource("1_7awwp")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Female" type="Button" parent="CanvasLayer"]
-offset_left = 190.0
-offset_top = 250.0
-offset_right = 270.0
-offset_bottom = 281.0
+[node name="Background" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(599.5, 402.5)
+scale = Vector2(0.7805989, 0.77246094)
+texture = ExtResource("2_582mj")
+
+[node name="Node" type="Node" parent="CanvasLayer"]
+
+[node name="Female" type="Button" parent="CanvasLayer/Node"]
+offset_left = 300.0
+offset_top = 553.0
+offset_right = 380.0
+offset_bottom = 584.0
+scale = Vector2(3, 3)
 text = "Mädchen"
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/Female"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/Node/Female"]
 show_behind_parent = true
 position = Vector2(41, -29)
 sprite_frames = SubResource("SpriteFrames_t87id")
 autoplay = "default"
 frame_progress = 0.03909449
 
-[node name="Male" type="Button" parent="CanvasLayer"]
-offset_left = 327.0
-offset_top = 248.0
-offset_right = 407.0
-offset_bottom = 279.0
+[node name="Male" type="Button" parent="CanvasLayer/Node"]
+offset_left = 650.0
+offset_top = 553.0
+offset_right = 730.0
+offset_bottom = 584.0
+scale = Vector2(3, 3)
 text = "Junge"
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/Male"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/Node/Male"]
 show_behind_parent = true
 position = Vector2(42, -28)
 sprite_frames = SubResource("SpriteFrames_swmlp")
 autoplay = "default"
 frame_progress = 0.5916638
 
-[connection signal="pressed" from="CanvasLayer/Female" to="." method="_on_female_pressed"]
-[connection signal="pressed" from="CanvasLayer/Male" to="." method="_on_male_pressed"]
+[node name="Camera2D" type="Camera2D" parent="CanvasLayer"]
+position = Vector2(600, 400)
+
+[connection signal="pressed" from="CanvasLayer/Node/Female" to="." method="_on_female_pressed"]
+[connection signal="pressed" from="CanvasLayer/Node/Male" to="." method="_on_male_pressed"]

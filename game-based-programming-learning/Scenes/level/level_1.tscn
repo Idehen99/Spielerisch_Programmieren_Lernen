@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=4 uid="uid://c07fft4p2644r"]
+[gd_scene load_steps=39 format=4 uid="uid://c07fft4p2644r"]
 
 [ext_resource type="Texture2D" uid="uid://8tpjqjy5ryap" path="res://Assets/Farm RPG - Tiny Asset Pack - (All in One)/Farm/Tileset/Modular/Tileset Grass Winter.png" id="1_h6h6g"]
 [ext_resource type="Texture2D" uid="uid://6tmefgtainbg" path="res://Assets/Farm RPG - Tiny Asset Pack - (All in One)/Farm/Tileset/Modular/Tileset Grass Water Winter.png" id="2_wb0mb"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://bcy4j2lh2tpdk" path="res://Assets/Farm RPG - Tiny Asset Pack - (All in One)/Farm/Tree/Common/Shadow/Pine Tree.png" id="12_wb0mb"]
 [ext_resource type="Shader" uid="uid://d10cusyrwbsd6" path="res://Shader/Flowers/flower.gdshader" id="13_duqvl"]
 [ext_resource type="PackedScene" uid="uid://ce83ryaq60g6k" path="res://Scenes/character/player/player.tscn" id="13_x4k3e"]
+[ext_resource type="Script" uid="uid://w7gdvxxrvd8t" path="res://Scripts/Interface/camera_area_2d.gd" id="15_nr23b"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xm4wk"]
 texture = ExtResource("1_h6h6g")
@@ -3995,7 +3996,11 @@ physics_layer_0/collision_layer = 16
 physics_layer_0/collision_mask = 16
 sources/0 = SubResource("TileSetAtlasSource_x4k3e")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nr23b"]
+size = Vector2(1147, 651)
+
 [node name="Node2D" type="Node2D" groups=["level"]]
+position = Vector2(1, 3)
 
 [node name="TileMaps" type="Node" parent="."]
 
@@ -4037,3 +4042,10 @@ tile_set = SubResource("TileSet_k7lep")
 position = Vector2(-2, 0)
 tile_map_data = PackedByteArray("AAAAABkAAAAIAAAAAAAAABoAAAAIAAEAAAAAABsAAAAIAAIAAAABABkAAAAJAAAAAAABABoAAAAJAAEAAAABABsAAAAJAAIAAAADABkAAAAIAAAAAAADABoAAAAIAAEAAAADABsAAAAIAAIAAAAEABkAAAAJAAAAAAAEABoAAAAJAAEAAAAEABsAAAAJAAIAAAAGABkAAAAGAAAAAAAGABoAAAAGAAEAAAAGABsAAAAGAAIAAAAHABkAAAAHAAAAAAAHABoAAAAHAAEAAAAHABsAAAAHAAIAAAAAAB8AAAAIAAAAAAAAACAAAAAIAAEAAAAAACEAAAAIAAIAAAABAB8AAAAJAAAAAAABACAAAAAJAAEAAAABACEAAAAJAAIAAAADACAAAAAGAAEAAAADACEAAAAGAAIAAAAEAB8AAAAHAAAAAAAEACAAAAAHAAEAAAAEACEAAAAHAAIAAAAGAB8AAAAIAAAAAAAGACAAAAAIAAEAAAAGACEAAAAIAAIAAAAHAB8AAAAJAAAAAAAHACAAAAAJAAEAAAAHACEAAAAJAAIAAAABACMAAAAOAAIAAAACACMAAAAPAAIAAAADAB8AAAAGAAAAAAAFACIAAAAOAAIAAAAGACIAAAAPAAIAAAAEACQAAAAOAAIAAAAFACQAAAAPAAIAAAABACQAAAAGAAAAAAABACUAAAAGAAEAAAABACYAAAAGAAIAAAACACQAAAAHAAAAAAACACUAAAAHAAEAAAACACYAAAAHAAIAAAAHACMAAAAGAAAAAAAHACQAAAAGAAEAAAAHACUAAAAGAAIAAAAIACMAAAAHAAAAAAAIACQAAAAHAAEAAAAIACUAAAAHAAIAAAAEACUAAAAIAAAAAAAEACYAAAAIAAEAAAAEACcAAAAIAAIAAAAFACUAAAAJAAAAAAAFACYAAAAJAAEAAAAFACcAAAAJAAIAAAA=")
 tile_set = SubResource("TileSet_ba4d7")
+
+[node name="CameraArea2D" type="Area2D" parent="."]
+script = ExtResource("15_nr23b")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CameraArea2D"]
+position = Vector2(572.5, 324.5)
+shape = SubResource("RectangleShape2D_nr23b")

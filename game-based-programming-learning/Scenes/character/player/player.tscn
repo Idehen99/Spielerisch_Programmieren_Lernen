@@ -1892,6 +1892,10 @@ anim_player = NodePath("..")
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(8, 0)
 zoom = Vector2(3.5, 3.5)
+limit_left = -100000000
+limit_top = -100000000
+limit_right = 100000000
+limit_bottom = 100000000
 
 [node name="VBoxContainer" parent="." instance=ExtResource("11_4wg6r")]
 anchors_preset = 0

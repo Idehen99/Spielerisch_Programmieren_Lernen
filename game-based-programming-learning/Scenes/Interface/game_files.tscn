@@ -1,16 +1,23 @@
-[gd_scene load_steps=2 format=3 uid="uid://csskufrktxrdt"]
+[gd_scene load_steps=3 format=3 uid="uid://csskufrktxrdt"]
 
 [ext_resource type="Script" uid="uid://bl5dmikjivkqw" path="res://Scripts/Interface/game_files.gd" id="1_esynb"]
+[ext_resource type="Texture2D" uid="uid://crg6poamdqco3" path="res://Assets/Backgrounds/snow_background.png" id="2_w2aa6"]
 
 [node name="gameFile" type="CanvasLayer"]
 layer = 0
 script = ExtResource("1_esynb")
 
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(599.5, 402.5)
+scale = Vector2(0.7805989, 0.77246094)
+texture = ExtResource("2_w2aa6")
+
 [node name="Files" type="VBoxContainer" parent="."]
-offset_left = 449.0
-offset_top = 378.0
-offset_right = 627.0
-offset_bottom = 444.0
+offset_left = 233.0
+offset_top = 314.00003
+offset_right = 411.0
+offset_bottom = 380.00003
+scale = Vector2(3.5, 3.5)
 
 [node name="File1" type="HBoxContainer" parent="Files"]
 layout_mode = 2
@@ -36,26 +43,31 @@ text = "Löschen"
 
 [node name="Sure" type="VBoxContainer" parent="."]
 visible = false
-offset_left = 449.0
-offset_top = 314.0
-offset_right = 489.0
-offset_bottom = 354.0
+offset_left = 233.0
+offset_top = 85.685
+offset_right = 358.0
+offset_bottom = 137.68512
+scale = Vector2(4.5, 4.5)
 
 [node name="Label" type="Label" parent="Sure"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 12
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 17
 text = "yolo"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Sure"]
 layout_mode = 2
+alignment = 1
 
 [node name="Yes" type="Button" parent="Sure/HBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.05882353, 1, 0.05882353, 1)
 theme_override_font_sizes/font_size = 11
 text = "Ja"
 
 [node name="No" type="Button" parent="Sure/HBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.05490196, 0.05490196, 1)
 theme_override_font_sizes/font_size = 11
 text = "Nein
 "

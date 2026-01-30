@@ -1,7 +1,8 @@
 extends CanvasLayer
 
 func _ready() -> void:
-	$Background.play("default")
+	pass
+	#$Background.play("default")
 	
 
 
