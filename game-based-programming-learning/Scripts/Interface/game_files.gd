@@ -30,7 +30,7 @@ func _on_delete_1_pressed() -> void:
 
 func _on_second_pressed() -> void:
 	Settings.Spielstand = 2
-	if Savefile.load_variable(2,"new","n") == true:
+	if Savefile.load_variable(2,"new","n"):
 		Settings.saveData = Savefile.load_all(2)
 		Settings.new = true
 		get_tree().change_scene_to_file("res://Scenes/Interface/gender_selection.tscn")
