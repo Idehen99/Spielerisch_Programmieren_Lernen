@@ -16,7 +16,10 @@ var is_busy := false   # blockiert Input bei AXE
 
 func _ready() -> void:
 	if !Settings.saveData["new"]:
-		$".".global_position = Settings.saveData["player_pos"]
+		if Settings._on_changed_scene_positioning($"."):
+			pass
+		else:
+			$".".global_position = Settings.saveData["player_pos"]
 		Settings.Gender = Settings.saveData["gender"]
 	if Settings.Gender == "Female":
 		sprite = $FemaleSprite
@@ -54,8 +57,9 @@ func set_modus(new_modus: Modus) -> void:
 @onready var player_node = $"."
 
 func _process(delta):
-	flower_tiles.material.set_shader_parameter("player_pos", player_node.global_position)
-	flower_tiles.material.set_shader_parameter("tilemap_pos", flower_tiles.global_position)
+	if flower_tiles:
+		flower_tiles.material.set_shader_parameter("player_pos", player_node.global_position)
+		flower_tiles.material.set_shader_parameter("tilemap_pos", flower_tiles.global_position)
 	if is_busy:
 		velocity = Vector2.ZERO
 		move_and_slide()

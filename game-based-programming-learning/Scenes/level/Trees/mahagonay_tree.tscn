@@ -1,0 +1,79 @@
+[gd_scene load_steps=10 format=3 uid="uid://2qxiwgjdagd1"]
+
+[ext_resource type="Script" uid="uid://c3cseafsm3m6" path="res://Scripts/interactives/tree.gd" id="1_6fons"]
+[ext_resource type="Texture2D" uid="uid://d3pmlie0xlj6b" path="res://Assets/Farm RPG - Tiny Asset Pack - (All in One)/Farm/Tree/Common/Shadow/Mahogany Tree Animation.png" id="1_73hdx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6fons"]
+atlas = ExtResource("1_73hdx")
+region = Rect2(0, 288, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ycwjy"]
+atlas = ExtResource("1_73hdx")
+region = Rect2(32, 288, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mso34"]
+atlas = ExtResource("1_73hdx")
+region = Rect2(64, 288, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3h434"]
+atlas = ExtResource("1_73hdx")
+region = Rect2(96, 288, 32, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o7l8f"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6fons")
+}, {
+"duration": 0.4,
+"texture": SubResource("AtlasTexture_ycwjy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mso34")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3h434")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6fons")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tvv6s"]
+size = Vector2(12, 12)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6fons"]
+radius = 7.0
+height = 14.0
+
+[node name="MahagonayTree" type="Node2D"]
+z_index = 6
+script = ExtResource("1_6fons")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_o7l8f")
+frame = 4
+frame_progress = 1.0
+
+[node name="Area2D" type="Area2D" parent="AnimatedSprite2D"]
+z_index = 6
+collision_layer = 128
+collision_mask = 128
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/Area2D"]
+position = Vector2(0, 16)
+shape = SubResource("RectangleShape2D_tvv6s")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 16)
+shape = SubResource("CapsuleShape2D_6fons")
+
+[connection signal="body_entered" from="AnimatedSprite2D/Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
