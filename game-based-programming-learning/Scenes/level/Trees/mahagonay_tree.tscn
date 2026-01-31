@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://2qxiwgjdagd1"]
+[gd_scene format=3 uid="uid://2qxiwgjdagd1"]
 
 [ext_resource type="Script" uid="uid://c3cseafsm3m6" path="res://Scripts/interactives/tree.gd" id="1_6fons"]
 [ext_resource type="Texture2D" uid="uid://d3pmlie0xlj6b" path="res://Assets/Farm RPG - Tiny Asset Pack - (All in One)/Farm/Tree/Common/Shadow/Mahogany Tree Animation.png" id="1_73hdx"]
@@ -49,29 +49,29 @@ size = Vector2(12, 12)
 radius = 7.0
 height = 14.0
 
-[node name="MahagonayTree" type="Node2D"]
+[node name="MahagonayTree" type="Node2D" unique_id=441015380]
 z_index = 6
 script = ExtResource("1_6fons")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1517430329]
 sprite_frames = SubResource("SpriteFrames_o7l8f")
 frame = 4
 frame_progress = 1.0
 
-[node name="Area2D" type="Area2D" parent="AnimatedSprite2D"]
+[node name="Area2D" type="Area2D" parent="AnimatedSprite2D" unique_id=1614589566]
 z_index = 6
 collision_layer = 128
 collision_mask = 128
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/Area2D" unique_id=562161586]
 position = Vector2(0, 16)
 shape = SubResource("RectangleShape2D_tvv6s")
 
-[node name="Timer" type="Timer" parent="."]
+[node name="Timer" type="Timer" parent="." unique_id=658401251]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=301210817]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1671712425]
 position = Vector2(0, 16)
 shape = SubResource("CapsuleShape2D_6fons")
 

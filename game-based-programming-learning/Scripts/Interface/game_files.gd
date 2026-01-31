@@ -11,7 +11,7 @@ var which = 0
 
 func _on_first_pressed() -> void:
 	Settings.Spielstand = 1
-	if Savefile.load_variable(1,"new","n") == true:
+	if Savefile.load_variable(1,"new","n"):
 		Settings.saveData = Savefile.load_all(1)
 		Settings.new = true
 		get_tree().change_scene_to_file("res://Scenes/Interface/gender_selection.tscn")

@@ -15,7 +15,7 @@ var mode_str := "idle"
 var is_busy := false   # blockiert Input bei AXE
 
 func _ready() -> void:
-	if !Settings.saveData["new"]:
+	if Settings.saveData.has("new") and !Settings.saveData["new"]:
 		if Settings._on_changed_scene_positioning($"."):
 			pass
 		else:
