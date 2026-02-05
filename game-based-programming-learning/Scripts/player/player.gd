@@ -53,13 +53,13 @@ func set_modus(new_modus: Modus) -> void:
 # -------------------------
 # PHYSICS → BEWEGUNG
 # -------------------------
-@onready var flower_tiles = $"../FlowerTileMap"
+#@onready var flower_tiles = $"../FlowerTileMap"
 @onready var player_node = $"."
 
 func _process(delta):
-	if flower_tiles:
-		flower_tiles.material.set_shader_parameter("player_pos", player_node.global_position)
-		flower_tiles.material.set_shader_parameter("tilemap_pos", flower_tiles.global_position)
+	#if flower_tiles:
+		#flower_tiles.material.set_shader_parameter("player_pos", player_node.global_position)
+		#flower_tiles.material.set_shader_parameter("tilemap_pos", flower_tiles.global_position)
 	if is_busy:
 		velocity = Vector2.ZERO
 		move_and_slide()

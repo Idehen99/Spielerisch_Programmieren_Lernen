@@ -1,0 +1,87 @@
+[gd_scene format=3 uid="uid://04euaaynmoi4"]
+
+[ext_resource type="Script" uid="uid://c4qi0iwlnqt48" path="res://Scripts/inLevelManagement/code_control.gd" id="1_586eu"]
+[ext_resource type="Script" uid="uid://dmsdamwyonf3g" path="res://Scripts/inLevelManagement/programm_Runner.gd" id="1_im22g"]
+[ext_resource type="Script" uid="uid://doq7lne2yscu1" path="res://Scripts/inLevelManagement/programm_Builder.gd" id="2_dllmu"]
+[ext_resource type="Script" uid="uid://b7nyexjgc70ya" path="res://Scripts/inLevelManagement/code_editor.gd" id="4_klg5e"]
+[ext_resource type="Texture2D" uid="uid://cj3prubt5csbj" path="res://Assets/Farm RPG - Tiny Asset Pack - (All in One)/UI/button.png" id="5_klg5e"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_586eu"]
+bg_color = Color(0.6, 0.6, 0.6, 0.42745098)
+border_width_left = 20
+border_width_top = 20
+border_width_right = 20
+border_width_bottom = 20
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fs25k"]
+atlas = ExtResource("5_klg5e")
+region = Rect2(176, 255.985, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kf1to"]
+atlas = ExtResource("5_klg5e")
+region = Rect2(176, 224, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s0nuj"]
+atlas = ExtResource("5_klg5e")
+region = Rect2(640, 256.005, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gaeya"]
+atlas = ExtResource("5_klg5e")
+region = Rect2(640, 224, 16, 16)
+
+[node name="Node" type="Node" unique_id=1309577195]
+script = ExtResource("1_586eu")
+
+[node name="ProgrammRunner" type="Node" parent="." unique_id=1686884202]
+script = ExtResource("1_im22g")
+
+[node name="ProgrammBuilder" type="Node" parent="." unique_id=1297568953]
+script = ExtResource("2_dllmu")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1287864487]
+
+[node name="CodeEditor" type="Panel" parent="." unique_id=742612804]
+offset_top = -398.0
+offset_right = 599.0
+offset_bottom = 394.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_586eu")
+script = ExtResource("4_klg5e")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="CodeEditor" unique_id=743863579]
+layout_mode = 0
+offset_right = 596.0
+offset_bottom = 791.0
+
+[node name="codeContainer" type="VBoxContainer" parent="CodeEditor/ScrollContainer" unique_id=399640154]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1152745482]
+z_index = 10
+
+[node name="play" type="TextureButton" parent="." unique_id=1935319788]
+offset_left = -600.0
+offset_top = -400.0
+offset_right = -584.0
+offset_bottom = -384.0
+texture_normal = SubResource("AtlasTexture_fs25k")
+texture_pressed = SubResource("AtlasTexture_kf1to")
+
+[node name="retry" type="TextureButton" parent="." unique_id=96372563]
+offset_left = -600.0
+offset_top = -383.0
+offset_right = -584.0
+offset_bottom = -367.0
+texture_normal = SubResource("AtlasTexture_s0nuj")
+texture_pressed = SubResource("AtlasTexture_gaeya")
+
+[node name="backToLevel" type="TextureButton" parent="." unique_id=1469079441]
+offset_left = -599.0
+offset_top = -365.0
+offset_right = -583.0
+offset_bottom = -349.0
+
+[connection signal="pressed" from="play" to="." method="_on_play_pressed"]

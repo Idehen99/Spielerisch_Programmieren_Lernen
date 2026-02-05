@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://d1vycrxumbcbf"]
+
+[ext_resource type="Script" uid="uid://cuuhl7utc22iv" path="res://Scripts/block/move_right_block.gd" id="1_lduf0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lduf0"]
+
+[node name="MoveRightBlock" type="Panel" unique_id=346435543]
+z_index = 11
+offset_right = 220.0
+offset_bottom = 138.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_lduf0")
+script = ExtResource("1_lduf0")
+Side = "Move Right"
+block_type = "move_right"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=904650624]
+layout_mode = 0
+offset_right = 219.0
+offset_bottom = 136.0
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=331237640]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer" unique_id=188525219]
+layout_direction = 2
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 0
+
+[node name="Content" type="VBoxContainer" parent="VBoxContainer/MarginContainer" unique_id=1472525928]
+visible = false
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="VBoxContainer" unique_id=364672624]
+layout_mode = 2

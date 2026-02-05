@@ -1,4 +1,4 @@
-[gd_scene load_steps=222 format=3 uid="uid://ce83ryaq60g6k"]
+[gd_scene format=3 uid="uid://ce83ryaq60g6k"]
 
 [ext_resource type="Script" uid="uid://gb2re3svn42q" path="res://Scripts/player/player.gd" id="1_fvsbo"]
 [ext_resource type="Texture2D" uid="uid://dx371s517cawi" path="res://Assets/Farm RPG - Tiny Asset Pack - (All in One)/Character and Portrait/Character/Pre-made/Tori/Axe.png" id="2_qdjdy"]
@@ -1861,36 +1861,34 @@ states/female_walkUp/position = Vector2(291, 408.67712)
 transitions = ["Start", "female_idleDown", SubResource("AnimationNodeStateMachineTransition_0ctly"), "female_idleDown", "female_axeDown", SubResource("AnimationNodeStateMachineTransition_8xeoa"), "female_axeDown", "female_idleDown", SubResource("AnimationNodeStateMachineTransition_q1n24"), "female_idleRight", "female_axeRight", SubResource("AnimationNodeStateMachineTransition_0w2h1"), "female_axeRight", "female_idleRight", SubResource("AnimationNodeStateMachineTransition_og1w1"), "female_idleUp", "female_axeUp", SubResource("AnimationNodeStateMachineTransition_df70w"), "female_axeUp", "female_idleUp", SubResource("AnimationNodeStateMachineTransition_24ytt"), "female_idleUp", "female_walkUp", SubResource("AnimationNodeStateMachineTransition_pc7aq"), "female_walkUp", "female_idleUp", SubResource("AnimationNodeStateMachineTransition_0kvab"), "female_walkRight", "female_idleRight", SubResource("AnimationNodeStateMachineTransition_p6uyb"), "female_idleRight", "female_walkRight", SubResource("AnimationNodeStateMachineTransition_xs10y"), "female_idleDown", "female_walkDown", SubResource("AnimationNodeStateMachineTransition_4bx8y"), "female_walkDown", "female_idleDown", SubResource("AnimationNodeStateMachineTransition_tvtc5"), "female_runUp", "female_walkUp", SubResource("AnimationNodeStateMachineTransition_8tasy"), "female_walkUp", "female_runUp", SubResource("AnimationNodeStateMachineTransition_xpms6"), "female_runRight", "female_walkRight", SubResource("AnimationNodeStateMachineTransition_i15h4"), "female_walkRight", "female_runRight", SubResource("AnimationNodeStateMachineTransition_kpu01"), "female_walkDown", "female_runDown", SubResource("AnimationNodeStateMachineTransition_2wlnf"), "female_runDown", "female_walkDown", SubResource("AnimationNodeStateMachineTransition_wn1kf"), "female_runUp", "female_runRight", SubResource("AnimationNodeStateMachineTransition_5w6ea"), "female_runRight", "female_runUp", SubResource("AnimationNodeStateMachineTransition_go4te")]
 graph_offset = Vector2(0, -23.322878)
 
-[node name="Player" type="CharacterBody2D" groups=["player"]]
+[node name="Player" type="CharacterBody2D" unique_id=1236920572 groups=["player"]]
 z_index = 3
 script = ExtResource("1_fvsbo")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1727201343]
 position = Vector2(0, -1)
 shape = SubResource("CapsuleShape2D_4klla")
 
-[node name="MaleSprite" type="AnimatedSprite2D" parent="."]
+[node name="MaleSprite" type="AnimatedSprite2D" parent="." unique_id=1488819007]
 sprite_frames = SubResource("SpriteFrames_0ctly")
 animation = &"axeDown"
 
-[node name="FemaleSprite" type="AnimatedSprite2D" parent="."]
+[node name="FemaleSprite" type="AnimatedSprite2D" parent="." unique_id=147675097]
 sprite_frames = SubResource("SpriteFrames_k13hx")
 animation = &""
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_0ctly"),
-&"female": SubResource("AnimationLibrary_e2cdf"),
-&"male": SubResource("AnimationLibrary_vsm4s")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1539837495]
+libraries/ = SubResource("AnimationLibrary_0ctly")
+libraries/female = SubResource("AnimationLibrary_e2cdf")
+libraries/male = SubResource("AnimationLibrary_vsm4s")
 
-[node name="AnimationTree" type="AnimationTree" parent="AnimationPlayer"]
+[node name="AnimationTree" type="AnimationTree" parent="AnimationPlayer" unique_id=1099480751]
 active = false
 root_node = NodePath("../..")
 tree_root = SubResource("AnimationNodeStateMachine_hinxy")
 anim_player = NodePath("..")
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1085448502]
 position = Vector2(8, 0)
 zoom = Vector2(3.5, 3.5)
 limit_left = -100000000
@@ -1898,7 +1896,7 @@ limit_top = -100000000
 limit_right = 100000000
 limit_bottom = 100000000
 
-[node name="VBoxContainer" parent="." instance=ExtResource("11_4wg6r")]
+[node name="VBoxContainer" parent="." unique_id=394815848 instance=ExtResource("11_4wg6r")]
 visible = false
 offset_left = -81.0
 offset_top = -23.0
@@ -1906,7 +1904,7 @@ offset_right = 163.0
 offset_bottom = 78.0
 scale = Vector2(0.6, 0.6)
 
-[node name="Menu" type="Button" parent="."]
+[node name="Menu" type="Button" parent="." unique_id=80301833]
 offset_left = 138.0
 offset_top = -114.0
 offset_right = 178.0
