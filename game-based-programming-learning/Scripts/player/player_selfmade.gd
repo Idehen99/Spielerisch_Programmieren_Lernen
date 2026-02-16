@@ -8,8 +8,8 @@ enum Direction { UP, DOWN, RIGHT, LEFT}
 var modus: Modus = Modus.IDLE
 var dir: Direction = Direction.DOWN
 
-var direction_str := "Down"
-var mode_str := "idle"
+var direction_str = "Down"
+var mode_str = "idle"
 
 var is_busy := false
 
@@ -25,20 +25,26 @@ func _ready() -> void:
 		p.animation_finished.connect(_on_animation_finished)
 	for m in Modus:
 		for d in Direction:
-			for p in parts:
-				match d:
-					Direction.UP: direction_str = "Up"
-					Direction.DOWN: direction_str = "Down"
-					Direction.RIGHT:
-						direction_str = "Right"
-					Direction.LEFT: continue
-				match m:
-					Modus.IDLE: mode_str = "idle"
-					Modus.WALK: mode_str = "walk"
-					Modus.RUN: mode_str = "run"
-					Modus.AXE: mode_str = "axe"
-				var anim_name = mode_str + direction_str
-				p.change(mode_str, anim_name)
+			var mode
+			var dire
+			print(m,d,Modus.IDLE,m=="IDLE")
+			match d:
+				"UP": dire = "Up"
+				"DOWN": dire = "Down"
+				"RIGHT":
+					dire = "Right"
+				"LEFT": continue
+			match m:
+				"IDLE": mode = "idle"
+				"WALK": mode = "walk"
+				"RUN": mode = "run"
+				"AXE": mode = "axe"
+			var anim_name = mode + dire
+			$Hair.change(mode, anim_name)
+			$Eyes.change(mode, anim_name)
+			$Skins.change(mode, anim_name)
+			$Clothes.change(mode, anim_name)
+
 
 # -------------------------
 # INPUT
@@ -113,6 +119,8 @@ func flip_parts(value: bool):
 # -------------------------
 # ANIMATION
 # -------------------------
+var last_anim_name := ""  # speichert die aktuell abgespielte Animation
+
 func update_animation() -> void:
 	match dir:
 		Direction.UP: direction_str = "Up"
@@ -128,9 +136,11 @@ func update_animation() -> void:
 
 	var anim_name = mode_str + direction_str
 
-	for p in parts:
-		#if p.has_animation(anim_name):
-		p.change2(mode_str, anim_name)
+	if anim_name != last_anim_name:
+		for p in parts:
+			p.change2(mode_str, anim_name)  # Animation wechseln nur bei Änderung
+		last_anim_name = anim_name
+
 
 # -------------------------
 # AXE ENDE

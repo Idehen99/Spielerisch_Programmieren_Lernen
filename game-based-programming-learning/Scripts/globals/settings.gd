@@ -3,11 +3,11 @@ var Gender = "Male"
 var Spielstand = 0
 var saveData = {"new":true}
 var new = false
-var HairColor = "Black"
-var HairStyle = "Lyria"
+@onready var HairColor = "Black"
+@onready var HairStyle = "Lyria"
 var EyeColor = "Green"
 var Clothes = "Purple"
-var Skins = "3"
+var Skins = "1"
 
 
 
