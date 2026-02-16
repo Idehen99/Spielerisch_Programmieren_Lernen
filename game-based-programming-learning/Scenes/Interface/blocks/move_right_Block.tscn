@@ -12,6 +12,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxEmpty_lduf0")
 script = ExtResource("1_lduf0")
+side = "Ein Schritt nach Rechts"
 Side = "Move Right"
 block_type = "move_right"
 

@@ -1871,7 +1871,7 @@ shape = SubResource("CapsuleShape2D_4klla")
 
 [node name="MaleSprite" type="AnimatedSprite2D" parent="." unique_id=1488819007]
 sprite_frames = SubResource("SpriteFrames_0ctly")
-animation = &"axeDown"
+animation = &"axeUp"
 
 [node name="FemaleSprite" type="AnimatedSprite2D" parent="." unique_id=147675097]
 sprite_frames = SubResource("SpriteFrames_k13hx")

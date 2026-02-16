@@ -2718,7 +2718,7 @@ position = Vector2(-14, 48)
 shape = SubResource("RectangleShape2D_wgn7w")
 
 [node name="ChangeSceneArea" parent="." unique_id=774300499 instance=ExtResource("20_wgn7w")]
-position = Vector2(468.89502, 520)
+position = Vector2(478, 518)
 new_position_for_player = Vector2(20, 476)
 
 [node name="AxebleTrees" type="Node" parent="." unique_id=1776433414]

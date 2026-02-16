@@ -1,6 +1,15 @@
-extends CharacterBody2D # CharacterBody ist gut für Kollision, wir nutzen aber kein velocity
+extends CharacterBody2D 
 
-@export var step_size := 64.0 # Die Pixel-Breite eines Feldes
+@export var step_size = 16.0 #weil TileMap = 16x16 pixel
+
+func _ready() -> void:
+	match Settings.Gender:
+		"Male":
+			$CollisionShape2D/FemaleSprite2D.visible=false
+			$CollisionShape2D/MaleSprite2d.visible=true
+		"Female":
+			$CollisionShape2D/FemaleSprite2D.visible=true
+			$CollisionShape2D/MaleSprite2d.visible=false
 
 func move_step(direction: Vector2):
 	# Wir erstellen einen Tween für eine flüssige Bewegung

@@ -7,7 +7,7 @@ extends "res://Scripts/block/code_Block.gd"
 func _ready():
 	block_type = "for"
 	content.visible = true
-	$VBoxContainer/HBoxContainer/Label.text = "FOR ( " 
+	$VBoxContainer/HBoxContainer/Label.text = "Wiederhole ( " 
 
 func _can_drop_data(_pos, data):
 	modulate = Color(1, 1, 1, 0.7)

@@ -1,5 +1,5 @@
 extends Node2D
-@onready var play = preload("res://Scenes/character/player/player.tscn")
+@onready var play = preload("res://Scenes/character/player/player.tscn") #preload("res://Scenes/Test/Test_Player.tscn")
 func _ready() -> void:
 	if get_tree().get_first_node_in_group("player")==null:
 		print("yes")

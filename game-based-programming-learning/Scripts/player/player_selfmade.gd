@@ -1,44 +1,51 @@
 extends CharacterBody2D
 
 enum Modus { IDLE, AXE, RUN, WALK }
-enum Direction { UP, DOWN, LEFT, RIGHT }
+enum Direction { UP, DOWN, RIGHT, LEFT}
 
 @export var speed := 100
 
 var modus: Modus = Modus.IDLE
 var dir: Direction = Direction.DOWN
 
-var sprite
 var direction_str := "Down"
 var mode_str := "idle"
 
-var is_busy := false   # blockiert Input bei AXE
+var is_busy := false
+
+@onready var parts = [
+	$Hair,
+	$Eyes,
+	$Skins,
+	$Clothes
+]
 
 func _ready() -> void:
-	if Settings.saveData.has("new") and !Settings.saveData["new"]:
-		if Settings._on_changed_scene_positioning($"."):
-			pass
-		else:
-			$".".global_position = Settings.saveData["player_pos"]
-		Settings.Gender = Settings.saveData["gender"]
-	if Settings.Gender == "Female":
-		sprite = $FemaleSprite
-		$MaleSprite.visible = false
-	else:
-		sprite = $MaleSprite
-		$FemaleSprite.visible = false
-
-	# wichtig: Animation-Finished-Signal verbinden
-	sprite.animation_finished.connect(_on_animation_finished)
-
+	for p in parts:
+		p.animation_finished.connect(_on_animation_finished)
+	for m in Modus:
+		for d in Direction:
+			for p in parts:
+				match d:
+					Direction.UP: direction_str = "Up"
+					Direction.DOWN: direction_str = "Down"
+					Direction.RIGHT:
+						direction_str = "Right"
+					Direction.LEFT: continue
+				match m:
+					Modus.IDLE: mode_str = "idle"
+					Modus.WALK: mode_str = "walk"
+					Modus.RUN: mode_str = "run"
+					Modus.AXE: mode_str = "axe"
+				var anim_name = mode_str + direction_str
+				p.change(mode_str, anim_name)
 
 # -------------------------
-# INPUT → STATE (Events!)
+# INPUT
 # -------------------------
 func _input(event):
 	if event.is_action_pressed("axe") and not is_busy:
 		set_modus(Modus.AXE)
-
 
 func set_modus(new_modus: Modus) -> void:
 	if is_busy:
@@ -49,17 +56,10 @@ func set_modus(new_modus: Modus) -> void:
 	if modus == Modus.AXE:
 		is_busy = true
 
-
 # -------------------------
-# PHYSICS → BEWEGUNG
+# BEWEGUNG
 # -------------------------
-#@onready var flower_tiles = $"../FlowerTileMap"
-@onready var player_node = $"."
-
 func _process(_delta):
-	#if flower_tiles:
-		#flower_tiles.material.set_shader_parameter("player_pos", player_node.global_position)
-		#flower_tiles.material.set_shader_parameter("tilemap_pos", flower_tiles.global_position)
 	if is_busy:
 		velocity = Vector2.ZERO
 		move_and_slide()
@@ -87,26 +87,28 @@ func _process(_delta):
 	move_and_slide()
 	update_animation()
 
-
 # -------------------------
-# RICHTUNG (smooth)
+# RICHTUNG
 # -------------------------
 func update_direction(input_vector: Vector2) -> void:
 	if abs(input_vector.x) > abs(input_vector.y):
 		if input_vector.x > 0:
 			dir = Direction.RIGHT
-			sprite.flip_h = false
+			flip_parts(false)
 		else:
 			dir = Direction.LEFT
-			sprite.flip_h = true
+			flip_parts(true)
 	else:
 		if input_vector.y < 0:
 			dir = Direction.UP
-			sprite.flip_h = false
+			flip_parts(false)
 		else:
 			dir = Direction.DOWN
-			sprite.flip_h = false
+			flip_parts(false)
 
+func flip_parts(value: bool):
+	for p in parts:
+		p.flip_h = value
 
 # -------------------------
 # ANIMATION
@@ -124,11 +126,14 @@ func update_animation() -> void:
 		Modus.RUN: mode_str = "run"
 		Modus.AXE: mode_str = "axe"
 
-	sprite.play(mode_str + direction_str)
+	var anim_name = mode_str + direction_str
 
+	for p in parts:
+		#if p.has_animation(anim_name):
+		p.change2(mode_str, anim_name)
 
 # -------------------------
-# AXE ENDE → IDLE
+# AXE ENDE
 # -------------------------
 func _on_animation_finished():
 	if modus == Modus.AXE:

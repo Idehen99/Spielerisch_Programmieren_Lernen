@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://6g7kvs7yuxn7" path="res://Scripts/player/test_player.gd" id="1_831hd"]
 [ext_resource type="Texture2D" uid="uid://osb7er84ejd3" path="res://Assets/Farm RPG - Tiny Asset Pack - (All in One)/Character and Portrait/Portrait/Premade/2.png" id="2_tqeay"]
+[ext_resource type="Texture2D" uid="uid://bfyay607fqeqv" path="res://Assets/Farm RPG - Tiny Asset Pack - (All in One)/Character and Portrait/Portrait/Premade/1.png" id="3_brgqr"]
+[ext_resource type="PackedScene" uid="uid://04euaaynmoi4" path="res://Scenes/control/code_control.tscn" id="4_b8kti"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8w3hh"]
 
@@ -9,11 +11,27 @@
 atlas = ExtResource("2_tqeay")
 region = Rect2(0, 0, 64, 64)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_b8kti"]
+atlas = ExtResource("3_brgqr")
+region = Rect2(0, 0, 64, 64)
+
 [node name="player" type="CharacterBody2D" unique_id=1051168559 groups=["player"]]
+z_index = 10
 script = ExtResource("1_831hd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1548926677]
 shape = SubResource("CircleShape2D_8w3hh")
 
-[node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D" unique_id=1148892048]
+[node name="FemaleSprite2D" type="Sprite2D" parent="CollisionShape2D" unique_id=1148892048]
+z_index = 10
 texture = SubResource("AtlasTexture_brgqr")
+
+[node name="MaleSprite2d" type="Sprite2D" parent="CollisionShape2D" unique_id=416699872]
+z_index = 10
+texture = SubResource("AtlasTexture_b8kti")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1552977594]
+z_index = 12
+zoom = Vector2(3.5, 3.5)
+
+[node name="Node" parent="Camera2D" unique_id=1309577195 instance=ExtResource("4_b8kti")]

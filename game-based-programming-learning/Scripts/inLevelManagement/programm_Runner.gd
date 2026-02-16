@@ -1,13 +1,13 @@
 extends Node
 
-var vars := {}
+var vars = {}
 @onready var player
 
 func _ready() -> void:
 	if get_tree().get_first_node_in_group("player")!=null:
 		player = get_tree().get_first_node_in_group("player")
 	else:
-		var play ="res://Scenes/Test/Test_Player.tscn"
+		var play = preload("res://Scenes/Test/Test_Player.tscn")
 		player = play.instantiate()
 		add_child(player)
 		print(player.get_groups())
@@ -17,7 +17,6 @@ func run_block_list(list):
 	for cmd in list:
 		match cmd.type:
 
-			# In deinem ProgrammRunner Skript
 			"move":
 				if cmd.dir == "right":
 					await player.move_step(Vector2.RIGHT)
@@ -44,7 +43,6 @@ func run_block_list(list):
 				else:
 					run_block_list(cmd.body_false)
 
-# 👇 HIER war sie vorher nicht
 func evaluate(cond):
 	var left = vars.get(cond.left, 0)
 	var right = cond.right
