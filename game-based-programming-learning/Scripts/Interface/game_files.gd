@@ -24,7 +24,7 @@ func _on_first_pressed() -> void:
 func _on_delete_1_pressed() -> void:
 	which = 1
 	sure.visible = true
-	label.text = "Bist du dir sicher, dass du Spielstand 1 Löschen möchtest"
+	label.text = "Bist du dir sicher, \ndass du Spielstand 1\n Löschen möchtest"
 	files.visible = false
 
 
