@@ -1,17 +1,23 @@
-[gd_scene format=3 uid="uid://bc8v7buvbmje"]
+[gd_scene format=3 uid="uid://c5pl7bvey7as0"]
 
-[ext_resource type="Script" uid="uid://cvmpwcjjj444v" path="res://Scripts/block/code_Block.gd" id="1_vp8im"]
+[ext_resource type="Script" uid="uid://cuuhl7utc22iv" path="res://Scripts/block/move_right_block.gd" id="1_01bs3"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_trmeh"]
-bg_color = Color(0.71396166, 0.5891892, 1.92523e-07, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vvywo"]
+bg_color = Color(0, 0, 0, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vp8im"]
-
-[node name="Panel" type="Panel" unique_id=346435543]
-offset_right = 220.0
-offset_bottom = 138.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_trmeh")
-script = ExtResource("1_vp8im")
+[node name="MoveUpBlock" type="Panel" unique_id=346435543]
+z_index = 11
+custom_minimum_size = Vector2(200, 30)
+offset_right = 200.0
+offset_bottom = 30.0
+scale = Vector2(0.3, 0.3)
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_vvywo")
+script = ExtResource("1_01bs3")
+side = "Ein Schritt nach Oben"
+Side = "Move Up"
+block_type = "moveUp"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=904650624]
 layout_mode = 0
@@ -20,9 +26,9 @@ offset_bottom = 136.0
 
 [node name="Label" type="Label" parent="VBoxContainer" unique_id=331237640]
 layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_vp8im")
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer" unique_id=188525219]
+visible = false
 layout_direction = 2
 layout_mode = 2
 size_flags_vertical = 3
@@ -34,7 +40,5 @@ visible = false
 layout_mode = 2
 
 [node name="Label2" type="Label" parent="VBoxContainer" unique_id=364672624]
-layout_mode = 2
-
-[node name="Label3" type="Label" parent="VBoxContainer" unique_id=2018271359]
+visible = false
 layout_mode = 2

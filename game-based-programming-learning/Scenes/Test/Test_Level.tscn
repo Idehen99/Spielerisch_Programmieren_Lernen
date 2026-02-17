@@ -5,11 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://31py6c2xidn" path="res://Scenes/Interface/blocks/for_Block.tscn" id="3_073eg"]
 [ext_resource type="PackedScene" uid="uid://bc8v7buvbmje" path="res://Scenes/Interface/blocks/code_Block.tscn" id="3_qcxl1"]
 [ext_resource type="PackedScene" uid="uid://d1vycrxumbcbf" path="res://Scenes/Interface/blocks/move_right_Block.tscn" id="4_f72m4"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f72m4"]
-bg_color = Color(0.6, 0.011999989, 0.011999989, 1)
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lduf0"]
+[ext_resource type="PackedScene" uid="uid://c5pl7bvey7as0" path="res://Scenes/Interface/blocks/move_up_block.tscn" id="6_5tole"]
+[ext_resource type="PackedScene" uid="uid://dicl3qr1rg1pt" path="res://Scenes/Interface/blocks/move_down_block.tscn" id="7_eip2e"]
 
 [node name="Control" type="Control" unique_id=581648837]
 layout_mode = 3
@@ -20,20 +17,19 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Panel" parent="." unique_id=1567619386 instance=ExtResource("3_qcxl1")]
+visible = false
 layout_mode = 0
 offset_left = -169.0
 offset_top = -109.0
 offset_right = 51.0
 offset_bottom = 29.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_f72m4")
 
 [node name="MoveLeftBlock" parent="." unique_id=346435543 instance=ExtResource("1_j31c4")]
 layout_mode = 0
-offset_left = -96.0
-offset_top = -78.0
-offset_right = -35.0
-offset_bottom = -48.0
-scale = Vector2(0.3, 0.3)
+offset_left = -124.0
+offset_top = -45.0
+offset_right = 76.0
+offset_bottom = -15.0
 
 [node name="forfor" parent="." unique_id=1028428857 instance=ExtResource("3_073eg")]
 layout_mode = 0
@@ -46,22 +42,18 @@ block_type = "for"
 
 [node name="MoveRightBlock" parent="." unique_id=112476614 instance=ExtResource("4_f72m4")]
 layout_mode = 0
-offset_left = -92.0
-offset_top = 71.0
-offset_right = -37.0
-offset_bottom = 99.0
-scale = Vector2(0.3, 0.3)
-theme_override_styles/panel = SubResource("StyleBoxEmpty_lduf0")
+offset_left = -73.0
+offset_top = 11.0
+offset_right = -18.0
+offset_bottom = 39.0
 block_type = "moveLeft"
 
 [node name="MoveRightBlock2" parent="." unique_id=1905528360 instance=ExtResource("4_f72m4")]
 layout_mode = 0
-offset_left = -157.0
-offset_top = 54.0
-offset_right = -80.0
-offset_bottom = 96.0
-scale = Vector2(0.3, 0.3)
-theme_override_styles/panel = SubResource("StyleBoxEmpty_lduf0")
+offset_left = -148.0
+offset_top = -13.0
+offset_right = 52.0
+offset_bottom = 29.0
 
 [node name="ForBlock" parent="." unique_id=1695729332 instance=ExtResource("3_073eg")]
 layout_mode = 0
@@ -72,3 +64,17 @@ offset_bottom = 103.0
 scale = Vector2(0.3, 0.3)
 
 [node name="player" parent="." unique_id=1051168559 instance=ExtResource("2_2a2et")]
+
+[node name="MoveUpBlock" parent="." unique_id=460066021 instance=ExtResource("6_5tole")]
+layout_mode = 0
+offset_left = -61.0
+offset_top = 62.0
+offset_right = 139.0
+offset_bottom = 92.0
+
+[node name="MoveDownBlock" parent="." unique_id=585930064 instance=ExtResource("7_eip2e")]
+layout_mode = 0
+offset_left = -174.0
+offset_top = 14.0
+offset_right = 26.0
+offset_bottom = 44.0

@@ -2,15 +2,18 @@
 
 [ext_resource type="Script" uid="uid://cuuhl7utc22iv" path="res://Scripts/block/move_right_block.gd" id="1_lduf0"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lduf0"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lduf0"]
+bg_color = Color(0.5484822, 0.012211782, 0.42555034, 1)
 
 [node name="MoveRightBlock" type="Panel" unique_id=346435543]
 z_index = 11
-offset_right = 220.0
-offset_bottom = 138.0
+custom_minimum_size = Vector2(200, 30)
+offset_right = 200.0
+offset_bottom = 30.0
+scale = Vector2(0.3, 0.3)
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_styles/panel = SubResource("StyleBoxEmpty_lduf0")
+theme_override_styles/panel = SubResource("StyleBoxFlat_lduf0")
 script = ExtResource("1_lduf0")
 side = "Ein Schritt nach Rechts"
 Side = "Move Right"
@@ -23,8 +26,10 @@ offset_bottom = 136.0
 
 [node name="Label" type="Label" parent="VBoxContainer" unique_id=331237640]
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer" unique_id=188525219]
+visible = false
 layout_direction = 2
 layout_mode = 2
 size_flags_vertical = 3
@@ -36,4 +41,5 @@ visible = false
 layout_mode = 2
 
 [node name="Label2" type="Label" parent="VBoxContainer" unique_id=364672624]
+visible = false
 layout_mode = 2

@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://6g7kvs7yuxn7" path="res://Scripts/player/test_player.gd" id="1_831hd"]
 [ext_resource type="Texture2D" uid="uid://osb7er84ejd3" path="res://Assets/Farm RPG - Tiny Asset Pack - (All in One)/Character and Portrait/Portrait/Premade/2.png" id="2_tqeay"]
 [ext_resource type="Texture2D" uid="uid://bfyay607fqeqv" path="res://Assets/Farm RPG - Tiny Asset Pack - (All in One)/Character and Portrait/Portrait/Premade/1.png" id="3_brgqr"]
-[ext_resource type="PackedScene" uid="uid://04euaaynmoi4" path="res://Scenes/control/code_control.tscn" id="4_b8kti"]
+[ext_resource type="PackedScene" uid="uid://cb0ufxs0pi2qp" path="res://Scenes/control/code_control2D.tscn" id="4_b8kti"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8w3hh"]
 
@@ -34,4 +34,4 @@ texture = SubResource("AtlasTexture_b8kti")
 z_index = 12
 zoom = Vector2(3.5, 3.5)
 
-[node name="Node" parent="Camera2D" unique_id=1309577195 instance=ExtResource("4_b8kti")]
+[node name="Node2D" parent="Camera2D" unique_id=86194187 instance=ExtResource("4_b8kti")]

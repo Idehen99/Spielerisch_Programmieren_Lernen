@@ -1,7 +1,7 @@
 class_name CodeEditor
 extends Panel
 
-@onready var code_container = $ScrollContainer/codeContainer
+@onready var code_container = $MarginContainer/ScrollContainer/codeContainer
 
 func _get_drag_data(_pos):
 	var preview = duplicate()

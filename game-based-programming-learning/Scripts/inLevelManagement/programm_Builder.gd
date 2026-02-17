@@ -14,11 +14,22 @@ func build_program(container):
 						"type": "move",
 						"dir": "right"
 					})
-				else:
+				elif child.Side == "Move Left":
 					program.append({
 						"type": "move",
 						"dir": "left"
 					})
+				elif child.Side == "Move Up":
+					program.append({
+						"type": "move",
+						"dir": "up"
+					})
+				elif child.Side == "Move Down":
+					program.append({
+						"type": "move",
+						"dir": "down"
+					})
+
 			"for":
 				var body = build_program(child.content)
 				program.append({

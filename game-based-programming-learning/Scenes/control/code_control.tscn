@@ -47,18 +47,27 @@ offset_top = -115.5
 offset_right = 531.0
 offset_bottom = 641.72
 scale = Vector2(0.3, 0.3)
+pivot_offset = Vector2(3.055, 0)
 theme_override_styles/panel = SubResource("StyleBoxFlat_586eu")
 script = ExtResource("4_klg5e")
 
-[node name="ScrollContainer" type="ScrollContainer" parent="CodeEditor" unique_id=743863579]
+[node name="MarginContainer" type="MarginContainer" parent="CodeEditor" unique_id=138571899]
 layout_mode = 0
-offset_right = 503.3333
-offset_bottom = 791.0
+offset_left = 19.538332
+offset_top = 21.666666
+offset_right = 479.53833
+offset_bottom = 738.3333
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
 
-[node name="codeContainer" type="VBoxContainer" parent="CodeEditor/ScrollContainer" unique_id=399640154]
+[node name="ScrollContainer" type="ScrollContainer" parent="CodeEditor/MarginContainer" unique_id=743863579]
 layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="codeContainer" type="VBoxContainer" parent="CodeEditor/MarginContainer/ScrollContainer" unique_id=399640154]
+z_index = -1
+layout_mode = 2
+alignment = 1
 
 [node name="play" type="TextureButton" parent="." unique_id=1935319788]
 offset_left = -170.0

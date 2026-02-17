@@ -1,4 +1,4 @@
-extends Node
+extends Node2D
 class_name CodeControl
 
 @export var player_path: NodePath

@@ -22,6 +22,10 @@ func run_block_list(list):
 					await player.move_step(Vector2.RIGHT)
 				elif cmd.dir == "left":
 					await player.move_step(Vector2.LEFT)
+				elif cmd.dir == "up":
+					await player.move_step(Vector2.UP)
+				elif cmd.dir == "down":
+					await player.move_step(Vector2.DOWN)
 
 			"jump":
 				await player.jump_animation()

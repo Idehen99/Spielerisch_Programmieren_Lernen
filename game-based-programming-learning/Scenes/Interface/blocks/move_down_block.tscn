@@ -1,11 +1,11 @@
-[gd_scene format=3 uid="uid://qta3c1etfe61"]
+[gd_scene format=3 uid="uid://dicl3qr1rg1pt"]
 
-[ext_resource type="Script" uid="uid://cuuhl7utc22iv" path="res://Scripts/block/move_right_block.gd" id="1_vvywo"]
+[ext_resource type="Script" uid="uid://cuuhl7utc22iv" path="res://Scripts/block/move_right_block.gd" id="1_m2klk"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vvywo"]
-bg_color = Color(1.347661e-06, 0.7260562, 0.17855048, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3if2u"]
+bg_color = Color(0.99999994, 0.25558972, 0.6350436, 1)
 
-[node name="MoveLeftBlock" type="Panel" unique_id=346435543]
+[node name="MoveDownBlock" type="Panel" unique_id=346435543]
 z_index = 11
 custom_minimum_size = Vector2(200, 30)
 offset_right = 200.0
@@ -13,9 +13,11 @@ offset_bottom = 30.0
 scale = Vector2(0.3, 0.3)
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_vvywo")
-script = ExtResource("1_vvywo")
-side = "Ein Schritt nach Links"
+theme_override_styles/panel = SubResource("StyleBoxFlat_3if2u")
+script = ExtResource("1_m2klk")
+side = "Ein Schritt nach Unten"
+Side = "Move Down"
+block_type = "moveDown"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=904650624]
 layout_mode = 0
