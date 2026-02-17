@@ -9,6 +9,7 @@ var EyeColor = "Green"
 var Clothes = "Purple"
 var Skins = "1"
 
+var current_scene = "no_scene"
 
 
 

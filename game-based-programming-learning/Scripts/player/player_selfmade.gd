@@ -21,6 +21,11 @@ var is_busy := false
 ]
 
 func _ready() -> void:
+	if Settings.saveData.has("new") and !Settings.saveData["new"]:
+		if Settings._on_changed_scene_positioning($"."):
+			pass
+		else:
+			$".".global_position = Settings.saveData["player_pos"]
 	for p in parts:
 		p.animation_finished.connect(_on_animation_finished)
 	for m in Modus:

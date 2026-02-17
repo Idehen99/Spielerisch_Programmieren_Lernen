@@ -14,7 +14,7 @@ func _on_first_pressed() -> void:
 	if Savefile.load_variable(1,"new","n"):
 		Settings.saveData = Savefile.load_all(1)
 		Settings.new = true
-		get_tree().change_scene_to_file("res://Scenes/Interface/gender_selection.tscn")
+		get_tree().change_scene_to_file("res://Scenes/Interface/character_design.tscn")
 	else:
 		Settings.saveData = Savefile.load_all(1)
 		var scene = Savefile.load_variable(1,"actual_scene", "n")
@@ -33,7 +33,7 @@ func _on_second_pressed() -> void:
 	if Savefile.load_variable(2,"new","n"):
 		Settings.saveData = Savefile.load_all(2)
 		Settings.new = true
-		get_tree().change_scene_to_file("res://Scenes/Interface/gender_selection.tscn")
+		get_tree().change_scene_to_file("res://Scenes/Interface/character_design.tscn")
 	else:
 		Settings.saveData = Savefile.load_all(2)
 		var scene = Savefile.load_variable(2,"actual_scene", "n")

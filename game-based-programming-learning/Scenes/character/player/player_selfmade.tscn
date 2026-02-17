@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://fojhrc00dbb4" path="res://Assets/Farm RPG - Tiny Asset Pack - (All in One)/Character and Portrait/Character/PNG/1. Idle/Eyes/Female/Black.png" id="1_3qau8"]
 [ext_resource type="Script" uid="uid://vub8owuqpy7g" path="res://Scripts/player/player_selfmade.gd" id="1_6c1x6"]
 [ext_resource type="Texture2D" uid="uid://cw1rc862o8um5" path="res://Assets/Farm RPG - Tiny Asset Pack - (All in One)/Character and Portrait/Character/PNG/5. Axe and Sickle/Skins/4.png" id="2_4iobp"]
+[ext_resource type="PackedScene" uid="uid://bo0h7nhg2w0xn" path="res://Scenes/control/save_game.tscn" id="2_modpf"]
 [ext_resource type="Texture2D" uid="uid://bbhhxnbf1bkyn" path="res://Assets/Farm RPG - Tiny Asset Pack - (All in One)/Character and Portrait/Character/PNG/1. Idle/Skins/4.png" id="3_1h3xh"]
 [ext_resource type="Script" uid="uid://bwds05qbvtppn" path="res://Scripts/player/body_parts/eyes.gd" id="3_8ja76"]
 [ext_resource type="Texture2D" uid="uid://jy5i7trfsstp" path="res://Assets/Farm RPG - Tiny Asset Pack - (All in One)/Character and Portrait/Character/PNG/1. Idle/Clothers/Farm/Blue.png" id="4_6c1x6"]
@@ -2301,9 +2302,32 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0l14r"]
+radius = 5.0
+height = 18.0
 
-[node name="PlayerSelfmade" type="CharacterBody2D" unique_id=1362382994]
+[node name="PlayerSelfmade" type="CharacterBody2D" unique_id=1362382994 groups=["player"]]
+light_mask = 64
+visibility_layer = 64
+z_index = 3
 script = ExtResource("1_6c1x6")
+
+[node name="VBoxContainer" parent="." unique_id=225429359 instance=ExtResource("2_modpf")]
+visible = false
+z_index = 4
+offset_left = -23.000008
+offset_top = -9.000004
+offset_right = 221.0
+offset_bottom = 92.0
+scale = Vector2(0.2, 0.2)
+
+[node name="Menu" type="Button" parent="." unique_id=1440416920]
+z_index = 4
+offset_left = 153.0
+offset_top = -113.99999
+offset_right = 237.99994
+offset_bottom = -69.00005
+scale = Vector2(0.2, 0.2)
+text = "Menü"
 
 [node name="Skins" type="AnimatedSprite2D" parent="." unique_id=7404954]
 sprite_frames = SubResource("SpriteFrames_d50qh")
@@ -2336,10 +2360,11 @@ script = ExtResource("6_8ja76")
 shape = SubResource("CapsuleShape2D_0l14r")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=35124261]
-zoom = Vector2(10, 10)
+zoom = Vector2(3.5, 3.5)
 
 [node name="HairTimer" type="Timer" parent="." unique_id=1577341684]
 
+[connection signal="pressed" from="Menu" to="VBoxContainer" method="_on_menu_pressed"]
 [connection signal="timeout" from="EyeTimer" to="Eyes" method="_on_eye_timer_timeout"]
 [connection signal="timeout" from="EyeTimer" to="Hair" method="_on_eye_timer_timeout"]
 [connection signal="timeout" from="HairTimer" to="Hair" method="_on_hair_timer_timeout"]
