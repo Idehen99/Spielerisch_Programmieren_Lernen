@@ -41,6 +41,8 @@ folder_colors={
 [global_group]
 
 player=""
+codelevel="an level where movement is defined through the code_control"
+inputlevel="an level where movement is defined by the players input"
 
 [input]
 

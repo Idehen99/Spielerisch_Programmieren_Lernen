@@ -10,6 +10,7 @@ z_index = 11
 custom_minimum_size = Vector2(256, 256)
 offset_right = 220.0
 offset_bottom = 138.0
+scale = Vector2(0.1, 0.1)
 pivot_offset = Vector2(1, 0)
 theme_override_styles/panel = SubResource("StyleBoxFlat_x14o1")
 script = ExtResource("1_x14o1")

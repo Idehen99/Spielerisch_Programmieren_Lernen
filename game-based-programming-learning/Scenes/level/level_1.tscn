@@ -4001,7 +4001,7 @@ sources/0 = SubResource("TileSetAtlasSource_5pbx2")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nr23b"]
 size = Vector2(1147, 651)
 
-[node name="Node2D" type="Node2D" unique_id=177761043 groups=["level"]]
+[node name="Node2D" type="Node2D" unique_id=177761043 groups=["inputlevel", "level"]]
 position = Vector2(1, 3)
 script = ExtResource("1_bivn8")
 
@@ -4062,6 +4062,6 @@ shape = SubResource("RectangleShape2D_nr23b")
 [node name="ChangeSceneArea" parent="." unique_id=1426649765 instance=ExtResource("17_w82l0")]
 position = Vector2(-3.42, 476)
 destination = "res://Scenes/level/forrest_level_2.tscn"
-new_position_for_player = Vector2(400, 500)
+new_position_for_player = Vector2(344, 552)
 
 [connection signal="timeout" from="CameraArea2D/Timer" to="CameraArea2D" method="_on_timer_timeout"]

@@ -21,6 +21,11 @@
 [ext_resource type="PackedScene" uid="uid://2qxiwgjdagd1" path="res://Scenes/level/Trees/mahagonay_tree.tscn" id="18_x8w5r"]
 [ext_resource type="Script" uid="uid://w7gdvxxrvd8t" path="res://Scripts/Interface/camera_area_2d.gd" id="19_20jd0"]
 [ext_resource type="PackedScene" uid="uid://cguwmvmbmn0bi" path="res://Scenes/level/change_scene.tscn" id="20_wgn7w"]
+[ext_resource type="PackedScene" uid="uid://31py6c2xidn" path="res://Scenes/Interface/blocks/for_Block.tscn" id="22_y43hj"]
+[ext_resource type="PackedScene" uid="uid://dicl3qr1rg1pt" path="res://Scenes/Interface/blocks/move_down_block.tscn" id="23_tvbcx"]
+[ext_resource type="PackedScene" uid="uid://qta3c1etfe61" path="res://Scenes/Interface/blocks/move_left_Block.tscn" id="24_wsb8x"]
+[ext_resource type="PackedScene" uid="uid://d1vycrxumbcbf" path="res://Scenes/Interface/blocks/move_right_Block.tscn" id="25_ergi1"]
+[ext_resource type="PackedScene" uid="uid://c5pl7bvey7as0" path="res://Scenes/Interface/blocks/move_up_block.tscn" id="26_ga3um"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ergi1"]
 texture = ExtResource("1_qqdxw")
@@ -2667,10 +2672,16 @@ sources/3 = SubResource("TileSetAtlasSource_pfpa5")
 sources/4 = SubResource("TileSetAtlasSource_whhxi")
 sources/5 = SubResource("TileSetAtlasSource_bisux")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fub0r"]
+size = Vector2(16, 16)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wgn7w"]
 size = Vector2(460, 486)
 
-[node name="ForrestLevel" type="Node2D" unique_id=1434093856]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y43hj"]
+size = Vector2(48, 48)
+
+[node name="ForrestLevel" type="Node2D" unique_id=1434093856 groups=["codelevel"]]
 script = ExtResource("1_fub0r")
 
 [node name="Tilemaps" type="Node" parent="." unique_id=320712002]
@@ -2711,6 +2722,12 @@ tile_set = SubResource("TileSet_lt6g4")
 position = Vector2(247, 507)
 script = ExtResource("19_20jd0")
 
+[node name="Startposition" type="CollisionShape2D" parent="CameraArea2D" unique_id=1875009071]
+top_level = true
+z_index = 20
+position = Vector2(344, 552)
+shape = SubResource("RectangleShape2D_fub0r")
+
 [node name="Timer" type="Timer" parent="CameraArea2D" unique_id=1497864216]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CameraArea2D" unique_id=523285448]
@@ -2726,4 +2743,53 @@ new_position_for_player = Vector2(20, 476)
 [node name="MahagonayTree" parent="AxebleTrees" unique_id=322803202 instance=ExtResource("18_x8w5r")]
 position = Vector2(247, 507)
 
+[node name="ForBlock" parent="AxebleTrees" unique_id=346435543 instance=ExtResource("22_y43hj")]
+offset_left = 286.0
+offset_top = 568.0
+offset_right = 542.0
+offset_bottom = 824.0
+
+[node name="MoveDownBlock" parent="AxebleTrees" unique_id=345517918 instance=ExtResource("23_tvbcx")]
+offset_left = 249.0
+offset_top = 574.0
+offset_right = 449.0
+offset_bottom = 604.0
+
+[node name="MoveLeftBlock" parent="AxebleTrees" unique_id=1219635914 instance=ExtResource("24_wsb8x")]
+offset_left = 248.0
+offset_top = 578.0
+offset_right = 451.3333
+offset_bottom = 614.6666
+
+[node name="MoveRightBlock" parent="AxebleTrees" unique_id=1957977157 instance=ExtResource("25_ergi1")]
+offset_left = 251.0
+offset_top = 587.0
+offset_right = 451.0
+offset_bottom = 617.0
+
+[node name="MoveUpBlock" parent="AxebleTrees" unique_id=2091380929 instance=ExtResource("26_ga3um")]
+offset_left = 250.00002
+offset_top = 583.0
+offset_right = 450.0
+offset_bottom = 613.0
+
+[node name="ForBlock2" parent="AxebleTrees" unique_id=427047751 instance=ExtResource("22_y43hj")]
+offset_left = 286.0
+offset_top = 497.0
+offset_right = 542.0
+offset_bottom = 753.0
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1495007029]
+z_index = 10
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=596383164]
+position = Vector2(248, 520)
+shape = SubResource("RectangleShape2D_y43hj")
+debug_color = Color(0.19551516, 0.6418138, 7.70092e-07, 0.41960785)
+
+[node name="Timer" type="Timer" parent="Area2D" unique_id=1933808828]
+
 [connection signal="timeout" from="CameraArea2D/Timer" to="CameraArea2D" method="_on_timer_timeout"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="timeout" from="Area2D/Timer" to="." method="_on_timer_timeout"]
