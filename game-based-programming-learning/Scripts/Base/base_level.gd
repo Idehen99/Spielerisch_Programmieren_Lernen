@@ -7,6 +7,7 @@ func _ready() -> void:
 	if get_tree().get_first_node_in_group("player")==null:
 		print("yes")
 		player = play.instantiate()
+		$CameraArea2D._worked(player.get_node("Camera2D"))
 		add_child(player)
 		print(player.get_groups())
 		player.add_to_group("player")

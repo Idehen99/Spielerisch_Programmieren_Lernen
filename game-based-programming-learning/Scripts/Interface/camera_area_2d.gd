@@ -21,7 +21,7 @@ func _on_timer_timeout() -> void:
 		var cam = player.get_node("Camera2D")
 		_worked(cam)
 	else:
-		$Timer.start(3)
+		$Timer.start(1)
 
 func _worked(cam):
 	var shape = bounds.shape as RectangleShape2D

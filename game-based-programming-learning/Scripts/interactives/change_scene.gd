@@ -1,6 +1,6 @@
 extends Area2D
 
-@export var destination = "res://Scenes/level/level_1.tscn"
+@export var destination = preload("res://Scenes/level/level_1.tscn")
 @export var new_position_for_player: Vector2 = Vector2(1,1)
 
 
