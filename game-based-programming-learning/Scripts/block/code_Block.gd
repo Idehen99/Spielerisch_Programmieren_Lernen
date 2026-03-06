@@ -4,10 +4,12 @@ extends Panel
 @export var block_type = "moveLeft"
 @export var has_body = false
 
-@onready var content = $VBoxContainer/MarginContainer/Content
+@onready var content 
 
 func _ready():
-	content.visible = has_body
+	if $VBoxContainer/MarginContainer/Content:
+		content = $VBoxContainer/MarginContainer/Content
+		content.visible = has_body
 
 func _get_drag_data(_pos):
 	var preview = duplicate()

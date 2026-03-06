@@ -26,4 +26,13 @@ func _on_changed_scene_positioning(player: CharacterBody2D) -> bool:
 		sceneChange = false
 		return true
 	return false
-	
+
+# In Settings.gd (dein Singleton)
+func update_from_save():
+	if saveData.has("gender"): Gender = saveData["gender"]
+	if saveData.has("hair_color"): HairColor = saveData["hair_color"]
+	if saveData.has("hair_style"): HairStyle = saveData["hair_style"]
+	if saveData.has("eye_color"): EyeColor = saveData["eye_color"]
+	if saveData.has("clothes"): Clothes = saveData["clothes"]
+	if saveData.has("skins"): Skins = saveData["skins"]
+  

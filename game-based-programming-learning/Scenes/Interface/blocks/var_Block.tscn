@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://cxy2i3it0xox7"]
+
+[ext_resource type="Script" uid="uid://cnktakg82yuuq" path="res://Scripts/block/var_block.gd" id="1_pfk10"]
+
+[node name="VarBlock" type="Panel" unique_id=640576716]
+offset_right = 114.0
+offset_bottom = 46.0
+scale = Vector2(0.3, 0.3)
+script = ExtResource("1_pfk10")
+block_type = "var"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1743160080]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="HBoxContainer" unique_id=1761349341]
+layout_mode = 2
+text = "Var :"
+
+[node name="Baki" type="Label" parent="HBoxContainer" unique_id=249029368]
+layout_mode = 2
+text = "Baki"
+
+[node name="LineEdit" type="LineEdit" parent="HBoxContainer" unique_id=488427448]
+layout_mode = 2
+
+[connection signal="text_changed" from="HBoxContainer/LineEdit" to="." method="_on_line_edit_text_changed"]

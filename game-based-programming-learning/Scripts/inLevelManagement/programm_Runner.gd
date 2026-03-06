@@ -43,14 +43,14 @@ func run_block_list(list):
 
 			"if":
 				if evaluate(cmd.condition):
-					run_block_list(cmd.body_true)
+					await run_block_list(cmd.body_true)
 				else:
-					run_block_list(cmd.body_false)
+					await run_block_list(cmd.body_false)
 
 func evaluate(cond):
-	var left = vars.get(cond.left, 0)
-	var right = cond.right
-
+	var left = vars.get(cond.left, cond.left)
+	var right = vars.get(cond.right, cond.right)
+	
 	match cond.op:
 		"<": return left < right
 		">": return left > right

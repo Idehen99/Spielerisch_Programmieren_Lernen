@@ -17,6 +17,8 @@ func _on_first_pressed() -> void:
 		get_tree().change_scene_to_file("res://Scenes/Interface/character_design.tscn")
 	else:
 		Settings.saveData = Savefile.load_all(1)
+		Settings.update_from_save()
+		print(Settings.saveData)
 		var scene = Savefile.load_variable(1,"actual_scene", "n")
 		get_tree().change_scene_to_file(scene)
 
@@ -36,6 +38,7 @@ func _on_second_pressed() -> void:
 		get_tree().change_scene_to_file("res://Scenes/Interface/character_design.tscn")
 	else:
 		Settings.saveData = Savefile.load_all(2)
+		Settings.update_from_save()
 		var scene = Savefile.load_variable(2,"actual_scene", "n")
 		get_tree().change_scene_to_file(scene)
 

@@ -6,12 +6,14 @@ extends "res://Scripts/block/code_Block.gd"
 
 func _ready():
 	block_type = "for"
-	content.visible = true
+	if $VBoxContainer/MarginContainer/Content:
+		content = $VBoxContainer/MarginContainer/Content
+		content.visible = true
 	$VBoxContainer/HBoxContainer/Label.text = "Wiederhole ( " 
 
 func _can_drop_data(_pos, data):
 	modulate = Color(1, 1, 1, 0.7)
-	return data is CodeBlock
+	return data is CodeBlock and data != self
 
 func _drop_data(_pos, block):
 	modulate = Color(1, 1, 1, 1)

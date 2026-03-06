@@ -39,11 +39,6 @@ func get_path_for_current_style(action:String , _anim: String):
 		"axe":
 			return [6, false,"res://Assets/Farm RPG - Tiny Asset Pack - (All in One)/Character and Portrait/Character/PNG/5. Axe and Sickle/Skins/" + skin +".png"]
 
-
-
-
-
-
 func set_texture(sheet_path: String, anim_name: String, framesN: int, loop: bool):
 	if sprite_frames == null:
 		sprite_frames = SpriteFrames.new()

@@ -35,7 +35,8 @@ window/stretch/mode="canvas_items"
 folder_colors={
 "res://Assets/": "red",
 "res://Scenes/": "green",
-"res://Scripts/": "yellow"
+"res://Scripts/": "yellow",
+"res://Shader/": "pink"
 }
 
 [global_group]

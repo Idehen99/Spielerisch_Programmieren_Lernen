@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://c5pl7bvey7as0" path="res://Scenes/Interface/blocks/move_up_block.tscn" id="6_5tole"]
 [ext_resource type="PackedScene" uid="uid://632awkywuulm" path="res://Scenes/character/player/code_player.tscn" id="7_5tole"]
 [ext_resource type="PackedScene" uid="uid://dicl3qr1rg1pt" path="res://Scenes/Interface/blocks/move_down_block.tscn" id="7_eip2e"]
+[ext_resource type="PackedScene" uid="uid://byjy0okl4yakq" path="res://Scenes/Interface/blocks/if_Block.tscn" id="8_brpd5"]
+[ext_resource type="PackedScene" uid="uid://cxy2i3it0xox7" path="res://Scenes/Interface/blocks/var_Block.tscn" id="9_x2g4u"]
 
 [node name="Control" type="Control" unique_id=581648837]
 layout_mode = 3
@@ -33,10 +35,10 @@ offset_bottom = -15.0
 
 [node name="forfor" parent="." unique_id=1028428857 instance=ExtResource("3_073eg")]
 layout_mode = 0
-offset_left = -62.0
-offset_top = -78.0
-offset_right = 59.0
-offset_bottom = 25.0
+offset_left = -187.0
+offset_top = 35.0
+offset_right = 69.0
+offset_bottom = 291.0
 scale = Vector2(0.3, 0.3)
 block_type = "for"
 
@@ -78,3 +80,25 @@ offset_right = 26.0
 offset_bottom = 44.0
 
 [node name="codePlayer" parent="." unique_id=1051168559 instance=ExtResource("7_5tole")]
+
+[node name="IfBlock" parent="." unique_id=825846234 instance=ExtResource("8_brpd5")]
+layout_mode = 0
+offset_left = -98.0
+offset_top = -108.0
+offset_right = -98.0
+offset_bottom = -108.0
+
+[node name="VarBlock" parent="." unique_id=640576716 instance=ExtResource("9_x2g4u")]
+layout_mode = 0
+offset_left = -56.0
+offset_top = -27.0
+offset_right = -56.0
+offset_bottom = -27.0
+
+[node name="VarBlock2" parent="." unique_id=1445650479 instance=ExtResource("9_x2g4u")]
+layout_mode = 0
+offset_left = -94.0
+offset_top = -77.0
+offset_right = 20.0
+offset_bottom = -31.0
+modus = 1

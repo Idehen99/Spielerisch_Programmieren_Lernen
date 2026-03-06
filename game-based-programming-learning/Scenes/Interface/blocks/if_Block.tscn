@@ -1,0 +1,99 @@
+[gd_scene format=3 uid="uid://byjy0okl4yakq"]
+
+[ext_resource type="Script" uid="uid://dsxp6hu4nwdj0" path="res://Scripts/block/if_Block.gd" id="1_nkw88"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nkw88"]
+bg_color = Color(0.92860055, 0.4273301, 0.29754177, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5kl6q"]
+bg_color = Color(0.31883684, 0.5970492, 0.9973771, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2mpxw"]
+bg_color = Color(0.23668984, 0.7145914, 0.13824767, 1)
+
+[node name="IfBlock" type="Panel" unique_id=825846234]
+z_index = 11
+custom_minimum_size = Vector2(250, 150)
+offset_right = 413.3333
+offset_bottom = 290.0
+scale = Vector2(0.1, 0.1)
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_nkw88")
+script = ExtResource("1_nkw88")
+has_body = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=308712190]
+layout_mode = 0
+offset_right = 413.3333
+offset_bottom = 286.66666
+scale = Vector2(0.5, 0.5)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=586741946]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer" unique_id=2125498419]
+layout_mode = 2
+size_flags_horizontal = 8
+text = "Wenn"
+
+[node name="SlotLeft" type="PanelContainer" parent="VBoxContainer/HBoxContainer" unique_id=1948066848]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_5kl6q")
+
+[node name="OptionButton" type="OptionButton" parent="VBoxContainer/HBoxContainer" unique_id=155984037]
+custom_minimum_size = Vector2(5, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_stretch_ratio = 0.0
+theme_override_font_sizes/font_size = 16
+fit_to_longest_item = false
+item_count = 4
+popup/item_0/text = "Gleich"
+popup/item_0/id = 0
+popup/item_1/text = "Nicht_Gleich"
+popup/item_1/id = 1
+popup/item_2/text = "Größer_als"
+popup/item_2/id = 2
+popup/item_3/text = "Kleiner_als"
+popup/item_3/id = 3
+
+[node name="SlotRight" type="PanelContainer" parent="VBoxContainer/HBoxContainer" unique_id=216592802]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_2mpxw")
+
+[node name="Label2" type="Label" parent="VBoxContainer/HBoxContainer" unique_id=1107883867]
+layout_mode = 2
+text = "Dann:"
+
+[node name="Label3" type="Label" parent="VBoxContainer" unique_id=1588811018]
+layout_mode = 2
+text = "Dann:"
+
+[node name="MarginContainer_True" type="MarginContainer" parent="VBoxContainer" unique_id=373750163]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ContentTrue" type="VBoxContainer" parent="VBoxContainer/MarginContainer_True" unique_id=913030813]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="Label_Else" type="Label" parent="VBoxContainer" unique_id=1011882958]
+layout_mode = 2
+text = "Sonst:"
+
+[node name="MarginContainer_False" type="MarginContainer" parent="VBoxContainer" unique_id=1836694620]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ContentFalse" type="VBoxContainer" parent="VBoxContainer/MarginContainer_False" unique_id=24620420]
+layout_mode = 2
+
+[node name="Label_End" type="Label" parent="VBoxContainer" unique_id=20080770]
+layout_mode = 2
+
+[connection signal="item_selected" from="VBoxContainer/HBoxContainer/OptionButton" to="." method="_on_option_button_item_selected"]

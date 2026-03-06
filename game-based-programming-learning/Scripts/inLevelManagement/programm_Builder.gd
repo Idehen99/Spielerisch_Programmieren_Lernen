@@ -40,4 +40,22 @@ func build_program(container):
 					"body": body
 				})
 
+			"if":
+				# WICHTIG: Erst die Werte aus den Slots in die Variablen laden!
+				child.update_slot_values() 
+
+				var body_true = build_program(child.content_true)
+				var body_false = build_program(child.content_false)
+
+				program.append({
+					"type": "if",
+					"condition": {
+						"left": child.condition_left,  
+						"op": child.condition_op,      
+						"right": child.condition_right 
+					},
+					"body_true": body_true,
+					"body_false": body_false
+				})
+
 	return program
