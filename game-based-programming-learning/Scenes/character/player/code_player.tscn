@@ -334,7 +334,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_xv07h")
 }],
-"loop": true,
+"loop": false,
 "name": &"axeDown",
 "speed": 5.0
 }, {
@@ -357,7 +357,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_rvoku")
 }],
-"loop": true,
+"loop": false,
 "name": &"axeRight",
 "speed": 5.0
 }, {
@@ -380,7 +380,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_6ff3x")
 }],
-"loop": true,
+"loop": false,
 "name": &"axeUp",
 "speed": 5.0
 }, {
@@ -901,7 +901,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_0j12c")
 }],
-"loop": true,
+"loop": false,
 "name": &"axeDown",
 "speed": 5.0
 }, {
@@ -924,7 +924,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_tubf5")
 }],
-"loop": true,
+"loop": false,
 "name": &"axeRight",
 "speed": 5.0
 }, {
@@ -947,7 +947,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_kpnan")
 }],
-"loop": true,
+"loop": false,
 "name": &"axeUp",
 "speed": 5.0
 }, {
@@ -1473,7 +1473,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_hrppx")
 }],
-"loop": true,
+"loop": false,
 "name": &"axeDown",
 "speed": 5.0
 }, {
@@ -1496,7 +1496,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_lgdpx")
 }],
-"loop": true,
+"loop": false,
 "name": &"axeRight",
 "speed": 5.0
 }, {
@@ -1519,7 +1519,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_mx11i")
 }],
-"loop": true,
+"loop": false,
 "name": &"axeUp",
 "speed": 5.0
 }, {
@@ -2040,7 +2040,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_3simf")
 }],
-"loop": true,
+"loop": false,
 "name": &"axeDown",
 "speed": 5.0
 }, {
@@ -2063,7 +2063,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_qj3m4")
 }],
-"loop": true,
+"loop": false,
 "name": &"axeRight",
 "speed": 5.0
 }, {
@@ -2086,7 +2086,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_27804")
 }],
-"loop": true,
+"loop": false,
 "name": &"axeUp",
 "speed": 5.0
 }, {
@@ -2312,22 +2312,22 @@ shape = SubResource("CircleShape2D_8w3hh")
 
 [node name="Skins" type="AnimatedSprite2D" parent="CollisionShape2D" unique_id=1698050817]
 sprite_frames = SubResource("SpriteFrames_lvh61")
-animation = &"idleUp"
+animation = &"axeUp"
 script = ExtResource("6_owu43")
 
 [node name="Clothes" type="AnimatedSprite2D" parent="CollisionShape2D" unique_id=424415848]
 sprite_frames = SubResource("SpriteFrames_u6ou7")
-animation = &"idleDown"
+animation = &"axeDown"
 script = ExtResource("11_cnsb8")
 
 [node name="Eyes" type="AnimatedSprite2D" parent="CollisionShape2D" unique_id=1479171702]
 sprite_frames = SubResource("SpriteFrames_kn8iw")
-animation = &"idleDown"
+animation = &"idleRight"
 script = ExtResource("16_kiak3")
 
 [node name="Hair" type="AnimatedSprite2D" parent="CollisionShape2D" unique_id=510388287]
 sprite_frames = SubResource("SpriteFrames_d3fs4")
-animation = &"walkDown"
+animation = &"axeUp"
 script = ExtResource("21_odteg")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1552977594]
@@ -2335,3 +2335,6 @@ z_index = 12
 zoom = Vector2(3.5, 3.5)
 
 [node name="Node2D" parent="Camera2D" unique_id=86194187 instance=ExtResource("1_7a1ku")]
+position = Vector2(247, 507)
+
+[connection signal="animation_finished" from="CollisionShape2D/Hair" to="." method="_on_animation_finished"]

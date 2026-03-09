@@ -3,9 +3,13 @@
 [ext_resource type="Script" uid="uid://cnktakg82yuuq" path="res://Scripts/block/var_block.gd" id="1_pfk10"]
 
 [node name="VarBlock" type="Panel" unique_id=640576716]
+z_index = 11
+custom_minimum_size = Vector2(100, 50)
 offset_right = 114.0
 offset_bottom = 46.0
 scale = Vector2(0.3, 0.3)
+size_flags_horizontal = 3
+size_flags_vertical = 3
 script = ExtResource("1_pfk10")
 block_type = "var"
 

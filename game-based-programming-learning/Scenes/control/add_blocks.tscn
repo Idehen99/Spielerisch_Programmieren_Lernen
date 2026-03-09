@@ -1,0 +1,236 @@
+[gd_scene format=3 uid="uid://8wxhe87tp7wl"]
+
+[ext_resource type="Script" uid="uid://dh2be014ovtna" path="res://Scripts/Interface/trash.gd" id="1_gwuow"]
+[ext_resource type="Script" uid="uid://xrqvh6ha8dsr" path="res://Scripts/Interface/add_blocks.gd" id="1_pf7gr"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dfa5a"]
+bg_color = Color(0, 0, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0rtj8"]
+bg_color = Color(0, 0, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kmauu"]
+bg_color = Color(0, 0.59607846, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3yy6g"]
+bg_color = Color(0, 0, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f3x81"]
+bg_color = Color(0, 0, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t5m54"]
+bg_color = Color(0, 0.59607846, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rrhoa"]
+bg_color = Color(0, 0, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bepra"]
+bg_color = Color(0, 0, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_byh7j"]
+bg_color = Color(0, 0.59607846, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yqgns"]
+bg_color = Color(0, 0, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cdg7i"]
+bg_color = Color(0, 0, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iasud"]
+bg_color = Color(0, 0.59607846, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ufsv3"]
+bg_color = Color(0, 0, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aynwf"]
+bg_color = Color(0, 0.011764706, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jlb7u"]
+bg_color = Color(0, 0.59607846, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dupyl"]
+bg_color = Color(0, 0, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ca30i"]
+bg_color = Color(0, 0, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w24r1"]
+bg_color = Color(0, 0.59607846, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7wy4n"]
+bg_color = Color(0, 0, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gxgvf"]
+bg_color = Color(0, 0, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_87h8a"]
+bg_color = Color(0, 0.59607846, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q4bt4"]
+bg_color = Color(0, 0, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s1g1s"]
+bg_color = Color(0, 0, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xci7r"]
+bg_color = Color(0, 0.59607846, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ch2yr"]
+bg_color = Color(0, 0, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pkaab"]
+bg_color = Color(0, 0, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sg8yf"]
+bg_color = Color(0, 0.59607846, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t3cym"]
+bg_color = Color(0, 0, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0n843"]
+bg_color = Color(0, 0, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mnumg"]
+bg_color = Color(0, 0.59607846, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6mdya"]
+bg_color = Color(0, 0, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vfrvo"]
+bg_color = Color(0, 0, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f18o7"]
+bg_color = Color(0, 0.59607846, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pf7gr"]
+bg_color = Color(1, 0, 0, 0.5176471)
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=415209504]
+layer = 12
+script = ExtResource("1_pf7gr")
+
+[node name="Buttons" type="Node" parent="." unique_id=1418043503]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Buttons" unique_id=1088887290]
+custom_minimum_size = Vector2(100, 0)
+offset_top = 359.0
+offset_right = 104.0
+offset_bottom = 670.0
+scale = Vector2(2, 2)
+
+[node name="For" type="Button" parent="Buttons/VBoxContainer" unique_id=1330925731]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_dfa5a")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_0rtj8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_kmauu")
+text = "Wiederholen
+"
+
+[node name="If" type="Button" parent="Buttons/VBoxContainer" unique_id=1826492825]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_3yy6g")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_f3x81")
+theme_override_styles/hover = SubResource("StyleBoxFlat_t5m54")
+text = "Wenn/Dann"
+
+[node name="Return" type="Button" parent="Buttons/VBoxContainer" unique_id=1648160094]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_rrhoa")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_bepra")
+theme_override_styles/hover = SubResource("StyleBoxFlat_byh7j")
+text = "Stopp
+"
+
+[node name="Left" type="Button" parent="Buttons/VBoxContainer" unique_id=2048543612]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_yqgns")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_cdg7i")
+theme_override_styles/hover = SubResource("StyleBoxFlat_iasud")
+text = "Nach Links
+"
+
+[node name="Right" type="Button" parent="Buttons/VBoxContainer" unique_id=1839958387]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_ufsv3")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_aynwf")
+theme_override_styles/hover = SubResource("StyleBoxFlat_jlb7u")
+text = "Nach Rechts
+"
+
+[node name="Down" type="Button" parent="Buttons/VBoxContainer" unique_id=175894851]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_dupyl")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ca30i")
+theme_override_styles/hover = SubResource("StyleBoxFlat_w24r1")
+text = "Nach Unten"
+
+[node name="Up" type="Button" parent="Buttons/VBoxContainer" unique_id=584727623]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_7wy4n")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_gxgvf")
+theme_override_styles/hover = SubResource("StyleBoxFlat_87h8a")
+text = "Nach Oben"
+
+[node name="VarInput" type="Button" parent="Buttons/VBoxContainer" unique_id=1141292681]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_q4bt4")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_s1g1s")
+theme_override_styles/hover = SubResource("StyleBoxFlat_xci7r")
+text = "Var Zahl"
+
+[node name="VarObject" type="Button" parent="Buttons/VBoxContainer" unique_id=27671000]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_ch2yr")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_pkaab")
+theme_override_styles/hover = SubResource("StyleBoxFlat_sg8yf")
+text = "Var Speziell"
+
+[node name="VarTrue" type="Button" parent="Buttons/VBoxContainer" unique_id=1242472117]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_t3cym")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_0n843")
+theme_override_styles/hover = SubResource("StyleBoxFlat_mnumg")
+text = "Immer Wahr"
+
+[node name="VarFalse" type="Button" parent="Buttons/VBoxContainer" unique_id=147088518]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_6mdya")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_vfrvo")
+theme_override_styles/hover = SubResource("StyleBoxFlat_f18o7")
+text = "Immer Falsch"
+
+[node name="Trash" type="Panel" parent="." unique_id=1827184414]
+custom_minimum_size = Vector2(42, 0)
+offset_top = 1025.0
+offset_right = 42.0
+offset_bottom = 1050.0
+scale = Vector2(7, 7)
+theme_override_styles/panel = SubResource("StyleBoxFlat_pf7gr")
+script = ExtResource("1_gwuow")
+
+[node name="TextureRect" type="TextureRect" parent="Trash" unique_id=712654895]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 20.0
+
+[node name="Label" type="Label" parent="Trash" unique_id=57511352]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Müll"
+horizontal_alignment = 1
+
+[node name="Blocks" type="Node2D" parent="." unique_id=1090343692]
+z_index = 12
+position = Vector2(574, 735)
+
+[connection signal="pressed" from="Buttons/VBoxContainer/For" to="." method="_on_for_pressed"]
+[connection signal="pressed" from="Buttons/VBoxContainer/If" to="." method="_on_if_pressed"]
+[connection signal="pressed" from="Buttons/VBoxContainer/Return" to="." method="_on_return_pressed"]
+[connection signal="pressed" from="Buttons/VBoxContainer/Left" to="." method="_on_left_pressed"]
+[connection signal="pressed" from="Buttons/VBoxContainer/Right" to="." method="_on_right_pressed"]
+[connection signal="pressed" from="Buttons/VBoxContainer/Down" to="." method="_on_down_pressed"]
+[connection signal="pressed" from="Buttons/VBoxContainer/Up" to="." method="_on_up_pressed"]
+[connection signal="pressed" from="Buttons/VBoxContainer/VarInput" to="." method="_on_var_input_pressed"]
+[connection signal="pressed" from="Buttons/VBoxContainer/VarObject" to="." method="_on_var_object_pressed"]
+[connection signal="pressed" from="Buttons/VBoxContainer/VarTrue" to="." method="_on_var_true_pressed"]

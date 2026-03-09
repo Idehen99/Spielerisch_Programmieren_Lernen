@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://dicl3qr1rg1pt" path="res://Scenes/Interface/blocks/move_down_block.tscn" id="7_eip2e"]
 [ext_resource type="PackedScene" uid="uid://byjy0okl4yakq" path="res://Scenes/Interface/blocks/if_Block.tscn" id="8_brpd5"]
 [ext_resource type="PackedScene" uid="uid://cxy2i3it0xox7" path="res://Scenes/Interface/blocks/var_Block.tscn" id="9_x2g4u"]
+[ext_resource type="PackedScene" uid="uid://cn6ntn5kwo2v3" path="res://Scenes/Interface/blocks/return_Block.tscn" id="10_x2g4u"]
+[ext_resource type="PackedScene" uid="uid://8wxhe87tp7wl" path="res://Scenes/control/add_blocks.tscn" id="11_0mber"]
 
 [node name="Control" type="Control" unique_id=581648837]
 layout_mode = 3
@@ -61,8 +63,8 @@ offset_bottom = 29.0
 layout_mode = 0
 offset_left = -153.0
 offset_top = 8.0
-offset_right = -39.0
-offset_bottom = 103.0
+offset_right = 103.0
+offset_bottom = 264.0
 scale = Vector2(0.3, 0.3)
 
 [node name="MoveUpBlock" parent="." unique_id=460066021 instance=ExtResource("6_5tole")]
@@ -102,3 +104,13 @@ offset_top = -77.0
 offset_right = 20.0
 offset_bottom = -31.0
 modus = 1
+sensor_name = "Jack"
+
+[node name="ReturnBlock" parent="." unique_id=376674881 instance=ExtResource("10_x2g4u")]
+layout_mode = 0
+offset_left = -28.0
+offset_top = 38.0
+offset_right = 22.0
+offset_bottom = 68.0
+
+[node name="CanvasLayer" parent="." unique_id=415209504 instance=ExtResource("11_0mber")]

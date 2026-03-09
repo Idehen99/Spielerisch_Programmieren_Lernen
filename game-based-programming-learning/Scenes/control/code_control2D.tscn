@@ -6,14 +6,6 @@
 [ext_resource type="Script" uid="uid://b7nyexjgc70ya" path="res://Scripts/inLevelManagement/code_editor.gd" id="4_ediov"]
 [ext_resource type="Texture2D" uid="uid://cj3prubt5csbj" path="res://Assets/Farm RPG - Tiny Asset Pack - (All in One)/UI/button.png" id="5_kvopa"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_253bl"]
-bg_color = Color(0.6, 0.6, 0.6, 0.42745098)
-border_width_left = 20
-border_width_top = 20
-border_width_right = 20
-border_width_bottom = 20
-border_color = Color(0, 0, 0, 1)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_pjwbp"]
 atlas = ExtResource("5_kvopa")
 region = Rect2(176, 255.985, 16, 16)
@@ -30,6 +22,15 @@ region = Rect2(640, 256.005, 16, 16)
 atlas = ExtResource("5_kvopa")
 region = Rect2(640, 224, 16, 16)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_253bl"]
+bg_color = Color(0.6, 0.6, 0.6, 0.42745098)
+draw_center = false
+border_width_left = 20
+border_width_top = 20
+border_width_right = 20
+border_width_bottom = 20
+border_color = Color(0, 0, 0, 0.16078432)
+
 [node name="Node2D" type="Node2D" unique_id=86194187]
 script = ExtResource("1_7vys4")
 
@@ -40,18 +41,42 @@ script = ExtResource("2_0y0k8")
 script = ExtResource("3_p5hr2")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=940977611]
+layer = 13
 
-[node name="CodeEditor" type="Panel" parent="." unique_id=63852545]
-offset_left = 32.0
-offset_top = -115.5
-offset_right = 531.0
-offset_bottom = 641.72
-scale = Vector2(0.3, 0.3)
+[node name="play" type="TextureButton" parent="CanvasLayer" unique_id=1489885864]
+z_index = 13
+custom_minimum_size = Vector2(15, 15)
+offset_top = 5.0
+offset_right = 16.0
+offset_bottom = 21.0
+scale = Vector2(10, 10)
+texture_normal = SubResource("AtlasTexture_pjwbp")
+texture_pressed = SubResource("AtlasTexture_r0bkp")
+
+[node name="retry" type="TextureButton" parent="CanvasLayer" unique_id=1493249032]
+z_index = 13
+custom_minimum_size = Vector2(15, 15)
+offset_top = 165.0
+offset_right = 16.0
+offset_bottom = 181.0
+scale = Vector2(10, 10)
+disabled = true
+texture_normal = SubResource("AtlasTexture_roqeu")
+texture_pressed = SubResource("AtlasTexture_o5myt")
+
+[node name="CodeEditor" type="Panel" parent="CanvasLayer" unique_id=63852545]
+show_behind_parent = true
+z_index = 6
+offset_left = 1263.0
+offset_top = 20.0
+offset_right = 1762.0
+offset_bottom = 777.22
+scale = Vector2(1.005, 1.015)
 pivot_offset = Vector2(3.055, 0)
 theme_override_styles/panel = SubResource("StyleBoxFlat_253bl")
 script = ExtResource("4_ediov")
 
-[node name="MarginContainer" type="MarginContainer" parent="CodeEditor" unique_id=1070039613]
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/CodeEditor" unique_id=1070039613]
 layout_mode = 0
 offset_left = 19.538332
 offset_top = 21.666666
@@ -60,38 +85,20 @@ offset_bottom = 738.3333
 theme_override_constants/margin_left = 20
 theme_override_constants/margin_top = 20
 
-[node name="ScrollContainer" type="ScrollContainer" parent="CodeEditor/MarginContainer" unique_id=1651065958]
+[node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer/CodeEditor/MarginContainer" unique_id=1651065958]
 layout_mode = 2
 horizontal_scroll_mode = 0
 
-[node name="codeContainer" type="VBoxContainer" parent="CodeEditor/MarginContainer/ScrollContainer" unique_id=1568911090]
+[node name="codeContainer" type="VBoxContainer" parent="CanvasLayer/CodeEditor/MarginContainer/ScrollContainer" unique_id=1568911090]
 z_index = -1
 layout_mode = 2
 alignment = 1
 
-[node name="play" type="TextureButton" parent="." unique_id=1489885864]
-offset_left = -170.0
-offset_top = -115.5
-offset_right = -154.0
-offset_bottom = -99.5
-scale = Vector2(3, 3)
-texture_normal = SubResource("AtlasTexture_pjwbp")
-texture_pressed = SubResource("AtlasTexture_r0bkp")
-
-[node name="retry" type="TextureButton" parent="." unique_id=1493249032]
-offset_left = -170.0
-offset_top = -67.5
-offset_right = -154.0
-offset_bottom = -51.5
-scale = Vector2(3, 3)
-texture_normal = SubResource("AtlasTexture_roqeu")
-texture_pressed = SubResource("AtlasTexture_o5myt")
-
-[node name="backToLevel" type="TextureButton" parent="." unique_id=381934344]
+[node name="backToLevel" type="TextureButton" parent="CanvasLayer" unique_id=381934344]
 offset_left = -599.0
 offset_top = -365.0
 offset_right = -583.0
 offset_bottom = -349.0
 
-[connection signal="pressed" from="play" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="retry" to="." method="_on_retry_pressed"]
+[connection signal="pressed" from="CanvasLayer/play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="CanvasLayer/retry" to="." method="_on_retry_pressed"]

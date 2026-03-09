@@ -21,35 +21,44 @@ var free_to_walk = false
 	$CollisionShape2D/Clothes
 ]
 
+var axeCounter = 0
+
 func _ready() -> void:
 	if Settings.saveData.has("new") and !Settings.saveData["new"]:
 		if Settings._on_changed_scene_positioning($"."):
 			pass
 		else:
+			print("ey yoo")
 			$".".global_position = Settings.saveData["player_pos"]
 	for p in parts:
-		p.animation_finished.connect(_on_animation_finished)
-	for m in Modus:
-		for d in Direction:
-			var mode
-			var dire
-			print(m,d,Modus.IDLE,m=="IDLE")
+		# Wir verbinden das Signal nur einmal pro Part
+		if not p.animation_finished.is_connected(_on_animation_finished):
+			p.animation_finished.connect(_on_animation_finished)
+	for m in Modus.values():
+		for d in Direction.values():
+			var mode: String = ""
+			var dire: String = ""
 			match d:
-				"UP": dire = "Up"
-				"DOWN": dire = "Down"
-				"RIGHT":
-					dire = "Right"
-				"LEFT": continue
+				Direction.UP: dire = "Up"
+				Direction.DOWN: dire = "Down"
+				Direction.RIGHT: dire = "Right"
+				Direction.LEFT: continue # Links wird meist gespiegelt, daher überspringen
+
 			match m:
-				"IDLE": mode = "idle"
-				"WALK": mode = "walk"
-				"RUN": mode = "run"
-				"AXE": mode = "axe"
-			var anim_name = mode + dire
-			$CollisionShape2D/Hair.change(mode, anim_name)
-			$CollisionShape2D/Eyes.change(mode, anim_name)
-			$CollisionShape2D/Skins.change(mode, anim_name)
-			$CollisionShape2D/Clothes.change(mode, anim_name)
+				Modus.IDLE: mode = "idle"
+				Modus.WALK: mode = "walk"
+				Modus.RUN: mode = "run"
+				Modus.AXE: mode = "axe"
+
+			if mode != "" and dire != "":
+				var anim_name = mode + dire
+				for p in parts:
+					p.change(mode, anim_name)
+			#var anim_name = mode + dire
+			#$CollisionShape2D/Hair.change(mode, anim_name)
+			#$CollisionShape2D/Eyes.change(mode, anim_name)
+			#$CollisionShape2D/Skins.change(mode, anim_name)
+			#$CollisionShape2D/Clothes.change(mode, anim_name)
 
 
 # -------------------------
@@ -139,10 +148,16 @@ func update_animation() -> void:
 			direction_str = "Right"
 
 	match modus:
-		Modus.IDLE: mode_str = "idle"
+		Modus.IDLE: 
+			mode_str = "idle"
+			axeCounter = 0
 		Modus.WALK: mode_str = "walk"
 		Modus.RUN: mode_str = "run"
-		Modus.AXE: mode_str = "axe"
+		Modus.AXE: 
+			if axeCounter < 1:
+				mode_str = "axe"
+				axeCounter = 1
+			else: mode_str = "idle"
 
 	var anim_name = mode_str + direction_str
 
@@ -156,9 +171,12 @@ func update_animation() -> void:
 # AXE ENDE
 # -------------------------
 func _on_animation_finished():
-	if modus == Modus.AXE:
-		is_busy = false
-		set_modus(Modus.IDLE)
+	print("yolo")
+	set_modus(Modus.IDLE)
+	update_animation()
+	#if modus == Modus.AXE:
+		#is_busy = false
+		
 
 
 func move_step(direction: Vector2):

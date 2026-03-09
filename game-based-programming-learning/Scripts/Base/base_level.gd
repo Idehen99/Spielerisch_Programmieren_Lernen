@@ -19,12 +19,20 @@ func _ready() -> void:
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body == player:
+		var groupies = get_tree().get_nodes_in_group("objectBool")
+		#var whoop = get_tree().get_first_node_in_group("objectBool")
+		print(groupies)
+		for groupie in groupies:
+			groupie.change_sensor_state(true)
 		$Area2D/Timer.start(5)
 
 
 func _on_area_2d_body_exited(body: Node2D) -> void:
 	if body == player:
 		$Area2D/Timer.stop()
+		var groupies = get_tree().get_nodes_in_group("objectBool")
+		for groupie in groupies:
+			groupie.change_sensor_state(false)
 
 
 func _on_timer_timeout() -> void:

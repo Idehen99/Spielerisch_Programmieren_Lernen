@@ -29,18 +29,16 @@ func _ready():
 # --- Daten-Extraktion ---
 
 ## Diese Funktion wird vom Builder aufgerufen, BEVOR er das 'program'-Dictionary baut.
+# In deinem if-Block Script:
+
 func update_slot_values():
-	# Standardwerte, falls Slots leer sind
-	condition_left = 0
-	condition_right = 0
+	condition_left = false
+	condition_right = true
 	
-	# Wert aus linkem Slot holen
 	if slot_l.get_child_count() > 0:
 		var block = slot_l.get_child(0)
 		if block.has_method("get_block_value"):
 			condition_left = block.get_block_value()
-	
-	# Wert aus rechtem Slot holen
 	if slot_r.get_child_count() > 0:
 		var block = slot_r.get_child(0)
 		if block.has_method("get_block_value"):
@@ -52,7 +50,7 @@ func _can_drop_data(_pos, data):
 	# Wir akzeptieren nur Objekte vom Typ CodeBlock
 	return data is CodeBlock and data != self
 
-func _drop_data(pos, block):
+func _drop_data(_pos, block):
 	var mouse_pos = get_global_mouse_position()
 	print(block.block_type, "sus")
 	# 1. Check: Soll der Block in den linken Slot?

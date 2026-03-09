@@ -91,7 +91,7 @@ func get_path_for_current_style(action:String , _anim: String):
 func set_texture(sheet_path: String, anim_name: String, framesN: int, loop: bool):
 	if sprite_frames == null:
 		sprite_frames = SpriteFrames.new()
-
+	print("yeeeeehooooooo",  anim_name.contains("axe"))
 	var speed := 5
 	var keep_loop := loop
 	var old_regions: Array = []
@@ -117,6 +117,8 @@ func set_texture(sheet_path: String, anim_name: String, framesN: int, loop: bool
 			atlas.region = Rect2(i * 32, 0, 32, 32) # Fallback
 		sprite_frames.add_frame(anim_name, atlas)
 	sprite_frames.set_animation_loop(anim_name, keep_loop)
+	if anim_name.contains("axe"):
+		sprite_frames.set_animation_loop(anim_name, false)
 	sprite_frames.set_animation_speed(anim_name, speed)
 	if animation == anim_name:
 		play(anim_name)

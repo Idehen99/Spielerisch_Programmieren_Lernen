@@ -40,22 +40,19 @@ func build_program(container):
 					"body": body
 				})
 
+			# Im match child.block_type unter "if":
 			"if":
-				# WICHTIG: Erst die Werte aus den Slots in die Variablen laden!
-				child.update_slot_values() 
-
-				var body_true = build_program(child.content_true)
-				var body_false = build_program(child.content_false)
-
+				# Wir speichern die Referenz auf das 'child' (den UI-Block) direkt mit!
 				program.append({
 					"type": "if",
-					"condition": {
-						"left": child.condition_left,  
-						"op": child.condition_op,      
-						"right": child.condition_right 
-					},
-					"body_true": body_true,
-					"body_false": body_false
+					"block_node": child, # Das ist der Verweis auf das UI-Element
+					"body_true": build_program(child.content_true),
+					"body_false": build_program(child.content_false)
 				})
-
+			
+			"return":
+				program.append({
+					"type": "return"
+				})
+				
 	return program

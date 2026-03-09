@@ -13,7 +13,7 @@ func _ready() -> void:
 		print(player.get_groups())
 		player.add_to_group("player")
 	
-func run_block_list(list):
+func run_block_list(list) -> bool:
 	for cmd in list:
 		match cmd.type:
 
@@ -30,10 +30,15 @@ func run_block_list(list):
 			"jump":
 				await player.jump_animation()
 
+			
 			"for":
-				for i in range(1, cmd.to + 1):
+				var start_val = int(cmd.get("from", 1))
+				var end_val = int(cmd.to)
+
+				for i in range(start_val, end_val + 1):
 					vars[cmd.var] = i
-					await run_block_list(cmd.body)
+					if await run_block_list(cmd.body):
+						return true
 
 			"set_var":
 				vars[cmd.name] = cmd.value
@@ -41,19 +46,43 @@ func run_block_list(list):
 			"change_var":
 				vars[cmd.name] += cmd.value
 
+			# Im match cmd.type unter "if":
 			"if":
-				if evaluate(cmd.condition):
-					await run_block_list(cmd.body_true)
+				var block = cmd.block_node
+				block.update_slot_values()
+				print(block.condition_left,block.condition_right)
+				var live_condition = {
+					"left": block.condition_left,
+					"op": block.condition_op,
+					"right": block.condition_right
+				}
+				if evaluate(live_condition):
+					if await run_block_list(cmd.body_true):
+						return true
 				else:
-					await run_block_list(cmd.body_false)
-
+					if await run_block_list(cmd.body_false):
+						return true
+			
+			"return":
+				return true
+				
+	return false
+		
 func evaluate(cond):
 	var left = vars.get(cond.left, cond.left)
 	var right = vars.get(cond.right, cond.right)
-	
 	match cond.op:
-		"<": return left < right
-		">": return left > right
-		"==": return left == right
-		"!=": return left != right
+		"<": 
+			if typeof(left) == typeof(right):
+				return left < right
+		">":
+			if typeof(left) == typeof(right):
+				return left > right
+		"==": 
+			if typeof(left) == typeof(right):
+				return left == right
+		"!=": 
+			if typeof(left) == typeof(right):
+				return left != right
+			else: return true
 	return false
