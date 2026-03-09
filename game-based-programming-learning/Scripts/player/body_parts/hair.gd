@@ -91,7 +91,7 @@ func get_path_for_current_style(action:String , _anim: String):
 func set_texture(sheet_path: String, anim_name: String, framesN: int, loop: bool):
 	if sprite_frames == null:
 		sprite_frames = SpriteFrames.new()
-	print("yeeeeehooooooo",  anim_name.contains("axe"))
+
 	var speed := 5
 	var keep_loop := loop
 	var old_regions: Array = []
