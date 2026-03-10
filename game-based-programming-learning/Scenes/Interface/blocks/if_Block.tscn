@@ -68,7 +68,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_2mpxw")
 
 [node name="Label2" type="Label" parent="VBoxContainer/HBoxContainer" unique_id=1107883867]
 layout_mode = 2
-text = "Dann:"
+text = "ist:"
 
 [node name="Label3" type="Label" parent="VBoxContainer" unique_id=1588811018]
 layout_mode = 2

@@ -1,13 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://cguwmvmbmn0bi"]
+[gd_scene format=3 uid="uid://cguwmvmbmn0bi"]
 
 [ext_resource type="Script" uid="uid://dd1imf0glwiqh" path="res://Scripts/interactives/change_scene.gd" id="1_xewtr"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2a2hj"]
 
-[node name="ChangeSceneArea" type="Area2D"]
+[node name="ChangeSceneArea" type="Area2D" unique_id=1149694649 groups=["changeArea"]]
 script = ExtResource("1_xewtr")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1301277106]
 shape = SubResource("CapsuleShape2D_2a2hj")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

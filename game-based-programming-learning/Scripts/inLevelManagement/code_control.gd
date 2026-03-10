@@ -29,3 +29,11 @@ func _on_play_pressed() -> void:
 func _on_retry_pressed() -> void:
 	play.global_position = posi
 	$CanvasLayer/play.disabled = false
+
+
+func _on_back_to_level_pressed() -> void:
+	if get_tree().get_first_node_in_group("changeArea"):
+		var stuff = get_tree().get_first_node_in_group("changeArea")
+		if get_tree().get_first_node_in_group("player")!=null:
+			player = get_tree().get_first_node_in_group("player")
+			player.position = stuff.position

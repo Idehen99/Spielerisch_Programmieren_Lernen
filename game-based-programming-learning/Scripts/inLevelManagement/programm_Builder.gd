@@ -40,12 +40,10 @@ func build_program(container):
 					"body": body
 				})
 
-			# Im match child.block_type unter "if":
 			"if":
-				# Wir speichern die Referenz auf das 'child' (den UI-Block) direkt mit!
 				program.append({
 					"type": "if",
-					"block_node": child, # Das ist der Verweis auf das UI-Element
+					"block_node": child,
 					"body_true": build_program(child.content_true),
 					"body_false": build_program(child.content_false)
 				})

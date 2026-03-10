@@ -31,6 +31,14 @@ border_width_right = 20
 border_width_bottom = 20
 border_color = Color(0, 0, 0, 0.16078432)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_7vys4"]
+atlas = ExtResource("5_kvopa")
+region = Rect2(224, 256, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0y0k8"]
+atlas = ExtResource("5_kvopa")
+region = Rect2(224, 224, 16, 16)
+
 [node name="Node2D" type="Node2D" unique_id=86194187]
 script = ExtResource("1_7vys4")
 
@@ -95,10 +103,14 @@ layout_mode = 2
 alignment = 1
 
 [node name="backToLevel" type="TextureButton" parent="CanvasLayer" unique_id=381934344]
-offset_left = -599.0
-offset_top = -365.0
-offset_right = -583.0
-offset_bottom = -349.0
+offset_left = -4.0
+offset_top = 322.0
+offset_right = 12.0
+offset_bottom = 338.0
+scale = Vector2(10, 10)
+texture_normal = SubResource("AtlasTexture_7vys4")
+texture_pressed = SubResource("AtlasTexture_0y0k8")
 
 [connection signal="pressed" from="CanvasLayer/play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="CanvasLayer/retry" to="." method="_on_retry_pressed"]
+[connection signal="pressed" from="CanvasLayer/backToLevel" to="." method="_on_back_to_level_pressed"]

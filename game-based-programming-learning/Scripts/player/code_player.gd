@@ -171,7 +171,6 @@ func update_animation() -> void:
 # AXE ENDE
 # -------------------------
 func _on_animation_finished():
-	print("yolo")
 	set_modus(Modus.IDLE)
 	update_animation()
 	#if modus == Modus.AXE:

@@ -2,7 +2,7 @@ extends "res://Scripts/block/code_Block.gd"
 
 @export var var_name = "i"
 @export var from = 0
-@export var to = 3
+@export var to = 0
 
 func _ready():
 	block_type = "for"

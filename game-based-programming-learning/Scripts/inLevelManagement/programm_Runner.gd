@@ -35,7 +35,7 @@ func run_block_list(list) -> bool:
 				var start_val = int(cmd.get("from", 1))
 				var end_val = int(cmd.to)
 
-				for i in range(start_val, end_val + 1):
+				for i in range(start_val, end_val):
 					vars[cmd.var] = i
 					if await run_block_list(cmd.body):
 						return true

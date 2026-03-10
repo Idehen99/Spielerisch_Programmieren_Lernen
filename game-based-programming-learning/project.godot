@@ -46,6 +46,7 @@ codelevel="an level where movement is defined through the code_control"
 inputlevel="an level where movement is defined by the players input"
 objectBool=""
 startingPosition=""
+changeArea=""
 
 [input]
 
