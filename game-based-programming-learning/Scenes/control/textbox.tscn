@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://ckaq76djq0g85"]
+
+[ext_resource type="Script" uid="uid://cak1v1rkmtc70" path="res://Scripts/interactives/textbox.gd" id="1_emrj5"]
+[ext_resource type="Texture2D" uid="uid://xc3ucky4vshu" path="res://Assets/Farm RPG - Tiny Asset Pack - (All in One)/UI/dialogue box.png" id="1_uxa0s"]
+[ext_resource type="FontFile" uid="uid://bdpe6ysm1e8u7" path="res://Assets/Font/ScareEmAway.ttf" id="2_emrj5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v41lx"]
+atlas = ExtResource("1_uxa0s")
+region = Rect2(0, 48, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yw25x"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v41lx")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=1902209848]
+
+[node name="Textbox" type="Control" parent="." unique_id=776669278 groups=["textbox"]]
+z_index = 20
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_emrj5")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Textbox" unique_id=650051826]
+position = Vector2(874, 980.00006)
+scale = Vector2(14.125002, 3.4687505)
+sprite_frames = SubResource("SpriteFrames_yw25x")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Textbox" unique_id=1414315516]
+layout_mode = 0
+offset_left = 578.0
+offset_top = 920.0
+offset_right = 1168.0
+offset_bottom = 1039.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_emrj5")
+theme_override_font_sizes/normal_font_size = 32
+text = "Coding Farm ist ein Geniales Spiel hilf mir den Kamin an zu zünden"
+visible_characters = 0
+visible_ratio = 0.0

@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://cmaox2e1dxgci"]
+
+[ext_resource type="Script" uid="uid://5t4ghh0ulukl" path="res://Scripts/interactives/fire.gd" id="1_1ilbl"]
+[ext_resource type="Texture2D" uid="uid://cuf00i4udpc5m" path="res://Assets/Farm RPG - Tiny Asset Pack - (All in One)/Interior/Fireplace.png" id="1_1soym"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ilbl"]
+atlas = ExtResource("1_1soym")
+region = Rect2(57, 139, 15, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kfixf"]
+atlas = ExtResource("1_1soym")
+region = Rect2(88, 139, 15, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fq4sn"]
+atlas = ExtResource("1_1soym")
+region = Rect2(119, 139, 15, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oukmv"]
+atlas = ExtResource("1_1soym")
+region = Rect2(151, 139, 15, 15)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cgddu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1ilbl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kfixf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fq4sn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oukmv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": null
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1soym"]
+radius = 8.0
+height = 16.0
+
+[node name="Node2D" type="Node2D" unique_id=1231899377 groups=["fire"]]
+script = ExtResource("1_1ilbl")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=866884138]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D" unique_id=230424436]
+sprite_frames = SubResource("SpriteFrames_cgddu")
+animation = &"new_animation"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=36312619]
+shape = SubResource("CapsuleShape2D_1soym")

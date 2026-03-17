@@ -13,8 +13,15 @@ func _ready() -> void:
 		player.add_to_group("player")
 		print(player.get_groups())
 	Settings.current_scene = scene_file_path
+	fire()
 	
-	
+
+func fire():
+	if get_tree().get_first_node_in_group("fire"):
+		if Settings.fire:
+			var Kamin = get_tree().get_first_node_in_group("fire")
+			Kamin.visible = true
+			Kamin.get_child(0).play("default")
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:

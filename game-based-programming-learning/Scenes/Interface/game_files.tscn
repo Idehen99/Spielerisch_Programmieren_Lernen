@@ -8,16 +8,16 @@ layer = 0
 script = ExtResource("1_esynb")
 
 [node name="Background" type="Sprite2D" parent="." unique_id=736448311]
-position = Vector2(599.5, 402.5)
-scale = Vector2(0.7805989, 0.77246094)
+position = Vector2(958.0001, 542.50006)
+scale = Vector2(1.2473959, 1.0458986)
 texture = ExtResource("2_w2aa6")
 
 [node name="Files" type="VBoxContainer" parent="." unique_id=826361331]
-offset_left = 233.0
-offset_top = 314.00003
-offset_right = 411.0
-offset_bottom = 380.00003
-scale = Vector2(3.5, 3.5)
+offset_left = 486.0
+offset_top = 405.00003
+offset_right = 664.0
+offset_bottom = 471.00003
+scale = Vector2(5, 5)
 
 [node name="File1" type="HBoxContainer" parent="Files" unique_id=528269692]
 layout_mode = 2
@@ -43,11 +43,11 @@ text = "Löschen"
 
 [node name="Sure" type="VBoxContainer" parent="." unique_id=460587734]
 visible = false
-offset_left = 233.0
-offset_top = 85.685
-offset_right = 358.0
-offset_bottom = 137.68512
-scale = Vector2(4.5, 4.5)
+offset_left = 481.00006
+offset_top = 324.0
+offset_right = 606.00006
+offset_bottom = 376.00012
+scale = Vector2(7, 7)
 
 [node name="Label" type="Label" parent="Sure" unique_id=1838207994]
 layout_mode = 2

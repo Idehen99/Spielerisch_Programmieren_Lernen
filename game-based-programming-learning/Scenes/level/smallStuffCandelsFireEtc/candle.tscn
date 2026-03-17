@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://bm2tb3fset3ed"]
+
+[ext_resource type="Texture2D" uid="uid://byrh8nywsq6pi" path="res://Assets/Farm RPG - Tiny Asset Pack - (All in One)/Interior/Candle 3.png" id="1_2c61k"]
+[ext_resource type="Script" uid="uid://8jx8nxsqohre" path="res://Scripts/interactives/candle.gd" id="1_hfedq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hfedq"]
+atlas = ExtResource("1_2c61k")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ttje2"]
+atlas = ExtResource("1_2c61k")
+region = Rect2(16, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7iq5b"]
+atlas = ExtResource("1_2c61k")
+region = Rect2(32, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ikqv1"]
+atlas = ExtResource("1_2c61k")
+region = Rect2(48, 0, 16, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hlx0p"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hfedq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ttje2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7iq5b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ikqv1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ttje2"]
+radius = 3.0
+height = 14.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hfedq"]
+height = 20.0
+
+[node name="Node2D" type="Node2D" unique_id=533886686]
+script = ExtResource("1_hfedq")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1836595724]
+sprite_frames = SubResource("SpriteFrames_hlx0p")
+frame_progress = 0.7689951
+
+[node name="Area2D" type="Area2D" parent="." unique_id=560411096]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1883623503]
+position = Vector2(-2, 6)
+shape = SubResource("CapsuleShape2D_ttje2")
+
+[node name="FireArea2D" type="Area2D" parent="." unique_id=935480510]
+z_index = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FireArea2D" unique_id=1927617740]
+position = Vector2(-2, 6)
+shape = SubResource("CapsuleShape2D_hfedq")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="area_entered" from="FireArea2D" to="." method="_on_fire_area_2d_area_entered"]
+[connection signal="body_entered" from="FireArea2D" to="." method="_on_fire_area_2d_body_entered"]

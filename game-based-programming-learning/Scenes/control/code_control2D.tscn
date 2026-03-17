@@ -22,14 +22,13 @@ region = Rect2(640, 256.005, 16, 16)
 atlas = ExtResource("5_kvopa")
 region = Rect2(640, 224, 16, 16)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_253bl"]
-bg_color = Color(0.6, 0.6, 0.6, 0.42745098)
-draw_center = false
-border_width_left = 20
-border_width_top = 20
-border_width_right = 20
-border_width_bottom = 20
-border_color = Color(0, 0, 0, 0.16078432)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7vys4"]
+bg_color = Color(0, 0, 0, 0.31764707)
+border_width_left = 18
+border_width_top = 18
+border_width_right = 18
+border_width_bottom = 18
+border_color = Color(0, 0, 0, 1)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7vys4"]
 atlas = ExtResource("5_kvopa")
@@ -39,10 +38,10 @@ region = Rect2(224, 256, 16, 16)
 atlas = ExtResource("5_kvopa")
 region = Rect2(224, 224, 16, 16)
 
-[node name="Node2D" type="Node2D" unique_id=86194187]
+[node name="Node2D" type="Node2D" unique_id=86194187 groups=["interpreter"]]
 script = ExtResource("1_7vys4")
 
-[node name="ProgrammRunner" type="Node" parent="." unique_id=509616861]
+[node name="ProgrammRunner" type="Node" parent="." unique_id=509616861 groups=["runner"]]
 script = ExtResource("2_0y0k8")
 
 [node name="ProgrammBuilder" type="Node" parent="." unique_id=1050135107]
@@ -54,9 +53,9 @@ layer = 13
 [node name="play" type="TextureButton" parent="CanvasLayer" unique_id=1489885864]
 z_index = 13
 custom_minimum_size = Vector2(15, 15)
-offset_top = 5.0
+offset_top = 1.0000001
 offset_right = 16.0
-offset_bottom = 21.0
+offset_bottom = 17.0
 scale = Vector2(10, 10)
 texture_normal = SubResource("AtlasTexture_pjwbp")
 texture_pressed = SubResource("AtlasTexture_r0bkp")
@@ -64,9 +63,10 @@ texture_pressed = SubResource("AtlasTexture_r0bkp")
 [node name="retry" type="TextureButton" parent="CanvasLayer" unique_id=1493249032]
 z_index = 13
 custom_minimum_size = Vector2(15, 15)
-offset_top = 165.0
-offset_right = 16.0
-offset_bottom = 181.0
+offset_left = 158.99998
+offset_top = 2.0000157
+offset_right = 174.99998
+offset_bottom = 18.000015
 scale = Vector2(10, 10)
 disabled = true
 texture_normal = SubResource("AtlasTexture_roqeu")
@@ -75,13 +75,13 @@ texture_pressed = SubResource("AtlasTexture_o5myt")
 [node name="CodeEditor" type="Panel" parent="CanvasLayer" unique_id=63852545]
 show_behind_parent = true
 z_index = 6
-offset_left = 1263.0
-offset_top = 20.0
-offset_right = 1762.0
-offset_bottom = 777.22
+offset_left = 1501.0
+offset_top = 10.0
+offset_right = 2000.0
+offset_bottom = 767.22
 scale = Vector2(1.005, 1.015)
 pivot_offset = Vector2(3.055, 0)
-theme_override_styles/panel = SubResource("StyleBoxFlat_253bl")
+theme_override_styles/panel = SubResource("StyleBoxFlat_7vys4")
 script = ExtResource("4_ediov")
 
 [node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/CodeEditor" unique_id=1070039613]
@@ -103,10 +103,10 @@ layout_mode = 2
 alignment = 1
 
 [node name="backToLevel" type="TextureButton" parent="CanvasLayer" unique_id=381934344]
-offset_left = -4.0
-offset_top = 322.0
-offset_right = 12.0
-offset_bottom = 338.0
+offset_left = 318.00027
+offset_top = 2.0000622
+offset_right = 334.00027
+offset_bottom = 18.000063
 scale = Vector2(10, 10)
 texture_normal = SubResource("AtlasTexture_7vys4")
 texture_pressed = SubResource("AtlasTexture_0y0k8")

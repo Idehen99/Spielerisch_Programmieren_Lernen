@@ -29,9 +29,9 @@ func _on_line_edit_text_changed(new_text: String) -> void:
 	to = new_text.to_int()
 
 
-func _on_content_child_entered_tree(node: Node) -> void:
+func _on_content_child_entered_tree(_node: Node) -> void:
 	#$VBoxContainer/MarginContainer/Content.size.y = $VBoxContainer/MarginContainer/Content.size.y + node.size.y
 	pass
 
-func _on_content_child_exiting_tree(node: Node) -> void:
+func _on_content_child_exiting_tree(_node: Node) -> void:
 	pass # Replace with function body.

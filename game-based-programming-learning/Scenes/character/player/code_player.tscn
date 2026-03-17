@@ -22,6 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://cmwqnexgmf4qw" path="res://Assets/Farm RPG - Tiny Asset Pack - (All in One)/Character and Portrait/Character/PNG/3. Run/Hair's/Fawn/Ginger.png" id="19_u5kq5"]
 [ext_resource type="Texture2D" uid="uid://jxjkq163h3pg" path="res://Assets/Farm RPG - Tiny Asset Pack - (All in One)/Character and Portrait/Character/PNG/2. Walk/Hair's/Fawn/Ginger.png" id="20_k08du"]
 [ext_resource type="Script" uid="uid://cqtkm0np73og5" path="res://Scripts/player/body_parts/hair.gd" id="21_odteg"]
+[ext_resource type="PackedScene" uid="uid://ckaq76djq0g85" path="res://Scenes/control/textbox.tscn" id="23_7hj2o"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8w3hh"]
 
@@ -2336,5 +2337,7 @@ zoom = Vector2(3.5, 3.5)
 
 [node name="Node2D" parent="Camera2D" unique_id=86194187 instance=ExtResource("1_7a1ku")]
 position = Vector2(247, 507)
+
+[node name="CanvasLayer" parent="." unique_id=1902209848 instance=ExtResource("23_7hj2o")]
 
 [connection signal="animation_finished" from="CollisionShape2D/Hair" to="." method="_on_animation_finished"]

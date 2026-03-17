@@ -12,6 +12,7 @@ func _ready():
 		content.visible = has_body
 
 func _get_drag_data(_pos):
-	var preview = duplicate()
-	set_drag_preview(preview)
+	if duplicate():
+		var preview = duplicate()
+		set_drag_preview(preview)
 	return self

@@ -10,7 +10,7 @@ var Clothes = "Purple"
 var Skins = "1"
 
 var current_scene = "no_scene"
-
+var fire = false
 
 
 var sceneChange = false
@@ -35,4 +35,5 @@ func update_from_save():
 	if saveData.has("eye_color"): EyeColor = saveData["eye_color"]
 	if saveData.has("clothes"): Clothes = saveData["clothes"]
 	if saveData.has("skins"): Skins = saveData["skins"]
+	if saveData.has("fire"): fire = saveData["fire"]
   

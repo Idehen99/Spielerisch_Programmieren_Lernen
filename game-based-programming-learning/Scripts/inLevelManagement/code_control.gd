@@ -28,6 +28,7 @@ func _on_play_pressed() -> void:
 
 func _on_retry_pressed() -> void:
 	play.global_position = posi
+	runner.wall_contact(false)
 	$CanvasLayer/play.disabled = false
 	$CanvasLayer/retry.disabled = true
 

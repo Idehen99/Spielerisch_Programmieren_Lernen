@@ -19,7 +19,8 @@ func _on_save_n_continue_pressed() -> void:
 		"hair_style": Settings.HairStyle,
 		"eye_color": Settings.EyeColor,
 		"clothes": Settings.Clothes,
-		"skins": Settings.Skins
+		"skins": Settings.Skins,
+		"fire": Settings.fire
 	}
 
 	Savefile.save_all(Settings.Spielstand, all_data)
@@ -41,7 +42,8 @@ func _on_save_n_exit_pressed() -> void:
 		"hair_style": Settings.HairStyle,
 		"eye_color": Settings.EyeColor,
 		"clothes": Settings.Clothes,
-		"skins": Settings.Skins
+		"skins": Settings.Skins,
+		"fire": Settings.fire
 	}
 	Savefile.save_all(Settings.Spielstand ,all_data)
 	get_tree().change_scene_to_file("res://Scenes/Interface/main_menu.tscn")

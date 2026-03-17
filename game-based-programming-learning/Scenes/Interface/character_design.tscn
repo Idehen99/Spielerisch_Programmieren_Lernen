@@ -1946,22 +1946,24 @@ animations = [{
 [node name="Control" type="Control" unique_id=119710899]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 1202.0
-offset_bottom = 801.0
+offset_right = 1473.8463
+offset_bottom = 826.92316
+scale = Vector2(1.3, 1.3)
 script = ExtResource("1_oevp7")
 
 [node name="Background" type="Sprite2D" parent="." unique_id=647449825]
-position = Vector2(599.5, 402.5)
-scale = Vector2(0.7805989, 0.77246094)
+position = Vector2(739.6154, 421.5769)
+scale = Vector2(0.96304077, 0.8097205)
 texture = ExtResource("1_dlf7i")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=673550158]
 
 [node name="Gender" type="ScrollContainer" parent="CanvasLayer" unique_id=1858076668]
-offset_left = 416.0
-offset_top = 266.0
-offset_right = 552.0
-offset_bottom = 306.0
+offset_left = 445.0
+offset_top = 193.0
+offset_right = 581.0
+offset_bottom = 233.0
+scale = Vector2(2, 2)
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Gender" unique_id=1440040526]
 layout_mode = 2
@@ -1975,10 +1977,11 @@ layout_mode = 2
 text = "Mädchen"
 
 [node name="Haircolor" type="ScrollContainer" parent="CanvasLayer" unique_id=435498380]
-offset_left = 416.0
-offset_top = 312.0
-offset_right = 552.0
-offset_bottom = 352.0
+offset_left = 447.0
+offset_top = 277.0
+offset_right = 583.0
+offset_bottom = 317.0
+scale = Vector2(2, 2)
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Haircolor" unique_id=1292058339]
 layout_mode = 2
@@ -2000,10 +2003,11 @@ layout_mode = 2
 text = "Orange"
 
 [node name="Hairstyle" type="ScrollContainer" parent="CanvasLayer" unique_id=826887128]
-offset_left = 416.0
-offset_top = 360.0
-offset_right = 552.0
-offset_bottom = 400.0
+offset_left = 447.0
+offset_top = 371.0
+offset_right = 583.0
+offset_bottom = 411.0
+scale = Vector2(2, 2)
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Hairstyle" unique_id=1136923014]
 layout_mode = 2
@@ -2033,10 +2037,11 @@ layout_mode = 2
 text = "Zopf"
 
 [node name="Eyecolor" type="ScrollContainer" parent="CanvasLayer" unique_id=477413244]
-offset_left = 416.0
-offset_top = 408.0
-offset_right = 552.0
-offset_bottom = 448.0
+offset_left = 449.0
+offset_top = 459.0
+offset_right = 585.0
+offset_bottom = 499.0
+scale = Vector2(2, 2)
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Eyecolor" unique_id=1802799593]
 layout_mode = 2
@@ -2058,10 +2063,11 @@ layout_mode = 2
 text = "Grün"
 
 [node name="Skin" type="ScrollContainer" parent="CanvasLayer" unique_id=1613650315]
-offset_left = 416.0
-offset_top = 456.0
-offset_right = 552.0
-offset_bottom = 496.0
+offset_left = 447.0
+offset_top = 553.0
+offset_right = 583.0
+offset_bottom = 593.0
+scale = Vector2(2, 2)
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Skin" unique_id=1972516699]
 layout_mode = 2
@@ -2083,10 +2089,11 @@ layout_mode = 2
 text = "Dunkel2"
 
 [node name="Cloth" type="ScrollContainer" parent="CanvasLayer" unique_id=346846505]
-offset_left = 416.0
-offset_top = 504.0
-offset_right = 552.0
-offset_bottom = 544.0
+offset_left = 447.0
+offset_top = 657.0
+offset_right = 583.0
+offset_bottom = 697.0
+scale = Vector2(2, 2)
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Cloth" unique_id=2023779417]
 layout_mode = 2
@@ -2112,10 +2119,11 @@ layout_mode = 2
 text = "Rot"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer" unique_id=2132515045]
-offset_left = 551.0
-offset_top = 569.0
-offset_right = 977.0
-offset_bottom = 609.0
+offset_left = 483.0
+offset_top = 770.0
+offset_right = 909.0
+offset_bottom = 810.0
+scale = Vector2(2, 2)
 
 [node name="LetsGo" type="Button" parent="CanvasLayer/HBoxContainer" unique_id=871509531]
 layout_mode = 2
@@ -2147,11 +2155,11 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_sos0v")
 text = "Zurück zum Hauptmenü"
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1309108294]
-position = Vector2(600, 400)
+position = Vector2(740, 420.76923)
 
 [node name="ActualDesignNode2D" type="Node2D" parent="." unique_id=2044710322]
-position = Vector2(912.99994, 337)
-scale = Vector2(6, 6)
+position = Vector2(1170, 374.61542)
+scale = Vector2(7, 7)
 
 [node name="FemaleSkin" type="AnimatedSprite2D" parent="ActualDesignNode2D" unique_id=1582633174]
 sprite_frames = SubResource("SpriteFrames_dx4c7")

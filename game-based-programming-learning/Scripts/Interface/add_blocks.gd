@@ -10,10 +10,30 @@ var Vari = preload("res://Scenes/Interface/blocks/var_Block.tscn")
 @export var specialName = "Prototyp"
 @export var boolName = "True"
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
+@export var For = true
+@export var If = true
+@export var Return = true
+@export var Left = true
+@export var Right = true
+@export var Down = true
+@export var Up = true
+@export var VarInput = true
+@export var VarObject = true
+@export var VarTrue = true
+@export var VarFalse = true
 
+func _ready() -> void:
+	$Buttons/VBoxContainer/For.visible = For
+	$Buttons/VBoxContainer/If.visible = If
+	$Buttons/VBoxContainer/Return.visible = Return
+	$Buttons/VBoxContainer/Left.visible = Left
+	$Buttons/VBoxContainer/Right.visible = Right
+	$Buttons/VBoxContainer/Down.visible = Down
+	$Buttons/VBoxContainer/Up.visible = Up
+	$Buttons/VBoxContainer/VarInput.visible = VarInput
+	$Buttons/VBoxContainer/VarObject.visible = VarObject
+	$Buttons/VBoxContainer/VarTrue.visible = VarTrue
+	$Buttons/VBoxContainer/VarFalse.visible = VarFalse
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
@@ -71,6 +91,14 @@ func _on_var_object_pressed() -> void:
 func _on_var_true_pressed() -> void:
 	var aria = _create(Vari)
 	aria.special = true
-	aria.sensor_name = boolName
+	aria.sensor_name = "Wahr"
 	aria.change_sensor_state(true)
+	aria.change_type()
+
+
+func _on_var_false_pressed() -> void:
+	var aria = _create(Vari)
+	aria.special = false
+	aria.sensor_name = "Nicht Wahr"
+	aria.change_sensor_state(false)
 	aria.change_type()

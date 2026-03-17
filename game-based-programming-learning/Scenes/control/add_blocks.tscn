@@ -105,7 +105,7 @@ bg_color = Color(0, 0.59607846, 1, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pf7gr"]
 bg_color = Color(1, 0, 0, 0.5176471)
 
-[node name="CanvasLayer" type="CanvasLayer" unique_id=415209504]
+[node name="CanvasLayer" type="CanvasLayer" unique_id=415209504 groups=["blockManager"]]
 layer = 12
 script = ExtResource("1_pf7gr")
 
@@ -113,9 +113,10 @@ script = ExtResource("1_pf7gr")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Buttons" unique_id=1088887290]
 custom_minimum_size = Vector2(100, 0)
-offset_top = 359.0
-offset_right = 104.0
-offset_bottom = 670.0
+offset_left = 7.0
+offset_top = 157.0
+offset_right = 111.0
+offset_bottom = 468.0
 scale = Vector2(2, 2)
 
 [node name="For" type="Button" parent="Buttons/VBoxContainer" unique_id=1330925731]
@@ -200,10 +201,12 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_f18o7")
 text = "Immer Falsch"
 
 [node name="Trash" type="Panel" parent="." unique_id=1827184414]
+z_index = 13
 custom_minimum_size = Vector2(42, 0)
-offset_top = 1025.0
-offset_right = 42.0
-offset_bottom = 1050.0
+offset_left = 3.9999998
+offset_top = 766.9999
+offset_right = 63.28571
+offset_bottom = 811.57135
 scale = Vector2(7, 7)
 theme_override_styles/panel = SubResource("StyleBoxFlat_pf7gr")
 script = ExtResource("1_gwuow")
@@ -215,8 +218,9 @@ offset_bottom = 20.0
 
 [node name="Label" type="Label" parent="Trash" unique_id=57511352]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+offset_right = 58.999996
+offset_bottom = 44.714302
+theme_override_font_sizes/font_size = 28
 text = "Müll"
 horizontal_alignment = 1
 
@@ -234,3 +238,4 @@ position = Vector2(574, 735)
 [connection signal="pressed" from="Buttons/VBoxContainer/VarInput" to="." method="_on_var_input_pressed"]
 [connection signal="pressed" from="Buttons/VBoxContainer/VarObject" to="." method="_on_var_object_pressed"]
 [connection signal="pressed" from="Buttons/VBoxContainer/VarTrue" to="." method="_on_var_true_pressed"]
+[connection signal="pressed" from="Buttons/VBoxContainer/VarFalse" to="." method="_on_var_false_pressed"]

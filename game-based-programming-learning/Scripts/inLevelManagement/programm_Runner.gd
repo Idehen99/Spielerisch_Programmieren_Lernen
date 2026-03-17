@@ -2,7 +2,7 @@ extends Node
 
 var vars = {}
 @onready var player
-
+@onready var walked_against_wall = false
 func _ready() -> void:
 	if get_tree().get_first_node_in_group("player")!=null:
 		player = get_tree().get_first_node_in_group("player")
@@ -14,6 +14,9 @@ func _ready() -> void:
 		player.add_to_group("player")
 	
 func run_block_list(list) -> bool:
+	if walked_against_wall:
+		return true
+		
 	for cmd in list:
 		match cmd.type:
 
@@ -86,3 +89,6 @@ func evaluate(cond):
 				return left != right
 			else: return true
 	return false
+
+func wall_contact(isit):
+	walked_against_wall = isit
