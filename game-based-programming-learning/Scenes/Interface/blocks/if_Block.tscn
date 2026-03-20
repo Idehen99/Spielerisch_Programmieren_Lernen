@@ -3,13 +3,13 @@
 [ext_resource type="Script" uid="uid://dsxp6hu4nwdj0" path="res://Scripts/block/if_Block.gd" id="1_nkw88"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nkw88"]
-bg_color = Color(0.92860055, 0.4273301, 0.29754177, 1)
+bg_color = Color(0.9411765, 0.45490196, 0.015686275, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5kl6q"]
-bg_color = Color(0.31883684, 0.5970492, 0.9973771, 1)
+bg_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2mpxw"]
-bg_color = Color(0.23668984, 0.7145914, 0.13824767, 1)
+bg_color = Color(0, 0, 0, 1)
 
 [node name="IfBlock" type="Panel" unique_id=825846234]
 z_index = 11

@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://bw0lubfb0lic3" path="res://Scripts/block/return_block.gd" id="1_xudkv"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h6rq4"]
-bg_color = Color(0.95789534, 0.33374283, 0.6172553, 1)
+bg_color = Color(0.9411765, 0.44705883, 0.6745098, 1)
 
 [node name="ReturnBlock" type="Panel" unique_id=376674881]
 z_index = 11

@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://cuuhl7utc22iv" path="res://Scripts/block/move_right_block.gd" id="1_lduf0"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lduf0"]
-bg_color = Color(0.5484822, 0.012211782, 0.42555034, 1)
+bg_color = Color(1, 0, 0, 1)
 
 [node name="MoveRightBlock" type="Panel" unique_id=346435543]
 z_index = 11

@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://c366jnoebyjkm" path="res://Scripts/block/for_Block.gd" id="1_x14o1"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x14o1"]
-bg_color = Color(0.14091778, 0.6186416, 0.9999998, 1)
+bg_color = Color(0.007843138, 0.3019608, 0.6313726, 1)
 
 [node name="ForBlock" type="Panel" unique_id=346435543]
 z_index = 11

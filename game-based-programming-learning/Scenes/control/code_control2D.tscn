@@ -6,6 +6,14 @@
 [ext_resource type="Script" uid="uid://b7nyexjgc70ya" path="res://Scripts/inLevelManagement/code_editor.gd" id="4_ediov"]
 [ext_resource type="Texture2D" uid="uid://cj3prubt5csbj" path="res://Assets/Farm RPG - Tiny Asset Pack - (All in One)/UI/button.png" id="5_kvopa"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_p5hr2"]
+atlas = ExtResource("5_kvopa")
+region = Rect2(400, 256.005, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ediov"]
+atlas = ExtResource("5_kvopa")
+region = Rect2(400, 272, 16, 16)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_pjwbp"]
 atlas = ExtResource("5_kvopa")
 region = Rect2(176, 255.985, 16, 16)
@@ -49,6 +57,15 @@ script = ExtResource("3_p5hr2")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=940977611]
 layer = 13
+
+[node name="deleteAllButton" type="TextureButton" parent="CanvasLayer" unique_id=1301967761]
+offset_left = 1744.0001
+offset_top = 777.0
+offset_right = 1760.0001
+offset_bottom = 793.0
+scale = Vector2(10, 10)
+texture_normal = SubResource("AtlasTexture_p5hr2")
+texture_pressed = SubResource("AtlasTexture_ediov")
 
 [node name="play" type="TextureButton" parent="CanvasLayer" unique_id=1489885864]
 z_index = 13
@@ -111,6 +128,7 @@ scale = Vector2(10, 10)
 texture_normal = SubResource("AtlasTexture_7vys4")
 texture_pressed = SubResource("AtlasTexture_0y0k8")
 
+[connection signal="pressed" from="CanvasLayer/deleteAllButton" to="." method="_on_delete_all_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="CanvasLayer/retry" to="." method="_on_retry_pressed"]
 [connection signal="pressed" from="CanvasLayer/backToLevel" to="." method="_on_back_to_level_pressed"]

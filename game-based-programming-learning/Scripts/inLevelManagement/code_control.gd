@@ -38,3 +38,8 @@ func _on_back_to_level_pressed() -> void:
 		if get_tree().get_first_node_in_group("player")!=null:
 			player = get_tree().get_first_node_in_group("player")
 			player.position = stuff.position
+
+
+func _on_delete_all_button_pressed() -> void:
+	for child in $CanvasLayer/CodeEditor/MarginContainer/ScrollContainer/codeContainer.get_children():
+		child.queue_free()
