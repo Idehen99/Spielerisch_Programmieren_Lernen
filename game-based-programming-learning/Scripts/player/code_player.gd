@@ -5,6 +5,7 @@ enum Direction { UP, DOWN, RIGHT, LEFT}
 
 @export var speed := 100
 @export var step_size = 16.0
+@export var axe_unlocked = false
 
 var modus: Modus = Modus.IDLE
 var dir: Direction = Direction.DOWN
@@ -18,7 +19,8 @@ var free_to_walk = false
 	$CollisionShape2D/Hair,
 	$CollisionShape2D/Eyes,
 	$CollisionShape2D/Skins,
-	$CollisionShape2D/Clothes
+	$CollisionShape2D/Clothes, 
+	$Axe
 ]
 
 var axeCounter = 0
@@ -28,37 +30,31 @@ func _ready() -> void:
 		if Settings._on_changed_scene_positioning($"."):
 			pass
 		else:
-			print("ey yoo")
 			$".".global_position = Settings.saveData["player_pos"]
-	for p in parts:
-		# Wir verbinden das Signal nur einmal pro Part
-		if not p.animation_finished.is_connected(_on_animation_finished):
-			p.animation_finished.connect(_on_animation_finished)
-	for m in Modus.values():
-		for d in Direction.values():
-			var mode: String = ""
-			var dire: String = ""
+	#for p in parts:
+		#p.animation_finished.connect(_on_animation_finished)
+	for m in Modus:
+		for d in Direction:
+			var mode
+			var dire
+			print(m,d,Modus.IDLE,m=="IDLE")
 			match d:
-				Direction.UP: dire = "Up"
-				Direction.DOWN: dire = "Down"
-				Direction.RIGHT: dire = "Right"
-				Direction.LEFT: continue # Links wird meist gespiegelt, daher überspringen
-
+				"UP": dire = "Up"
+				"DOWN": dire = "Down"
+				"RIGHT":
+					dire = "Right"
+				"LEFT": continue
 			match m:
-				Modus.IDLE: mode = "idle"
-				Modus.WALK: mode = "walk"
-				Modus.RUN: mode = "run"
-				Modus.AXE: mode = "axe"
+				"IDLE": mode = "idle"
+				"WALK": mode = "walk"
+				"RUN": mode = "run"
+				"AXE": mode = "axe"
+			var anim_name = mode + dire
+			$CollisionShape2D/Hair.change(mode, anim_name)
+			$CollisionShape2D/Eyes.change(mode, anim_name)
+			$CollisionShape2D/Skins.change(mode, anim_name)
+			$CollisionShape2D/Clothes.change(mode, anim_name)
 
-			if mode != "" and dire != "":
-				var anim_name = mode + dire
-				for p in parts:
-					p.change(mode, anim_name)
-			#var anim_name = mode + dire
-			#$CollisionShape2D/Hair.change(mode, anim_name)
-			#$CollisionShape2D/Eyes.change(mode, anim_name)
-			#$CollisionShape2D/Skins.change(mode, anim_name)
-			#$CollisionShape2D/Clothes.change(mode, anim_name)
 
 
 # -------------------------
@@ -81,7 +77,6 @@ func set_modus(new_modus: Modus) -> void:
 # BEWEGUNG
 # -------------------------
 func _process(_delta):
-	pass
 	if is_busy:
 		velocity = Vector2.ZERO
 		move_and_slide()
@@ -102,7 +97,7 @@ func _process(_delta):
 		else:
 			set_modus(Modus.WALK)
 			velocity = input_vector.normalized() * speed
-	else:
+	elif !is_busy:
 		set_modus(Modus.IDLE)
 		velocity = Vector2.ZERO
 	if free_to_walk:
@@ -138,7 +133,7 @@ func flip_parts(value: bool):
 # -------------------------
 # ANIMATION
 # -------------------------
-var last_anim_name := ""  # speichert die aktuell abgespielte Animation
+var last_anim_name = ""  # speichert die aktuell abgespielte Animation
 
 func update_animation() -> void:
 	match dir:
@@ -171,10 +166,9 @@ func update_animation() -> void:
 # AXE ENDE
 # -------------------------
 func _on_animation_finished():
-	set_modus(Modus.IDLE)
-	update_animation()
-	#if modus == Modus.AXE:
-		#is_busy = false
+	if modus == Modus.AXE:
+		is_busy = false
+		set_modus(Modus.IDLE)
 		
 
 

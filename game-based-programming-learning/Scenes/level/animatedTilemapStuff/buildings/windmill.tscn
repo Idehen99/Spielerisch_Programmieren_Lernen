@@ -1,0 +1,148 @@
+[gd_scene format=3 uid="uid://dpli56jn7siuo"]
+
+[ext_resource type="Script" uid="uid://dqugws4xex87c" path="res://Scripts/interactives/windmill.gd" id="1_gpvpr"]
+[ext_resource type="Texture2D" uid="uid://ceosdo3ydta4o" path="res://Assets/Farm RPG - Tiny Asset Pack - (All in One)/Exterior/Houses/Farm Buildings/Old/Barn Options.png" id="1_rlkc6"]
+[ext_resource type="Texture2D" uid="uid://cw4bpttsndjxw" path="res://Assets/Farm RPG - Tiny Asset Pack - (All in One)/Exterior/Houses/Farm Buildings/Old/Mill.png" id="2_gpvpr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fsmgx"]
+atlas = ExtResource("1_rlkc6")
+region = Rect2(547, 400, 42, 80)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_aj7dk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fsmgx")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v48jt"]
+atlas = ExtResource("1_rlkc6")
+region = Rect2(594, 399, 43, 80)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qnruo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v48jt")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0vcc8"]
+atlas = ExtResource("1_rlkc6")
+region = Rect2(594, 319, 43, 80)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7plmq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0vcc8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5b0b4"]
+atlas = ExtResource("1_rlkc6")
+region = Rect2(336, 399, 16, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wn23f"]
+atlas = ExtResource("1_rlkc6")
+region = Rect2(320, 399, 16, 80)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5wksq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5b0b4")
+}],
+"loop": true,
+"name": &"open",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wn23f")
+}],
+"loop": true,
+"name": &"shut",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ykt0d"]
+atlas = ExtResource("2_gpvpr")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uoxen"]
+atlas = ExtResource("2_gpvpr")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8ri12"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ykt0d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uoxen")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fsmgx"]
+radius = 6.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aj7dk"]
+size = Vector2(33, 44)
+
+[node name="Windmill" type="Node2D" unique_id=933125499]
+script = ExtResource("1_gpvpr")
+
+[node name="wall" type="AnimatedSprite2D" parent="." unique_id=1523879627]
+z_index = 4
+sprite_frames = SubResource("SpriteFrames_aj7dk")
+
+[node name="roof" type="AnimatedSprite2D" parent="." unique_id=926321599]
+z_index = 6
+sprite_frames = SubResource("SpriteFrames_qnruo")
+
+[node name="roofSnow" type="AnimatedSprite2D" parent="." unique_id=1146857810]
+z_index = 6
+position = Vector2(0, -48)
+sprite_frames = SubResource("SpriteFrames_7plmq")
+
+[node name="door" type="AnimatedSprite2D" parent="." unique_id=1613611353]
+z_index = 4
+position = Vector2(0, 3)
+sprite_frames = SubResource("SpriteFrames_5wksq")
+animation = &"shut"
+
+[node name="mill" type="AnimatedSprite2D" parent="." unique_id=895515522]
+z_index = 7
+position = Vector2(0, -11)
+sprite_frames = SubResource("SpriteFrames_8ri12")
+frame_progress = 0.6739729
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1958046537]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1124479313]
+position = Vector2(-1, 17)
+shape = SubResource("CapsuleShape2D_fsmgx")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1410825060]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=771490712]
+position = Vector2(-0.5, 6)
+shape = SubResource("RectangleShape2D_aj7dk")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

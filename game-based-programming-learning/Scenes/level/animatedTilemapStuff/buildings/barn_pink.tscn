@@ -1,0 +1,164 @@
+[gd_scene format=3 uid="uid://v0enr3b8tki2"]
+
+[ext_resource type="Texture2D" uid="uid://ceosdo3ydta4o" path="res://Assets/Farm RPG - Tiny Asset Pack - (All in One)/Exterior/Houses/Farm Buildings/Old/Barn Options.png" id="1_jqw66"]
+[ext_resource type="Script" uid="uid://3ekbj5xgn6f1" path="res://Scripts/interactives/barn.gd" id="1_qccug"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mmirs"]
+atlas = ExtResource("1_jqw66")
+region = Rect2(161, 432, 63, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qccug"]
+atlas = ExtResource("1_jqw66")
+region = Rect2(224, 432, 63, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e4hng"]
+atlas = ExtResource("1_jqw66")
+region = Rect2(97, 432, 63, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mmirs"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mmirs")
+}],
+"loop": true,
+"name": &"brown",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qccug")
+}],
+"loop": true,
+"name": &"pink",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e4hng")
+}],
+"loop": true,
+"name": &"red",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ddhtl"]
+atlas = ExtResource("1_jqw66")
+region = Rect2(110, 371, 70, 53)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_e4hng"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ddhtl")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ri0m0"]
+atlas = ExtResource("1_jqw66")
+region = Rect2(14, 512, 70, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ug3fh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ri0m0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uj7cr"]
+atlas = ExtResource("1_jqw66")
+region = Rect2(540, 561, 70, 51)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ak380"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uj7cr")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_juwyr"]
+atlas = ExtResource("1_jqw66")
+region = Rect2(578, 600, 32, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y1pv3"]
+atlas = ExtResource("1_jqw66")
+region = Rect2(546, 600, 32, 40)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v77k6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_juwyr")
+}],
+"loop": true,
+"name": &"open",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y1pv3")
+}],
+"loop": true,
+"name": &"shut",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mmirs"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jqw66"]
+size = Vector2(62, 36)
+
+[node name="BarnPink" type="Node2D" unique_id=675540679]
+script = ExtResource("1_qccug")
+
+[node name="wall" type="AnimatedSprite2D" parent="." unique_id=1558593432]
+z_index = 4
+sprite_frames = SubResource("SpriteFrames_mmirs")
+animation = &"red"
+
+[node name="roof" type="AnimatedSprite2D" parent="." unique_id=981123341]
+z_index = 6
+position = Vector2(0, -27)
+sprite_frames = SubResource("SpriteFrames_e4hng")
+
+[node name="roofSnow" type="AnimatedSprite2D" parent="." unique_id=951604622]
+z_index = 6
+position = Vector2(0, -25)
+sprite_frames = SubResource("SpriteFrames_ug3fh")
+
+[node name="window" type="AnimatedSprite2D" parent="." unique_id=1709128285]
+z_index = 4
+position = Vector2(-1, 2)
+sprite_frames = SubResource("SpriteFrames_ak380")
+
+[node name="door" type="AnimatedSprite2D" parent="." unique_id=862112069]
+z_index = 4
+position = Vector2(2, 4)
+sprite_frames = SubResource("SpriteFrames_v77k6")
+animation = &"shut"
+
+[node name="Area2D" type="Area2D" parent="." unique_id=307077749]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D" unique_id=319391158]
+position = Vector2(1, 15)
+shape = SubResource("CapsuleShape2D_mmirs")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1433487985]
+collision_layer = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=723376840]
+position = Vector2(0, 5)
+shape = SubResource("RectangleShape2D_jqw66")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

@@ -4,6 +4,7 @@ enum Modus { IDLE, AXE, RUN, WALK }
 enum Direction { UP, DOWN, RIGHT, LEFT}
 
 @export var speed := 100
+@export var axe_unlocked = false
 
 var modus: Modus = Modus.IDLE
 var dir: Direction = Direction.DOWN
@@ -17,7 +18,8 @@ var is_busy := false
 	$Hair,
 	$Eyes,
 	$Skins,
-	$Clothes
+	$Clothes,
+	$Axe
 ]
 
 func _ready() -> void:

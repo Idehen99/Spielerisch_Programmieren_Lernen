@@ -18,7 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://cq7vofs6jy4bm" path="res://Assets/Farm RPG - Tiny Asset Pack - (All in One)/Exterior/Snowman.png" id="13_y43hj"]
 [ext_resource type="Texture2D" uid="uid://pcd77xrcotoi" path="res://Assets/Farm RPG - Tiny Asset Pack - (All in One)/Exterior/Deep Forest/Bridge.png" id="14_tvbcx"]
 [ext_resource type="Texture2D" uid="uid://cadro8m6rmojm" path="res://Assets/Farm RPG - Tiny Asset Pack - (All in One)/Farm/Tree/Common/Shadow/Birch Tree.png" id="15_wsb8x"]
-[ext_resource type="PackedScene" uid="uid://2qxiwgjdagd1" path="res://Scenes/level/Trees/mahagonay_tree.tscn" id="18_x8w5r"]
+[ext_resource type="PackedScene" uid="uid://2qxiwgjdagd1" path="res://Scenes/level/animatedTilemapStuff/Trees/mahagonay_tree.tscn" id="18_x8w5r"]
 [ext_resource type="Script" uid="uid://w7gdvxxrvd8t" path="res://Scripts/Interface/camera_area_2d.gd" id="19_20jd0"]
 [ext_resource type="PackedScene" uid="uid://cguwmvmbmn0bi" path="res://Scenes/level/change_scene.tscn" id="20_wgn7w"]
 [ext_resource type="PackedScene" uid="uid://8wxhe87tp7wl" path="res://Scenes/control/add_blocks.tscn" id="29_ergi1"]

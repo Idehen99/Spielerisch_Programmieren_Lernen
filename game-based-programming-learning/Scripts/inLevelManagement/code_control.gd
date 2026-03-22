@@ -41,5 +41,16 @@ func _on_back_to_level_pressed() -> void:
 
 
 func _on_delete_all_button_pressed() -> void:
+	var dialog = ConfirmationDialog.new()
+	dialog.title = "Bestätigung"
+	dialog.dialog_text = "Willst du das wirklich löschen?"
+	dialog.get_ok_button().text = "Ja"
+	dialog.get_cancel_button().text = "Nein"
+	add_child(dialog)
+	dialog.popup_centered()
+	dialog.confirmed.connect(_on_confirmed)
+
+func _on_confirmed():
+	print("Bestätigt!")
 	for child in $CanvasLayer/CodeEditor/MarginContainer/ScrollContainer/codeContainer.get_children():
 		child.queue_free()

@@ -22,6 +22,8 @@
 [ext_resource type="Texture2D" uid="uid://bxhbbf4i8jt47" path="res://Assets/Farm RPG - Tiny Asset Pack - (All in One)/Character and Portrait/Character/PNG/2. Walk/Clothers/Farm/Blue.png" id="14_kc4tj"]
 [ext_resource type="Script" uid="uid://cpn1i8n8hs3f0" path="res://Scripts/player/body_parts/clothes.gd" id="16_modpf"]
 [ext_resource type="PackedScene" uid="uid://ckaq76djq0g85" path="res://Scenes/control/textbox.tscn" id="22_modpf"]
+[ext_resource type="Texture2D" uid="uid://ckl32qa4f5tag" path="res://Assets/Farm RPG - Tiny Asset Pack - (All in One)/Character and Portrait/Character/PNG/5. Axe and Sickle/Weapons/Axe/3.png" id="23_d3f3v"]
+[ext_resource type="Script" uid="uid://n0xepmhi28pj" path="res://Scripts/player/weapons/axe.gd" id="24_bdcus"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_flpxu"]
 atlas = ExtResource("2_4iobp")
@@ -2305,33 +2307,183 @@ animations = [{
 radius = 5.0
 height = 11.764708
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_wh2la"]
+atlas = ExtResource("23_d3f3v")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_svv1e"]
+atlas = ExtResource("23_d3f3v")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lo3qs"]
+atlas = ExtResource("23_d3f3v")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oajke"]
+atlas = ExtResource("23_d3f3v")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jokjo"]
+atlas = ExtResource("23_d3f3v")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_au4na"]
+atlas = ExtResource("23_d3f3v")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hqj67"]
+atlas = ExtResource("23_d3f3v")
+region = Rect2(384, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1pjoe"]
+atlas = ExtResource("23_d3f3v")
+region = Rect2(416, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cib5f"]
+atlas = ExtResource("23_d3f3v")
+region = Rect2(448, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qv3nj"]
+atlas = ExtResource("23_d3f3v")
+region = Rect2(480, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6oxdq"]
+atlas = ExtResource("23_d3f3v")
+region = Rect2(512, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t1ixt"]
+atlas = ExtResource("23_d3f3v")
+region = Rect2(544, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5fqxa"]
+atlas = ExtResource("23_d3f3v")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jg2t5"]
+atlas = ExtResource("23_d3f3v")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_315x2"]
+atlas = ExtResource("23_d3f3v")
+region = Rect2(256, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m0rq6"]
+atlas = ExtResource("23_d3f3v")
+region = Rect2(288, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t2wsa"]
+atlas = ExtResource("23_d3f3v")
+region = Rect2(320, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5wc5i"]
+atlas = ExtResource("23_d3f3v")
+region = Rect2(352, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_aacib"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wh2la")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_svv1e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lo3qs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oajke")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jokjo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_au4na")
+}],
+"loop": false,
+"name": &"axeDown",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hqj67")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1pjoe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cib5f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qv3nj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6oxdq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t1ixt")
+}],
+"loop": false,
+"name": &"axeRight",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5fqxa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jg2t5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_315x2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m0rq6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t2wsa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5wc5i")
+}],
+"loop": false,
+"name": &"axeUp",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": null
+}],
+"loop": true,
+"name": &"non",
+"speed": 5.0
+}]
+
 [node name="PlayerSelfmade" type="CharacterBody2D" unique_id=1362382994 groups=["player"]]
 light_mask = 64
 visibility_layer = 64
 z_index = 5
+collision_mask = 3
 script = ExtResource("1_6c1x6")
 
 [node name="Skins" type="AnimatedSprite2D" parent="." unique_id=7404954]
 sprite_frames = SubResource("SpriteFrames_d50qh")
-animation = &"idleUp"
+animation = &"axeRight"
 script = ExtResource("6_ujuvq")
 
 [node name="Eyes" type="AnimatedSprite2D" parent="." unique_id=550246981]
 sprite_frames = SubResource("SpriteFrames_4xcmx")
-animation = &"idleDown"
+animation = &"axeRight"
 script = ExtResource("3_8ja76")
 
 [node name="Clothes" type="AnimatedSprite2D" parent="." unique_id=1763501777]
 sprite_frames = SubResource("SpriteFrames_modpf")
-animation = &"idleDown"
-frame_progress = 0.4947568
+animation = &"axeRight"
 script = ExtResource("16_modpf")
 
 [node name="Hair" type="AnimatedSprite2D" parent="." unique_id=1336313599]
 sprite_frames = SubResource("SpriteFrames_5wmbi")
-animation = &"walkRight"
-frame = 4
-frame_progress = 0.35241753
+animation = &"axeRight"
 script = ExtResource("6_8ja76")
 
 [node name="EyeTimer" type="Timer" parent="." unique_id=1233265843]
@@ -2347,6 +2499,11 @@ zoom = Vector2(3.5, 3.5)
 [node name="HairTimer" type="Timer" parent="." unique_id=1577341684]
 
 [node name="CanvasLayer" parent="." unique_id=1902209848 instance=ExtResource("22_modpf")]
+
+[node name="Axe" type="AnimatedSprite2D" parent="." unique_id=45867673]
+sprite_frames = SubResource("SpriteFrames_aacib")
+animation = &"axeDown"
+script = ExtResource("24_bdcus")
 
 [connection signal="timeout" from="EyeTimer" to="Eyes" method="_on_eye_timer_timeout"]
 [connection signal="timeout" from="EyeTimer" to="Hair" method="_on_eye_timer_timeout"]

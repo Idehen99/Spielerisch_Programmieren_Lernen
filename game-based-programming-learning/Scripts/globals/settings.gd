@@ -8,6 +8,7 @@ var new = false
 var EyeColor = "Green"
 var Clothes = "Purple"
 var Skins = "1"
+var axeUnlocked = false
 
 var current_scene = "no_scene"
 var fire = false
@@ -36,4 +37,5 @@ func update_from_save():
 	if saveData.has("clothes"): Clothes = saveData["clothes"]
 	if saveData.has("skins"): Skins = saveData["skins"]
 	if saveData.has("fire"): fire = saveData["fire"]
+	if saveData.has("axeUnlocked"): axeUnlocked = saveData["axeUnlocked"]
   

@@ -20,7 +20,8 @@ func _on_save_n_continue_pressed() -> void:
 		"eye_color": Settings.EyeColor,
 		"clothes": Settings.Clothes,
 		"skins": Settings.Skins,
-		"fire": Settings.fire
+		"fire": Settings.fire,
+		"axeUnlocked": Settings.axeUnlocked
 	}
 
 	Savefile.save_all(Settings.Spielstand, all_data)
@@ -43,7 +44,8 @@ func _on_save_n_exit_pressed() -> void:
 		"eye_color": Settings.EyeColor,
 		"clothes": Settings.Clothes,
 		"skins": Settings.Skins,
-		"fire": Settings.fire
+		"fire": Settings.fire,
+		"axeUnlocked": Settings.axeUnlocked
 	}
 	Savefile.save_all(Settings.Spielstand ,all_data)
 	get_tree().change_scene_to_file("res://Scenes/Interface/main_menu.tscn")

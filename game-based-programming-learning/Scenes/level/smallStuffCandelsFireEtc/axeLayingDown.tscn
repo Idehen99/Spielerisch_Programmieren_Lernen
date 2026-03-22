@@ -1,0 +1,78 @@
+[gd_scene format=3 uid="uid://dryk3q7q864je"]
+
+[ext_resource type="Texture2D" uid="uid://dv8rpvsl443jk" path="res://Assets/Farm RPG - Tiny Asset Pack - (All in One)/Icons/Weapons/RPG/3.png" id="1_2d3f2"]
+[ext_resource type="Script" uid="uid://dyv7d4hr3ikas" path="res://Scripts/interactives/axe_laying_down.gd" id="1_jnmvp"]
+[ext_resource type="Texture2D" uid="uid://bwuclsbiyxak7" path="res://Assets/Farm RPG - Tiny Asset Pack - (All in One)/Icons/Weapons/RPG/1.png" id="3_biub3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pqva5"]
+atlas = ExtResource("1_2d3f2")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jnmvp"]
+atlas = ExtResource("1_2d3f2")
+region = Rect2(192, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s3co4"]
+atlas = ExtResource("3_biub3")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_biub3"]
+animations = [{
+"frames": [{
+"duration": 6.0,
+"texture": SubResource("AtlasTexture_pqva5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jnmvp")
+}],
+"loop": true,
+"name": &"metal",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s3co4")
+}],
+"loop": true,
+"name": &"wood",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_myvgf"]
+radius = 3.0
+height = 14.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_iksn3"]
+radius = 8.0
+
+[node name="AxeLayingDown" type="Node2D" unique_id=1445305113]
+z_index = 4
+script = ExtResource("1_jnmvp")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1304653765]
+sprite_frames = SubResource("SpriteFrames_biub3")
+animation = &"wood"
+
+[node name="pickUpArea" type="Area2D" parent="." unique_id=53277252]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pickUpArea" unique_id=211834281]
+position = Vector2(-1, 1)
+rotation = -2.396337
+shape = SubResource("CapsuleShape2D_myvgf")
+
+[node name="identifyArea" type="Area2D" parent="." unique_id=1739950760]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="identifyArea" unique_id=375825932]
+position = Vector2(-1, 0)
+shape = SubResource("CircleShape2D_iksn3")
+
+[node name="Timer" type="Timer" parent="." unique_id=1991591927]
+
+[node name="PickUpTimer" type="Timer" parent="." unique_id=302438055]
+
+[connection signal="body_entered" from="pickUpArea" to="." method="_on_pick_up_area_body_entered"]
+[connection signal="body_exited" from="pickUpArea" to="." method="_on_pick_up_area_body_exited"]
+[connection signal="body_entered" from="identifyArea" to="." method="_on_identify_area_body_entered"]
+[connection signal="body_exited" from="identifyArea" to="." method="_on_identify_area_body_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="PickUpTimer" to="." method="_on_pick_up_timer_timeout"]
