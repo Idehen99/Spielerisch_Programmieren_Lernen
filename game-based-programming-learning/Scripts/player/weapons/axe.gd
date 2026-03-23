@@ -1,7 +1,7 @@
 extends AnimatedSprite2D
 
 # Die Variable, die bestimmt, ob der Spieler die Axt überhaupt besitzt
-@export var unlocked := false
+@export var unlocked = false
 
 # Wir laden die Skin-Einstellung wie in den anderen Skripten
 @onready var skin = Settings.Skins

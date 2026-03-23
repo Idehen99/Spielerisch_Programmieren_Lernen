@@ -1,0 +1,94 @@
+[gd_scene format=3 uid="uid://d0yqm60pjf8x7"]
+
+[ext_resource type="Script" uid="uid://c023ohycwyooy" path="res://Scripts/interactives/smoke.gd" id="1_7lefc"]
+[ext_resource type="Texture2D" uid="uid://gqwfklb1je0c" path="res://Assets/Farm RPG - Tiny Asset Pack - (All in One)/Farm/Props/Smoke.png" id="1_24ea1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7lefc"]
+atlas = ExtResource("1_24ea1")
+region = Rect2(0, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2hmpl"]
+atlas = ExtResource("1_24ea1")
+region = Rect2(32, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aumq7"]
+atlas = ExtResource("1_24ea1")
+region = Rect2(64, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sudeg"]
+atlas = ExtResource("1_24ea1")
+region = Rect2(96, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mpkpe"]
+atlas = ExtResource("1_24ea1")
+region = Rect2(128, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m3r3o"]
+atlas = ExtResource("1_24ea1")
+region = Rect2(160, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ma6pr"]
+atlas = ExtResource("1_24ea1")
+region = Rect2(192, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m1i68"]
+atlas = ExtResource("1_24ea1")
+region = Rect2(224, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uhjnk"]
+atlas = ExtResource("1_24ea1")
+region = Rect2(256, 0, 32, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_n2b30"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": null
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7lefc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2hmpl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aumq7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sudeg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mpkpe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m3r3o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ma6pr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m1i68")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uhjnk")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": true,
+"name": &"fireLit",
+"speed": 5.0
+}]
+
+[node name="Smoke" type="Node2D" unique_id=1160943051]
+z_index = 7
+script = ExtResource("1_7lefc")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1029635489]
+sprite_frames = SubResource("SpriteFrames_n2b30")
+frame_progress = 0.6168081

@@ -1,10 +1,13 @@
 extends Area2D
 
 @export var text = "Hallo Spieler. Willkommen in meinem Dorf. Pass gut auf."
-
+@export var ab_wann = 0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	if Settings.levelFinished != ab_wann:
+		monitoring = false
+	else:
+		monitoring = true
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

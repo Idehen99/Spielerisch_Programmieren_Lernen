@@ -18,7 +18,6 @@ func _on_first_pressed() -> void:
 	else:
 		Settings.saveData = Savefile.load_all(1)
 		Settings.update_from_save()
-		print(Settings.saveData)
 		var scene = Savefile.load_variable(1,"actual_scene", "n")
 		get_tree().change_scene_to_file(scene)
 

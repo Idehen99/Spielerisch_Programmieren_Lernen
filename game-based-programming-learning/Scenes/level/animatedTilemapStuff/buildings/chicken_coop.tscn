@@ -1,0 +1,102 @@
+[gd_scene format=3 uid="uid://ds0a7q0expda1"]
+
+[ext_resource type="Texture2D" uid="uid://ceosdo3ydta4o" path="res://Assets/Farm RPG - Tiny Asset Pack - (All in One)/Exterior/Houses/Farm Buildings/Old/Barn Options.png" id="1_kaalf"]
+[ext_resource type="Script" uid="uid://8e8tv66dwpaw" path="res://Scripts/interactives/chicken_coop.gd" id="1_s231w"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rvm08"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kaalf"]
+size = Vector2(63, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s231w"]
+atlas = ExtResource("1_kaalf")
+region = Rect2(205, 288, 73, 36)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rvm08"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s231w")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iw0mh"]
+atlas = ExtResource("1_kaalf")
+region = Rect2(96, 175, 32, 25)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_avoyo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iw0mh")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8evlh"]
+atlas = ExtResource("1_kaalf")
+region = Rect2(160, 175, 32, 25)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nxjus"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8evlh")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vcfms"]
+atlas = ExtResource("1_kaalf")
+region = Rect2(128, 175, 32, 25)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_aijep"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vcfms")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="ChickenCoop" type="Node2D" unique_id=1834234604]
+z_index = 4
+script = ExtResource("1_s231w")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1744838261]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1036097873]
+position = Vector2(-1, 7)
+shape = SubResource("CapsuleShape2D_rvm08")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=937590524]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1714375996]
+position = Vector2(-1.5, 0)
+shape = SubResource("RectangleShape2D_kaalf")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1898467676]
+sprite_frames = SubResource("SpriteFrames_rvm08")
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="." unique_id=1009377153]
+position = Vector2(-2, -6)
+sprite_frames = SubResource("SpriteFrames_avoyo")
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="." unique_id=2117777398]
+position = Vector2(14, -7)
+sprite_frames = SubResource("SpriteFrames_nxjus")
+
+[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="." unique_id=1949096242]
+position = Vector2(-17, -7)
+sprite_frames = SubResource("SpriteFrames_aijep")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

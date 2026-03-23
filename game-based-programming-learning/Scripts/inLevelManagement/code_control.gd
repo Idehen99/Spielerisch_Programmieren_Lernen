@@ -51,6 +51,5 @@ func _on_delete_all_button_pressed() -> void:
 	dialog.confirmed.connect(_on_confirmed)
 
 func _on_confirmed():
-	print("Bestätigt!")
 	for child in $CanvasLayer/CodeEditor/MarginContainer/ScrollContainer/codeContainer.get_children():
 		child.queue_free()

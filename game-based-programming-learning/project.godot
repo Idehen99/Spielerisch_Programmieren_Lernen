@@ -53,6 +53,8 @@ interpreter=""
 blockManager=""
 textbox=""
 layer=""
+sendSignalToIf="sends an signal to the var that is used in if"
+weizensack=""
 
 [input]
 

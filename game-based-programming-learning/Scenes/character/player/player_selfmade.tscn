@@ -24,6 +24,7 @@
 [ext_resource type="PackedScene" uid="uid://ckaq76djq0g85" path="res://Scenes/control/textbox.tscn" id="22_modpf"]
 [ext_resource type="Texture2D" uid="uid://ckl32qa4f5tag" path="res://Assets/Farm RPG - Tiny Asset Pack - (All in One)/Character and Portrait/Character/PNG/5. Axe and Sickle/Weapons/Axe/3.png" id="23_d3f3v"]
 [ext_resource type="Script" uid="uid://n0xepmhi28pj" path="res://Scripts/player/weapons/axe.gd" id="24_bdcus"]
+[ext_resource type="Texture2D" uid="uid://cgm6t0l6k1s2" path="res://Assets/Farm RPG - Tiny Asset Pack - (All in One)/Farm/Props/Mine/Fire light.png" id="24_fh1ws"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_flpxu"]
 atlas = ExtResource("2_4iobp")
@@ -2379,6 +2380,10 @@ region = Rect2(320, 0, 32, 32)
 atlas = ExtResource("23_d3f3v")
 region = Rect2(352, 0, 32, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_aacib"]
+atlas = ExtResource("24_fh1ws")
+region = Rect2(108, 0, 36, 12)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_aacib"]
 animations = [{
 "frames": [{
@@ -2453,6 +2458,9 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": null
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aacib")
 }],
 "loop": true,
 "name": &"non",
@@ -2502,7 +2510,7 @@ zoom = Vector2(3.5, 3.5)
 
 [node name="Axe" type="AnimatedSprite2D" parent="." unique_id=45867673]
 sprite_frames = SubResource("SpriteFrames_aacib")
-animation = &"axeDown"
+animation = &"non"
 script = ExtResource("24_bdcus")
 
 [connection signal="timeout" from="EyeTimer" to="Eyes" method="_on_eye_timer_timeout"]

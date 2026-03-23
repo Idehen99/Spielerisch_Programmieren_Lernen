@@ -34,7 +34,6 @@ func _ready() -> void:
 		for d in Direction:
 			var mode
 			var dire
-			print(m,d,Modus.IDLE,m=="IDLE")
 			match d:
 				"UP": dire = "Up"
 				"DOWN": dire = "Down"

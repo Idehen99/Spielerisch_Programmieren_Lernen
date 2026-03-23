@@ -1,0 +1,153 @@
+[gd_scene format=3 uid="uid://cewa3hodo3d01"]
+
+[ext_resource type="Texture2D" uid="uid://dyjkfo3kytyjf" path="res://Assets/Farm RPG - Tiny Asset Pack - (All in One)/Interior/Xmas.png" id="1_2kjmh"]
+[ext_resource type="Texture2D" uid="uid://dr8btfgxpi2hj" path="res://Assets/Farm RPG - Tiny Asset Pack - (All in One)/Farm Animals/Chicken/Chicken White.png" id="2_aqlrw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n0qnb"]
+atlas = ExtResource("1_2kjmh")
+region = Rect2(86, 96, 20, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qx3qw"]
+atlas = ExtResource("2_aqlrw")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pwt2x"]
+atlas = ExtResource("2_aqlrw")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1saxx"]
+atlas = ExtResource("2_aqlrw")
+region = Rect2(32, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8axwh"]
+atlas = ExtResource("2_aqlrw")
+region = Rect2(48, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hxrkt"]
+atlas = ExtResource("2_aqlrw")
+region = Rect2(0, 96, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p5y6v"]
+atlas = ExtResource("2_aqlrw")
+region = Rect2(16, 96, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d84co"]
+atlas = ExtResource("2_aqlrw")
+region = Rect2(32, 96, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r1s5q"]
+atlas = ExtResource("2_aqlrw")
+region = Rect2(48, 96, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n8mxr"]
+atlas = ExtResource("2_aqlrw")
+region = Rect2(0, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hqw50"]
+atlas = ExtResource("2_aqlrw")
+region = Rect2(16, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lwpvi"]
+atlas = ExtResource("2_aqlrw")
+region = Rect2(32, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_71lbw"]
+atlas = ExtResource("2_aqlrw")
+region = Rect2(48, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tv3xt"]
+atlas = ExtResource("2_aqlrw")
+region = Rect2(0, 64, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5yawx"]
+atlas = ExtResource("2_aqlrw")
+region = Rect2(16, 64, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f6m63"]
+atlas = ExtResource("2_aqlrw")
+region = Rect2(32, 64, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hp3my"]
+atlas = ExtResource("2_aqlrw")
+region = Rect2(48, 64, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lc7k8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n0qnb")
+}],
+"loop": true,
+"name": &"eatable",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qx3qw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pwt2x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1saxx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8axwh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hxrkt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p5y6v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d84co")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r1s5q")
+}],
+"loop": true,
+"name": &"picking",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_n8mxr")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_hqw50")
+}, {
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_lwpvi")
+}, {
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_71lbw")
+}],
+"loop": true,
+"name": &"sit",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tv3xt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5yawx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f6m63")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hp3my")
+}],
+"loop": true,
+"name": &"standing",
+"speed": 5.0
+}]
+
+[node name="ChickenWings" type="Node2D" unique_id=1922860853]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=199221781]
+sprite_frames = SubResource("SpriteFrames_lc7k8")
+animation = &"picking"
+frame_progress = 0.7441026

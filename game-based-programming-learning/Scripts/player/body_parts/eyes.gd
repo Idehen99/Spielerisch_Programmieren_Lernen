@@ -5,7 +5,7 @@ var anima = "idleDown"
 func _ready() -> void:
 	#$"../EyeTimer".start(10)
 	color = Settings.EyeColor
-	print(color)
+
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

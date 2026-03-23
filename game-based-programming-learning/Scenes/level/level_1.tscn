@@ -23,6 +23,8 @@
 [ext_resource type="PackedScene" uid="uid://bo0h7nhg2w0xn" path="res://Scenes/control/save_game.tscn" id="18_5j4x5"]
 [ext_resource type="Script" uid="uid://cvp11o1esyiam" path="res://Scripts/Interface/menu.gd" id="18_iv1fj"]
 [ext_resource type="PackedScene" uid="uid://dpli56jn7siuo" path="res://Scenes/level/animatedTilemapStuff/buildings/windmill.tscn" id="18_jbruj"]
+[ext_resource type="PackedScene" uid="uid://d0yqm60pjf8x7" path="res://Scenes/level/smallStuffCandelsFireEtc/smoke.tscn" id="24_6p3m8"]
+[ext_resource type="PackedScene" uid="uid://ds0a7q0expda1" path="res://Scenes/level/animatedTilemapStuff/buildings/chicken_coop.tscn" id="25_lge3y"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xm4wk"]
 texture = ExtResource("1_h6h6g")
@@ -5980,17 +5982,26 @@ size = Vector2(1147, 651)
 [node name="Node2D" type="Node2D" unique_id=177761043 groups=["inputlevel", "level"]]
 position = Vector2(1, 3)
 script = ExtResource("1_bivn8")
+levelsFinished = 0
 
 [node name="BarnPink" parent="." unique_id=675540679 instance=ExtResource("2_xm4wk")]
 position = Vector2(983, 113)
+levelsFinished = 1
 
 [node name="Windmill" parent="." unique_id=933125499 instance=ExtResource("18_jbruj")]
 position = Vector2(1038, 527)
+destination = "res://Scenes/level/windmill_level_5.tscn"
+new_position_for_player = Vector2(135, 195)
 
 [node name="BarnPink2" parent="." unique_id=733834681 instance=ExtResource("2_xm4wk")]
 position = Vector2(145, 304)
 destination = "res://Scenes/level/barn_level_4.tscn"
 color = "red"
+new_position_for_player = Vector2(185, 84)
+levelsFinished = 3
+
+[node name="ChickenCoop" parent="." unique_id=1834234604 instance=ExtResource("25_lge3y")]
+position = Vector2(395, 292)
 
 [node name="TileMaps" type="Node" parent="." unique_id=1661354392]
 
@@ -6050,6 +6061,7 @@ shape = SubResource("RectangleShape2D_nr23b")
 position = Vector2(-3.42, 476)
 destination = "res://Scenes/level/forrest_level_2.tscn"
 new_position_for_player = Vector2(392, 549)
+ab_wann = 5
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=810178698]
 
@@ -6076,10 +6088,45 @@ position = Vector2(464, 283)
 scale = Vector2(0.6, 1)
 destination = "res://Scenes/level/house_level_3.tscn"
 new_position_for_player = Vector2(871, 1060)
+angeschaltet = false
 
 [node name="Texttrigger" parent="." unique_id=1997264463 instance=ExtResource("16_h5k6w")]
 position = Vector2(399, 489)
 text = "Hallo Spieler. Willkommen in meinem Dorf. Es ist kalt hier draußen. Lass uns ins Haus gehen. Und den Kamin anzünden."
+
+[node name="Smoke" parent="." unique_id=1160943051 instance=ExtResource("24_6p3m8")]
+position = Vector2(454, 188)
+mcHomeSmoke = true
+
+[node name="Texttrigger2" parent="." unique_id=1269408798 instance=ExtResource("16_h5k6w")]
+position = Vector2(464, 310)
+text = "Ich habe meine Axt liegen lassen. Bitte geh mit mir in die Rote Scheune. In der roten Scheune können wir eine neue Axt holen."
+ab_wann = 1
+
+[node name="Texttrigger3" parent="." unique_id=1732703317 instance=ExtResource("16_h5k6w")]
+position = Vector2(145, 346)
+text = "Langsam werde Ich hungrig. Lass uns in der Windmühle Mehl holen. Dann können wir Brot backen."
+ab_wann = 2
+
+[node name="Texttrigger4" parent="." unique_id=1732156698 instance=ExtResource("16_h5k6w")]
+position = Vector2(1038, 570)
+text = "Ich möchte vor dem Essen noch das Huhn Füttern. Lass uns in der rosa Scheune einen Sack Körner holen."
+ab_wann = 3
+
+[node name="Texttrigger5" parent="." unique_id=664905159 instance=ExtResource("16_h5k6w")]
+position = Vector2(981, 151)
+text = "Jetzt haben wir das Korn. Auf zum Hühnerstall neben dem Haus. Lass uns das Huhn im Hühnerstall füttern."
+ab_wann = 4
+
+[node name="Texttrigger6" parent="." unique_id=17186759 instance=ExtResource("16_h5k6w")]
+position = Vector2(394, 327)
+text = "Oh nein. Aus dem Schornstein kommt kein Rauch mehr. Dann muss das Holz leer sein. Wir sollten den Westausgang von dem Hof benutzen. Dahinter ist ein Baum. Bei dem Baum können wir holzhacken."
+ab_wann = 5
+
+[node name="Texttrigger7" parent="." unique_id=404317787 instance=ExtResource("16_h5k6w")]
+position = Vector2(27, 476)
+text = "Jetzt wo wir das Holz haben. Lass uns zurück zum Haus gehen und das Brot backen."
+ab_wann = 6
 
 [connection signal="timeout" from="CameraArea2D/Timer" to="CameraArea2D" method="_on_timer_timeout"]
 [connection signal="pressed" from="CanvasLayer/Menu" to="CanvasLayer/Menu" method="_on_pressed"]

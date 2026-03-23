@@ -1,10 +1,14 @@
 [gd_scene format=4 uid="uid://cgo038cids5j2"]
 
 [ext_resource type="Texture2D" uid="uid://clyec1n3l1fmu" path="res://Assets/Farm RPG - Tiny Asset Pack - (All in One)/Farm/Tileset/Modular/Path tiles.png" id="1_833l0"]
+[ext_resource type="Script" uid="uid://k4fjrcgall5w" path="res://Scripts/Base/base_level.gd" id="1_xfn32"]
 [ext_resource type="Texture2D" uid="uid://dg00ggsb0j8h8" path="res://Assets/Farm RPG - Tiny Asset Pack - (All in One)/Farm/Tileset/Modular/Extra Village Tilesets.png" id="2_6sftk"]
 [ext_resource type="PackedScene" uid="uid://8wxhe87tp7wl" path="res://Scenes/control/add_blocks.tscn" id="3_5bor5"]
 [ext_resource type="PackedScene" uid="uid://dryk3q7q864je" path="res://Scenes/level/smallStuffCandelsFireEtc/axeLayingDown.tscn" id="3_6sftk"]
 [ext_resource type="Script" uid="uid://w7gdvxxrvd8t" path="res://Scripts/Interface/camera_area_2d.gd" id="5_quc22"]
+[ext_resource type="PackedScene" uid="uid://cguwmvmbmn0bi" path="res://Scenes/level/change_scene.tscn" id="7_h4mfu"]
+[ext_resource type="PackedScene" uid="uid://63csupi0rdbt" path="res://Scenes/control/texttrigger.tscn" id="8_apev5"]
+[ext_resource type="PackedScene" uid="uid://bo0taruopxvnu" path="res://Scenes/control/border.tscn" id="9_5aho6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5bor5"]
 texture = ExtResource("1_833l0")
@@ -435,7 +439,9 @@ size = Vector2(16, 14)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h4mfu"]
 size = Vector2(255, 207)
 
-[node name="BarnLevel4" type="Node2D" unique_id=2064405445]
+[node name="BarnLevel4" type="Node2D" unique_id=2064405445 groups=["codelevel"]]
+script = ExtResource("1_xfn32")
+levelsFinished = 2
 
 [node name="Node" type="Node" parent="." unique_id=157838823]
 
@@ -455,42 +461,61 @@ tile_set = SubResource("TileSet_833l0")
 [node name="5" type="TileMapLayer" parent="Node" unique_id=660353577]
 
 [node name="CanvasLayer" parent="." unique_id=415209504 instance=ExtResource("3_5bor5")]
-If = false
+specialName = "Auf der Axt"
+For = false
+Return = false
+Right = false
+Down = false
+Up = false
 VarInput = false
-VarObject = false
-VarTrue = false
 VarFalse = false
 
 [node name="AxeLayingDown" parent="." unique_id=1445305113 instance=ExtResource("3_6sftk")]
-position = Vector2(89, 87)
-
-[node name="AxeLayingDown2" parent="." unique_id=1706722200 instance=ExtResource("3_6sftk")]
-position = Vector2(153, 90)
-
-[node name="AxeLayingDown3" parent="." unique_id=720899891 instance=ExtResource("3_6sftk")]
 position = Vector2(121, 89)
 
+[node name="AxeLayingDown2" parent="." unique_id=1706722200 instance=ExtResource("3_6sftk")]
+position = Vector2(153, 89)
+
+[node name="AxeLayingDown3" parent="." unique_id=720899891 instance=ExtResource("3_6sftk")]
+position = Vector2(169, 89)
+
 [node name="AxeLayingDown4" parent="." unique_id=915180279 instance=ExtResource("3_6sftk")]
-position = Vector2(57, 88)
+position = Vector2(105, 89)
 
 [node name="AxeLayingDown5" parent="." unique_id=725063482 instance=ExtResource("3_6sftk")]
-position = Vector2(185, 89)
+position = Vector2(137, 89)
 type = "metal"
 chosen_one = true
 
 [node name="CameraArea2D" type="Area2D" parent="." unique_id=992129701]
-position = Vector2(247, 507)
+position = Vector2(126, 105)
 script = ExtResource("5_quc22")
 
 [node name="Startposition" type="CollisionShape2D" parent="CameraArea2D" unique_id=1686804108 groups=["startingPosition"]]
 top_level = true
-position = Vector2(871, 1064)
+position = Vector2(200, 89)
 shape = SubResource("RectangleShape2D_xfn32")
 
 [node name="Timer" type="Timer" parent="CameraArea2D" unique_id=1064396715]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CameraArea2D" unique_id=1593719421]
-position = Vector2(-119.5, -404.5)
+position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_h4mfu")
+
+[node name="ChangeSceneArea" parent="." unique_id=1149694649 instance=ExtResource("7_h4mfu")]
+position = Vector2(121, 221)
+rotation = 1.5707964
+scale = Vector2(2, 2)
+new_position_for_player = Vector2(145, 351)
+
+[node name="Texttrigger" parent="." unique_id=1997264463 instance=ExtResource("8_apev5")]
+position = Vector2(202, 89)
+text = "Du hast jetzt neue Blöcke. Der Wenn dann Block vergleicht 2 var Blöcke. Du kannst einstellen ob er gleich oder nicht gleich schauen soll. Es gibt 2 Var Blöcke. Speziell schaut ob du auf der richtigen Axt stehst und ist dann Wahr. Der immer Wahr Block ist immer Wahr. Und jetzt hilf mir die richtige Axt zu finden."
+ab_wann = 1
+
+[node name="Border" parent="." unique_id=36005010 instance=ExtResource("9_5aho6")]
+position = Vector2(-10, 8)
+rotation = 1.5707964
+scale = Vector2(2, 2)
 
 [connection signal="timeout" from="CameraArea2D/Timer" to="CameraArea2D" method="_on_timer_timeout"]

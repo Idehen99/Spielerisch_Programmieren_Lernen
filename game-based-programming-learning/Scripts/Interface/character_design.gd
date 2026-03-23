@@ -8,10 +8,10 @@ extends Control
 
 
 func _ready() -> void:
-	if Settings.current_scene == "no_scene":
-		$CanvasLayer/HBoxContainer/Play.visible = false
-	else:
-		$CanvasLayer/HBoxContainer/LetsGo.visible = false
+	#if Settings.current_scene != "no_scene":
+	$CanvasLayer/HBoxContainer/Play.visible = false
+	#else:
+		#$CanvasLayer/HBoxContainer/LetsGo.visible = false
 	change_design()
 
 func _process(_delta: float) -> void:
@@ -106,6 +106,10 @@ func change_design():
 	Settings.EyeColor = EyeColor
 	Settings.HairColor = HairColor
 	Settings.HairStyle = Hairstyle
+	Settings.axeUnlocked = false
+	Settings.fire = false
+	Settings.levelFinished = 0
+	Settings.weizensack = false
 	
 	
 	
