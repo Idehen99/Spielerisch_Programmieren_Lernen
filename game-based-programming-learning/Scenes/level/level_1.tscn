@@ -5984,16 +5984,17 @@ position = Vector2(1, 3)
 script = ExtResource("1_bivn8")
 levelsFinished = 0
 
-[node name="BarnPink" parent="." unique_id=675540679 instance=ExtResource("2_xm4wk")]
+[node name="BarnBrown" parent="." unique_id=675540679 instance=ExtResource("2_xm4wk")]
 position = Vector2(983, 113)
-levelsFinished = 3
+destination = "res://Scenes/level/barn_level_6.tscn"
+new_position_for_player = Vector2(1769, 1047.5)
 
 [node name="Windmill" parent="." unique_id=933125499 instance=ExtResource("18_jbruj")]
 position = Vector2(1038, 527)
 destination = "res://Scenes/level/windmill_level_5.tscn"
 new_position_for_player = Vector2(135, 195)
 
-[node name="BarnPink2" parent="." unique_id=733834681 instance=ExtResource("2_xm4wk")]
+[node name="BarnRed" parent="." unique_id=733834681 instance=ExtResource("2_xm4wk")]
 position = Vector2(145, 304)
 destination = "res://Scenes/level/barn_level_4.tscn"
 color = "red"

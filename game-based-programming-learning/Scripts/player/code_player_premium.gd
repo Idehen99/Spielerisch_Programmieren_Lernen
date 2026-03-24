@@ -53,6 +53,7 @@ func _ready() -> void:
 			$CollisionShape2D/Eyes.change(mode, anim_name)
 			$CollisionShape2D/Skins.change(mode, anim_name)
 			$CollisionShape2D/Clothes.change(mode, anim_name)
+	$Timer.start(0.5)
 
 
 
@@ -194,6 +195,8 @@ func jump_animation():
 func _on_area_left_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Blockade") and get_tree().get_first_node_in_group("VarLinks"):
 		get_tree().get_first_node_in_group("VarLinks").change_sensor_state(true)
+	if body.is_in_group("free") and get_tree().get_first_node_in_group("VarLinks"):
+		get_tree().get_first_node_in_group("VarLinks").change_sensor_state(false)
 
 
 func _on_area_left_body_exited(body: Node2D) -> void:
@@ -204,6 +207,8 @@ func _on_area_left_body_exited(body: Node2D) -> void:
 func _on_area_right_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Blockade") and get_tree().get_first_node_in_group("VarRechts"):
 		get_tree().get_first_node_in_group("VarRechts").change_sensor_state(true)
+	if body.is_in_group("free") and get_tree().get_first_node_in_group("VarRechts"):
+		get_tree().get_first_node_in_group("VarRechts").change_sensor_state(false)
 
 
 func _on_area_right_body_exited(body: Node2D) -> void:
@@ -214,6 +219,9 @@ func _on_area_right_body_exited(body: Node2D) -> void:
 func _on_area_up_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Blockade") and get_tree().get_first_node_in_group("VarOben"):
 		get_tree().get_first_node_in_group("VarOben").change_sensor_state(true)
+	if body.is_in_group("free") and get_tree().get_first_node_in_group("VarOben"):
+		get_tree().get_first_node_in_group("VarOben").change_sensor_state(false)
+	
 
 
 func _on_area_up_body_exited(body: Node2D) -> void:
@@ -224,8 +232,18 @@ func _on_area_up_body_exited(body: Node2D) -> void:
 func _on_area_down_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Blockade") and get_tree().get_first_node_in_group("VarUnten"):
 		get_tree().get_first_node_in_group("VarUnten").change_sensor_state(true)
+	if body.is_in_group("free") and get_tree().get_first_node_in_group("VarUnten"):
+		get_tree().get_first_node_in_group("VarUnten").change_sensor_state(false)
 
 
 func _on_area_down_body_exited(body: Node2D) -> void:
 	if body.is_in_group("Blockade") and get_tree().get_first_node_in_group("VarUnten"):
 		get_tree().get_first_node_in_group("VarUnten").change_sensor_state(false)
+
+
+func _on_timer_timeout() -> void:
+	$AreaLeft.monitoring =  true #!$AreaLeft.monitoring
+	$AreaRight.monitoring = true #!$AreaRight.monitoring
+	$AreaUp.monitoring = true #!$AreaUp.monitoring
+	$AreaDown.monitoring = true #!$AreaDown.monitoring
+	#$Timer.start(0.5)

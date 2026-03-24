@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://bgqiqclykyj7l"]
+
+[ext_resource type="Texture2D" uid="uid://b37126mvughjn" path="res://Assets/Farm RPG - Tiny Asset Pack - (All in One)/Icons/Crops.png" id="1_c5ept"]
+[ext_resource type="Script" uid="uid://b18cfm6rglrgn" path="res://Scripts/interactives/cornsack.gd" id="1_wtisb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wtisb"]
+atlas = ExtResource("1_c5ept")
+region = Rect2(0, 177, 16, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5w8id"]
+atlas = ExtResource("1_c5ept")
+region = Rect2(16, 177, 16, 15)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1p8ph"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wtisb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5w8id")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4vsk7"]
+radius = 2.0
+height = 8.0
+
+[node name="Cornsack" type="Node2D" unique_id=2130974939 groups=["cornsack"]]
+z_index = 4
+script = ExtResource("1_wtisb")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1463437412]
+sprite_frames = SubResource("SpriteFrames_1p8ph")
+autoplay = "default"
+frame_progress = 0.91522336
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1578356855]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=157502979]
+position = Vector2(0, 2)
+shape = SubResource("CapsuleShape2D_4vsk7")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

@@ -435,7 +435,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="MovingWater" type="Node2D" unique_id=1681060633]
+[node name="MovingWater" type="Node2D" unique_id=1681060633 groups=["Blockade"]]
 script = ExtResource("1_qq5nd")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=556988535]

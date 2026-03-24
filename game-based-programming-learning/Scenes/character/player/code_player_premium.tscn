@@ -2467,24 +2467,21 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_704h8"]
-radius = 3.9999998
-height = 22.0
+radius = 2.0
+height = 4.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vss77"]
 radius = 4.0
-height = 20.0
+height = 8.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_howwv"]
 radius = 4.0
-height = 18.0
+height = 8.0
 
 [node name="codePlayer" type="CharacterBody2D" unique_id=1051168559 groups=["player"]]
 z_index = 10
 collision_mask = 3
 script = ExtResource("1_704h8")
-speed = null
-step_size = null
-axe_unlocked = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1548926677]
 shape = SubResource("CircleShape2D_8w3hh")
@@ -2526,15 +2523,15 @@ script = ExtResource("26_in7ad")
 [node name="AreaLeft" type="Area2D" parent="." unique_id=707213897]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaLeft" unique_id=162014387]
-position = Vector2(-4, 0)
+position = Vector2(-13, 0)
 rotation = -1.5707964
 shape = SubResource("CapsuleShape2D_704h8")
-debug_color = Color(4.813075e-08, 0.055518612, 0.07272255, 0.41960785)
+debug_color = Color(0, 1, 0.49019608, 0.41960785)
 
 [node name="AreaRight" type="Area2D" parent="." unique_id=1113526508]
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="AreaRight" unique_id=282906161]
-position = Vector2(4, 0)
+position = Vector2(14, 0)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_704h8")
 debug_color = Color(4.813075e-08, 0.055518612, 0.07272255, 0.41960785)
@@ -2542,16 +2539,18 @@ debug_color = Color(4.813075e-08, 0.055518612, 0.07272255, 0.41960785)
 [node name="AreaUp" type="Area2D" parent="." unique_id=1562571320]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaUp" unique_id=862322907]
-position = Vector2(0, -6)
+position = Vector2(0, -15)
 shape = SubResource("CapsuleShape2D_vss77")
-debug_color = Color(1, 1, 1, 0.41960785)
+debug_color = Color(1, 0, 1, 0.41960785)
 
-[node name="AreaDown" type="Area2D" parent="." unique_id=631118293 groups=["Blockade"]]
+[node name="AreaDown" type="Area2D" parent="." unique_id=631118293]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaDown" unique_id=1990052066]
-position = Vector2(0, 5)
+position = Vector2(0, 14)
 shape = SubResource("CapsuleShape2D_howwv")
 debug_color = Color(1, 1, 1, 0.41960785)
+
+[node name="Timer" type="Timer" parent="." unique_id=908491544]
 
 [connection signal="body_entered" from="AreaLeft" to="." method="_on_area_left_body_entered"]
 [connection signal="body_exited" from="AreaLeft" to="." method="_on_area_left_body_exited"]
@@ -2561,3 +2560,4 @@ debug_color = Color(1, 1, 1, 0.41960785)
 [connection signal="body_exited" from="AreaUp" to="." method="_on_area_up_body_exited"]
 [connection signal="body_entered" from="AreaDown" to="." method="_on_area_down_body_entered"]
 [connection signal="body_exited" from="AreaDown" to="." method="_on_area_down_body_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

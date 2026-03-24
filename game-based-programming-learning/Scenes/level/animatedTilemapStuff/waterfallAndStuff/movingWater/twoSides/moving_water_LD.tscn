@@ -402,10 +402,18 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="MovingWater" type="Node2D" unique_id=1681060633]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mb0iy"]
+size = Vector2(16, 16)
+
+[node name="MovingWater" type="Node2D" unique_id=1681060633 groups=["Blockade"]]
 script = ExtResource("1_2m3xu")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=556988535]
 sprite_frames = SubResource("SpriteFrames_vng3r")
 animation = &"LeftDown"
 autoplay = "LeftDown"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=707003129 groups=["Blockade"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1768927192]
+shape = SubResource("RectangleShape2D_mb0iy")
