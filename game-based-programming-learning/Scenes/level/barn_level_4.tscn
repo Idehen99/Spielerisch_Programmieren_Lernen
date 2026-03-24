@@ -441,7 +441,6 @@ size = Vector2(255, 207)
 
 [node name="BarnLevel4" type="Node2D" unique_id=2064405445 groups=["codelevel"]]
 script = ExtResource("1_xfn32")
-levelsFinished = 2
 
 [node name="Node" type="Node" parent="." unique_id=157838823]
 
@@ -503,10 +502,11 @@ position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_h4mfu")
 
 [node name="ChangeSceneArea" parent="." unique_id=1149694649 instance=ExtResource("7_h4mfu")]
-position = Vector2(121, 221)
+position = Vector2(261, 247)
 rotation = 1.5707964
 scale = Vector2(2, 2)
 new_position_for_player = Vector2(145, 351)
+angeschaltet = false
 
 [node name="Texttrigger" parent="." unique_id=1997264463 instance=ExtResource("8_apev5")]
 position = Vector2(202, 89)

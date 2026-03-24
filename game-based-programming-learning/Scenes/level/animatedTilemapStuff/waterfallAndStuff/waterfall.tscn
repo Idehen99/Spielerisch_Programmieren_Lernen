@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://dyspy4fd1d0ys"]
+
+[ext_resource type="Script" uid="uid://d0ygb1xlpo0wk" path="res://Scripts/interactives/waterfall.gd" id="1_5g6n2"]
+[ext_resource type="Texture2D" uid="uid://dlp0a8fuptm5c" path="res://Assets/Farm RPG - Tiny Asset Pack - (All in One)/Farm/Tileset/Modular/Tileset Grass Cliff Tileset Fall.png" id="1_bjx7l"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fa1vl"]
+atlas = ExtResource("1_bjx7l")
+region = Rect2(336, 96, 48, 63)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0ur2c"]
+atlas = ExtResource("1_bjx7l")
+region = Rect2(0, 96, 48, 63)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tfkw7"]
+atlas = ExtResource("1_bjx7l")
+region = Rect2(48, 96, 48, 63)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hxnns"]
+atlas = ExtResource("1_bjx7l")
+region = Rect2(96, 96, 48, 63)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1qwn8"]
+atlas = ExtResource("1_bjx7l")
+region = Rect2(144, 96, 48, 63)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_exrhg"]
+atlas = ExtResource("1_bjx7l")
+region = Rect2(192, 96, 48, 63)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lin1h"]
+atlas = ExtResource("1_bjx7l")
+region = Rect2(240, 96, 48, 63)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_odc2g"]
+atlas = ExtResource("1_bjx7l")
+region = Rect2(288, 96, 48, 63)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fa1vl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fa1vl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0ur2c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tfkw7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hxnns")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1qwn8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_exrhg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lin1h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_odc2g")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Waterfall" type="Node2D" unique_id=365385310]
+script = ExtResource("1_5g6n2")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1407598998]
+sprite_frames = SubResource("SpriteFrames_fa1vl")
+frame_progress = 0.9200589

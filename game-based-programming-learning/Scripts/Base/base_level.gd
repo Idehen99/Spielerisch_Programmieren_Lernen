@@ -6,6 +6,8 @@ var player
 func _ready() -> void:
 	if get_tree().get_first_node_in_group("codelevel"):
 		play = preload("res://Scenes/character/player/code_player.tscn")
+	if get_tree().get_first_node_in_group("codelevel"):
+		play = preload("res://Scenes/character/player/code_player_premium.tscn")
 	if get_tree().get_first_node_in_group("player")==null:
 		player = play.instantiate()
 		$CameraArea2D._worked(player.get_node("Camera2D"))

@@ -2452,7 +2452,7 @@ size = Vector2(255, 207)
 
 [node name="WindmillLevel5" type="Node2D" unique_id=330681141 groups=["codelevel"]]
 script = ExtResource("1_0xy4q")
-levelsFinished = 3
+levelsFinished = 2
 
 [node name="Node" type="Node" parent="." unique_id=1931842164]
 
@@ -2511,6 +2511,7 @@ shape = SubResource("RectangleShape2D_resfr")
 position = Vector2(135, 212)
 rotation = 1.5707964
 new_position_for_player = Vector2(1038, 570)
+angeschaltet = false
 
 [node name="Texttrigger" parent="." unique_id=1997264463 instance=ExtResource("16_d4ma6")]
 position = Vector2(135, 188)

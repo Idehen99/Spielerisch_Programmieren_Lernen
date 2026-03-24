@@ -55,6 +55,12 @@ textbox=""
 layer=""
 sendSignalToIf="sends an signal to the var that is used in if"
 weizensack=""
+codeLevelPremium=""
+VarRechts=""
+VarLinks=""
+VarOben=""
+VarUnten=""
+Blockade=""
 
 [input]
 

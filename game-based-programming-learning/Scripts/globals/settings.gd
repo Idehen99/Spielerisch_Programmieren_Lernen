@@ -40,6 +40,6 @@ func update_from_save():
 	if saveData.has("skins"): Skins = saveData["skins"]
 	if saveData.has("fire"): fire = saveData["fire"]
 	if saveData.has("axeUnlocked"): axeUnlocked = saveData["axeUnlocked"]
-	if saveData.has("levelFinished"): fire = saveData["levelFinished"]
-	if saveData.has("weizensack"): axeUnlocked = saveData["weizensack"]
+	if saveData.has("levelFinished"): levelFinished = saveData["levelFinished"]
+	if saveData.has("weizensack"): weizensack = saveData["weizensack"]
   

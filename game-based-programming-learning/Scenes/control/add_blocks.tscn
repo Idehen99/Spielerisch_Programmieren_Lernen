@@ -217,6 +217,22 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_s1g1s")
 theme_override_styles/hover = SubResource("StyleBoxFlat_xci7r")
 text = "Var Zahl"
 
+[node name="VarLinks" type="Button" parent="Buttons/VBoxContainer" unique_id=1578207178]
+layout_mode = 2
+text = "Links ist Blockiert"
+
+[node name="VarRechts" type="Button" parent="Buttons/VBoxContainer" unique_id=1951971532]
+layout_mode = 2
+text = "Rechts ist Blockiert"
+
+[node name="VarOben" type="Button" parent="Buttons/VBoxContainer" unique_id=902319585]
+layout_mode = 2
+text = "Oben ist Blockiert"
+
+[node name="VarUnten" type="Button" parent="Buttons/VBoxContainer" unique_id=1589182048]
+layout_mode = 2
+text = "Unten ist Blockiert"
+
 [node name="Trash" type="Panel" parent="." unique_id=1827184414]
 z_index = 13
 custom_minimum_size = Vector2(42, 0)
@@ -256,3 +272,7 @@ position = Vector2(574, 735)
 [connection signal="pressed" from="Buttons/VBoxContainer/VarTrue" to="." method="_on_var_true_pressed"]
 [connection signal="pressed" from="Buttons/VBoxContainer/VarFalse" to="." method="_on_var_false_pressed"]
 [connection signal="pressed" from="Buttons/VBoxContainer/VarInput" to="." method="_on_var_input_pressed"]
+[connection signal="pressed" from="Buttons/VBoxContainer/VarLinks" to="." method="_on_var_links_pressed"]
+[connection signal="pressed" from="Buttons/VBoxContainer/VarRechts" to="." method="_on_var_rechts_pressed"]
+[connection signal="pressed" from="Buttons/VBoxContainer/VarOben" to="." method="_on_var_oben_pressed"]
+[connection signal="pressed" from="Buttons/VBoxContainer/VarUnten" to="." method="_on_var_unten_pressed"]

@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://cun3x56kyvhuu"]
+
+[ext_resource type="Script" uid="uid://c5d3axv0erhj8" path="res://Scripts/interactives/moving_water.gd" id="1_2ffxh"]
+[ext_resource type="Texture2D" uid="uid://c5512jcw4bmqn" path="res://Assets/Farm RPG - Tiny Asset Pack - (All in One)/Farm/Tileset/Modular/Cave Water Ground animations tiles.png" id="2_ovlem"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gqhor"]
+atlas = ExtResource("2_ovlem")
+region = Rect2(368, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ssgn2"]
+atlas = ExtResource("2_ovlem")
+region = Rect2(368, 96, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3i3qt"]
+atlas = ExtResource("2_ovlem")
+region = Rect2(368, 160, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pkugn"]
+atlas = ExtResource("2_ovlem")
+region = Rect2(368, 224, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vng3r"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gqhor")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ssgn2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3i3qt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pkugn")
+}],
+"loop": true,
+"name": &"Right",
+"speed": 5.0
+}]
+
+[node name="MovingWater" type="Node2D" unique_id=1681060633]
+script = ExtResource("1_2ffxh")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=556988535]
+sprite_frames = SubResource("SpriteFrames_vng3r")
+animation = &"Right"
+autoplay = "Right"

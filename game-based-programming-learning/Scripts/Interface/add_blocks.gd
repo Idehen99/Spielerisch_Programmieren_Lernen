@@ -21,6 +21,10 @@ var Vari = preload("res://Scenes/Interface/blocks/var_Block.tscn")
 @export var VarObject = true
 @export var VarTrue = true
 @export var VarFalse = true
+@export var VarLinks = false
+@export var VarRechts = false
+@export var VarOben = false
+@export var VarUnten = false
 
 func _ready() -> void:
 	$Buttons/VBoxContainer/For.visible = For
@@ -34,7 +38,11 @@ func _ready() -> void:
 	$Buttons/VBoxContainer/VarObject.visible = VarObject
 	$Buttons/VBoxContainer/VarTrue.visible = VarTrue
 	$Buttons/VBoxContainer/VarFalse.visible = VarFalse
-
+	$Buttons/VBoxContainer/VarLinks.visible = VarLinks
+	$Buttons/VBoxContainer/VarRechts.visible = VarRechts
+	$Buttons/VBoxContainer/VarOben.visible = VarOben
+	$Buttons/VBoxContainer/VarUnten.visible = VarUnten
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	pass
@@ -102,3 +110,37 @@ func _on_var_false_pressed() -> void:
 	aria.sensor_name = "Nicht Wahr"
 	aria.change_sensor_state(false)
 	aria.change_type()
+
+
+
+
+func _on_var_links_pressed() -> void:
+	var aria = _create(Vari)
+	aria.special = true
+	aria.sensor_name = "Links Blockiert"
+	aria.add_to_group("VarLinks")
+	aria.change_type2()
+
+
+func _on_var_rechts_pressed() -> void:
+	var aria = _create(Vari)
+	aria.special = true
+	aria.sensor_name = "Rechts Blockiert"
+	aria.add_to_group("VarRechts")
+	aria.change_type2()
+
+
+func _on_var_oben_pressed() -> void:
+	var aria = _create(Vari)
+	aria.special = true
+	aria.sensor_name = "Oben Blockiert"
+	aria.add_to_group("VarOben")
+	aria.change_type2()
+
+
+func _on_var_unten_pressed() -> void:
+	var aria = _create(Vari)
+	aria.special = true
+	aria.sensor_name = "Unten Blockiert"
+	aria.add_to_group("VarUnten")
+	aria.change_type2()

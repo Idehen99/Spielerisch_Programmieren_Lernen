@@ -3231,9 +3231,10 @@ z_index = 6
 position = Vector2(760, 917)
 
 [node name="ChangeSceneArea" parent="." unique_id=1149694649 instance=ExtResource("6_t0agl")]
-position = Vector2(862, 1093)
+position = Vector2(863, 1126)
 rotation = 1.5707964
 new_position_for_player = Vector2(478, 292)
+angeschaltet = false
 
 [node name="CameraArea2D" type="Area2D" parent="." unique_id=2072872072]
 position = Vector2(862, 1000)

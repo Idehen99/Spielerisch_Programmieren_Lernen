@@ -1,6 +1,6 @@
 extends "res://Scripts/block/code_Block.gd"
 
-enum VarModus { INPUT, OBJECT }
+enum VarModus { INPUT, OBJECT, NAVIGATOR }
 @export var modus: VarModus = VarModus.INPUT
 @export var sensor_name: String = "sensor1" # Name für die Area2D-Erkennung
 @export var special = false
@@ -16,10 +16,13 @@ func _ready():
 		line_edit.visible = false
 		Baki.visible = true
 		Baki.text = sensor_name
-	else:
+	elif modus == VarModus.INPUT:
 		line_edit.visible = true
 		Baki.visible = false
-		
+	else:
+		line_edit.visible = false
+		Baki.visible = true
+		Baki.text = sensor_name
 
 # Diese Funktion wird vom Builder aufgerufen
 func get_block_value():
@@ -36,6 +39,12 @@ func change_sensor_state(bob):
 
 func change_type():
 	modus = VarModus.OBJECT
+	line_edit.visible = false
+	Baki.visible = true
+	Baki.text = sensor_name
+
+func change_type2():
+	modus = VarModus.NAVIGATOR
 	line_edit.visible = false
 	Baki.visible = true
 	Baki.text = sensor_name

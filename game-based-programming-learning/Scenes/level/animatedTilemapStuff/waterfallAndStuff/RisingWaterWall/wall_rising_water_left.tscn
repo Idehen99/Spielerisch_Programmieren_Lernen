@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://diyi068yktwxp"]
+
+[ext_resource type="Texture2D" uid="uid://dlp0a8fuptm5c" path="res://Assets/Farm RPG - Tiny Asset Pack - (All in One)/Farm/Tileset/Modular/Tileset Grass Cliff Tileset Fall.png" id="1_gx4ca"]
+[ext_resource type="Script" uid="uid://d0ygb1xlpo0wk" path="res://Scripts/interactives/waterfall.gd" id="1_jvy0j"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gx4ca"]
+atlas = ExtResource("1_gx4ca")
+region = Rect2(0, 81, 16, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jvy0j"]
+atlas = ExtResource("1_gx4ca")
+region = Rect2(48, 81, 16, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fsa43"]
+atlas = ExtResource("1_gx4ca")
+region = Rect2(96, 81, 16, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ud0wv"]
+atlas = ExtResource("1_gx4ca")
+region = Rect2(144, 81, 16, 14)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7bhrs"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gx4ca")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gx4ca")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jvy0j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jvy0j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fsa43")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fsa43")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ud0wv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ud0wv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="WallRisingWaterLeft" type="Node2D" unique_id=1041505850]
+script = ExtResource("1_jvy0j")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=840342954]
+sprite_frames = SubResource("SpriteFrames_7bhrs")

@@ -5986,7 +5986,7 @@ levelsFinished = 0
 
 [node name="BarnPink" parent="." unique_id=675540679 instance=ExtResource("2_xm4wk")]
 position = Vector2(983, 113)
-levelsFinished = 1
+levelsFinished = 3
 
 [node name="Windmill" parent="." unique_id=933125499 instance=ExtResource("18_jbruj")]
 position = Vector2(1038, 527)
@@ -5998,7 +5998,7 @@ position = Vector2(145, 304)
 destination = "res://Scenes/level/barn_level_4.tscn"
 color = "red"
 new_position_for_player = Vector2(185, 84)
-levelsFinished = 3
+levelsFinished = 1
 
 [node name="ChickenCoop" parent="." unique_id=1834234604 instance=ExtResource("25_lge3y")]
 position = Vector2(395, 292)
@@ -6088,7 +6088,6 @@ position = Vector2(464, 283)
 scale = Vector2(0.6, 1)
 destination = "res://Scenes/level/house_level_3.tscn"
 new_position_for_player = Vector2(871, 1060)
-angeschaltet = false
 
 [node name="Texttrigger" parent="." unique_id=1997264463 instance=ExtResource("16_h5k6w")]
 position = Vector2(399, 489)
