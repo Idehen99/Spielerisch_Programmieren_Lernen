@@ -191,5 +191,5 @@ func jump_animation():
 	tween.tween_property(self, "position:y", position.y, 0.15).set_ease(Tween.EASE_IN)
 	await tween.finished
 
-func no_border_crosser( yes):
+func no_border_crosser(yes):
 	no_border_crossed=yes

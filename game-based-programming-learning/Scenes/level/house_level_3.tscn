@@ -3282,6 +3282,19 @@ scale = Vector2(0.06676467, 2.0515687)
 
 [node name="Texttrigger" parent="." unique_id=1997264463 instance=ExtResource("12_t7uvu")]
 position = Vector2(871, 1062)
-text = "Hallo Spieler.  Bitte hilf mir die Kerze zu holen. Ich kann mich hier Alleine nicht bewegen. Links auf den Knöpfen kannst du Blöcke erschaffen. Ziehe die Blöcke mit der Maus in den Kasten rechts. Dann drücke oben Links auf die Pfeiltaste. Mit der Kreispfeiltaste kannst du es nochmal von vorne probieren.  Mit dem Aus Knopf kannst du das Level beenden. Jetzt Los!."
+text = "Hallo Spieler.  Bitte hilf mir die Kerze zu holen. Ich kann mich hier Alleine nicht bewegen. Links auf den Knöpfen kannst du Blöcke erschaffen. Ziehe die Blöcke mit der Maus in den Kasten rechts. Dann drücke oben Links auf die Pfeiltaste. Mit der Kreispfeiltaste kannst du es nochmal von vorne probieren. Und wieder an der gleichen Stelle starten.  Mit dem Aus Knopf kannst du das Level beenden.  Mit dem X Knopf unter dem Kasten kannst du den Kasten leeren. Jetzt Los!."
+
+[node name="Border4" parent="." unique_id=476902467 instance=ExtResource("11_c2fki")]
+position = Vector2(1045, 921.00006)
+rotation = 1.5707964
+scale = Vector2(1.5, 1.5)
+
+[node name="Border5" parent="." unique_id=1197100507 instance=ExtResource("11_c2fki")]
+position = Vector2(656, 1091)
+scale = Vector2(1.5, 1.5)
+
+[node name="Border6" parent="." unique_id=242516308 instance=ExtResource("11_c2fki")]
+position = Vector2(885, 1090)
+scale = Vector2(1.5, 1.5)
 
 [connection signal="timeout" from="CameraArea2D/Timer" to="CameraArea2D" method="_on_timer_timeout"]

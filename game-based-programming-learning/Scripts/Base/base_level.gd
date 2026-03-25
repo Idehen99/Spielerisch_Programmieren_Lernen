@@ -6,7 +6,7 @@ var player
 func _ready() -> void:
 	if get_tree().get_first_node_in_group("codelevel"):
 		play = preload("res://Scenes/character/player/code_player.tscn")
-	if get_tree().get_first_node_in_group("codelevel"):
+	if get_tree().get_first_node_in_group("codeLevelPremium"):
 		play = preload("res://Scenes/character/player/code_player_premium.tscn")
 	if get_tree().get_first_node_in_group("player")==null:
 		player = play.instantiate()
@@ -15,7 +15,11 @@ func _ready() -> void:
 		player.add_to_group("player")
 	Settings.current_scene = scene_file_path
 	fire()
-	print(Settings.levelFinished)
+	if player:
+		if player.has_method("no_border_crosser"):
+			player.no_border_crosser(true)
+	print(Settings.levelFinished, play)
+	
 
 
 func fire():
@@ -56,4 +60,7 @@ func _finished_level():
 func finished_level(levelGotFinished):
 	if Settings.levelFinished < levelGotFinished:
 		Settings.levelFinished = levelGotFinished
+	if get_tree().get_first_node_in_group("finish"):
+		get_tree().get_first_node_in_group("finish").monitoring = false
+		get_tree().get_first_node_in_group("finish").monitoring = true
 	print(levelsFinished, levelGotFinished, Settings.levelFinished)

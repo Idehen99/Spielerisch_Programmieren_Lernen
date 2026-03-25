@@ -439,7 +439,7 @@ size = Vector2(16, 14)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h4mfu"]
 size = Vector2(255, 207)
 
-[node name="BarnLevel4" type="Node2D" unique_id=2064405445 groups=["codelevel"]]
+[node name="BarnLevel4" type="Node2D" unique_id=2064405445 groups=["codeLevelPremium", "codelevel"]]
 script = ExtResource("1_xfn32")
 levelsFinished = 2
 
@@ -493,7 +493,7 @@ script = ExtResource("5_quc22")
 
 [node name="Startposition" type="CollisionShape2D" parent="CameraArea2D" unique_id=1686804108 groups=["startingPosition"]]
 top_level = true
-position = Vector2(200, 89)
+position = Vector2(229, 137)
 shape = SubResource("RectangleShape2D_xfn32")
 
 [node name="Timer" type="Timer" parent="CameraArea2D" unique_id=1064396715]
@@ -510,13 +510,22 @@ new_position_for_player = Vector2(145, 351)
 angeschaltet = false
 
 [node name="Texttrigger" parent="." unique_id=1997264463 instance=ExtResource("8_apev5")]
-position = Vector2(202, 89)
+position = Vector2(225, 89)
 text = "Du hast jetzt neue Blöcke. Der Wenn dann Block vergleicht 2 var Blöcke. Du kannst einstellen ob er gleich oder nicht gleich schauen soll. Es gibt 2 Var Blöcke. Speziell schaut ob du auf der richtigen Axt stehst und ist dann Wahr. Der immer Wahr Block ist immer Wahr. Und jetzt hilf mir die richtige Axt zu finden."
 ab_wann = 1
 
 [node name="Border" parent="." unique_id=36005010 instance=ExtResource("9_5aho6")]
-position = Vector2(-10, 8)
+position = Vector2(-8, 82)
 rotation = 1.5707964
 scale = Vector2(2, 2)
+
+[node name="Texttrigger2" parent="." unique_id=1814455065 instance=ExtResource("8_apev5")]
+position = Vector2(136, 89)
+ab_wann = 2
+
+[node name="Texttrigger3" parent="." unique_id=1569570701 groups=["finish"] instance=ExtResource("8_apev5")]
+position = Vector2(136, 89)
+text = "Du hast die Axt gefunden. Lass uns die Scheune verlassen."
+ab_wann = 2
 
 [connection signal="timeout" from="CameraArea2D/Timer" to="CameraArea2D" method="_on_timer_timeout"]

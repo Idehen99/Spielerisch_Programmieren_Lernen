@@ -9699,12 +9699,12 @@ position = Vector2(1769, 1048)
 text = "Bitte Sammel die beiden Säcke ein. Und dann lass uns zu den Hühnern gehen."
 ab_wann = 3
 
-[node name="Texttrigger3" parent="." unique_id=5416514 instance=ExtResource("51_q6kta")]
+[node name="Texttrigger3" parent="." unique_id=5416514 groups=["finish"] instance=ExtResource("51_q6kta")]
 position = Vector2(1862, 1015)
 text = "Und jetzt zum Hühnerstall"
 ab_wann = 4
 
-[node name="Texttrigger2" parent="." unique_id=1719653805 instance=ExtResource("51_q6kta")]
+[node name="Texttrigger2" parent="." unique_id=1719653805 groups=["finish"] instance=ExtResource("51_q6kta")]
 position = Vector2(1702, 1017)
 text = "Und jetzt zum Hühnerstall"
 ab_wann = 4

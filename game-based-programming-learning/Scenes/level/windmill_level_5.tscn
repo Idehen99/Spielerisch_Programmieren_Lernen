@@ -2508,7 +2508,7 @@ position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_resfr")
 
 [node name="ChangeSceneArea" parent="." unique_id=1149694649 instance=ExtResource("14_rj6w7")]
-position = Vector2(135, 212)
+position = Vector2(135, 218)
 rotation = 1.5707964
 new_position_for_player = Vector2(1038, 570)
 angeschaltet = false
@@ -2521,7 +2521,7 @@ ab_wann = 2
 [node name="Border" parent="." unique_id=36005010 instance=ExtResource("17_yyn53")]
 position = Vector2(87, 31)
 
-[node name="Texttrigger2" parent="." unique_id=480143508 instance=ExtResource("16_d4ma6")]
+[node name="Texttrigger2" parent="." unique_id=480143508 groups=["finish"] instance=ExtResource("16_d4ma6")]
 position = Vector2(135, 73)
 text = "Gut, wir haben das Mehl. Lass uns die Mühle Verlassen."
 ab_wann = 3
