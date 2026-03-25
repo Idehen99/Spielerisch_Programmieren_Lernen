@@ -14,3 +14,4 @@ func _process(_delta: float) -> void:
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		get_tree().get_first_node_in_group("runner").wall_contact(true)
+		body.no_border_crosser(false)

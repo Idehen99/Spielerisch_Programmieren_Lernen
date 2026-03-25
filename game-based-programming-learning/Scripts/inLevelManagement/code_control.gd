@@ -38,6 +38,7 @@ func _on_back_to_level_pressed() -> void:
 		if get_tree().get_first_node_in_group("player")!=null:
 			player = get_tree().get_first_node_in_group("player")
 			player.position = stuff.position
+			player.no_border_crosser(true)
 
 
 func _on_delete_all_button_pressed() -> void:

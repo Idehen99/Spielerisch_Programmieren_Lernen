@@ -12,7 +12,7 @@ var dir: Direction = Direction.DOWN
 
 var direction_str = "Down"
 var mode_str = "idle"
-
+var no_border_crossed = true
 var is_busy := false
 var free_to_walk = false
 @onready var parts = [
@@ -182,23 +182,24 @@ func _on_animation_finished():
 func move_step(direction: Vector2):
 	# Wir erstellen einen Tween für eine flüssige Bewegung
 	# Wenn du es sofort "beamen" willst, nutze: global_position += direction * step_size
-	var tween = create_tween()
-	var target_pos = global_position + (direction * step_size)
-	
-	# Bewegt den Player in 0.3 Sekunden zum Ziel
-	$AreaLeft.monitoring = false
-	$AreaRight.monitoring = false
-	$AreaUp.monitoring = false
-	$AreaDown.monitoring = false
-	$AreaLeft.monitoring = true
-	$AreaRight.monitoring = true
-	$AreaUp.monitoring = true
-	$AreaDown.monitoring = true
-	tween.tween_property(self, "global_position", target_pos, 1).set_trans(Tween.TRANS_SINE)
-	
-	
-	# Wir warten, bis die Animation fertig ist
-	await tween.finished
+	if no_border_crossed:
+		var tween = create_tween()
+		var target_pos = global_position + (direction * step_size)
+		
+		# Bewegt den Player in 0.3 Sekunden zum Ziel
+		$AreaLeft.monitoring = false
+		$AreaRight.monitoring = false
+		$AreaUp.monitoring = false
+		$AreaDown.monitoring = false
+		$AreaLeft.monitoring = true
+		$AreaRight.monitoring = true
+		$AreaUp.monitoring = true
+		$AreaDown.monitoring = true
+		tween.tween_property(self, "global_position", target_pos, 1).set_trans(Tween.TRANS_SINE)
+		
+		
+		# Wir warten, bis die Animation fertig ist
+		await tween.finished
 
 func jump_animation():
 	var tween = create_tween()
@@ -267,3 +268,6 @@ func _on_timer_timeout() -> void:
 	$AreaUp.monitoring = true #!$AreaUp.monitoring
 	$AreaDown.monitoring = true #!$AreaDown.monitoring
 	#$Timer.start(0.5)
+
+func no_border_crosser( yes):
+	no_border_crossed=yes
