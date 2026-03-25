@@ -191,7 +191,34 @@ func _on_red_pressed() -> void:
 
 
 func _on_lets_go_pressed() -> void:
-	get_tree().change_scene_to_file("res://Scenes/level/level_1.tscn")
+	var level = "res://Scenes/level/level_1.tscn"
+	var player_pos = Vector2(407.0,485.0)
+	var gender = Settings.Gender
+	var  all_data = {
+		"actual_scene":level,
+		"player_pos": player_pos,
+		"inventory": "inventory",
+		"new": false,
+		"gender":gender,
+		"hair_color": Settings.HairColor,
+		"hair_style": Settings.HairStyle,
+		"eye_color": Settings.EyeColor,
+		"clothes": Settings.Clothes,
+		"skins": Settings.Skins,
+		"fire": Settings.fire,
+		"axeUnlocked": Settings.axeUnlocked,
+		"levelFinished":Settings.levelFinished,
+		"weizensack":Settings.weizensack
+	}
+	
+	Savefile.save_all(Settings.Spielstand, all_data)
+	Settings.saveData = Savefile.load_all(Settings.Spielstand)
+	Settings.update_from_save()
+	var scene = Savefile.load_variable(1,"actual_scene", "n")
+	get_tree().change_scene_to_file(scene)
+	#Savefile.load_all(Settings.Spielstand)
+	#Settings.changeling()
+	
 
 
 func _on_play_pressed() -> void:

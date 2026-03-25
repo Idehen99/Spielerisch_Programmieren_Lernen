@@ -17,7 +17,7 @@ var fire = false
 
 
 var sceneChange = false
-var spawnPosition: Vector2
+var spawnPosition: Vector2 = Vector2(407.0,485.0)
 
 func _on_change_scene_spawn_position(vec: Vector2):
 	spawnPosition = vec
@@ -43,3 +43,6 @@ func update_from_save():
 	if saveData.has("levelFinished"): levelFinished = saveData["levelFinished"]
 	if saveData.has("weizensack"): weizensack = saveData["weizensack"]
   
+func changeling():
+	await get_tree().change_scene_to_file("res://Scenes/level/house_level_3.tscn")
+	await get_tree().change_scene_to_file("res://Scenes/level/level_1.tscn")

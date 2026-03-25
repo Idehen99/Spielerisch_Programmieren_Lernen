@@ -117,7 +117,7 @@ func _on_var_false_pressed() -> void:
 func _on_var_links_pressed() -> void:
 	var aria = _create(Vari)
 	aria.special = true
-	aria.sensor_name = "Links Blockiert"
+	aria.sensor_name = "Links versperrt"
 	aria.add_to_group("VarLinks")
 	aria.change_type2()
 
@@ -125,7 +125,7 @@ func _on_var_links_pressed() -> void:
 func _on_var_rechts_pressed() -> void:
 	var aria = _create(Vari)
 	aria.special = true
-	aria.sensor_name = "Rechts Blockiert"
+	aria.sensor_name = "Rechts versperrt"
 	aria.add_to_group("VarRechts")
 	aria.change_type2()
 
@@ -133,7 +133,7 @@ func _on_var_rechts_pressed() -> void:
 func _on_var_oben_pressed() -> void:
 	var aria = _create(Vari)
 	aria.special = true
-	aria.sensor_name = "Oben Blockiert"
+	aria.sensor_name = "Oben versperrt"
 	aria.add_to_group("VarOben")
 	aria.change_type2()
 
@@ -141,6 +141,6 @@ func _on_var_oben_pressed() -> void:
 func _on_var_unten_pressed() -> void:
 	var aria = _create(Vari)
 	aria.special = true
-	aria.sensor_name = "Unten Blockiert"
+	aria.sensor_name = "Unten versperrt"
 	aria.add_to_group("VarUnten")
 	aria.change_type2()

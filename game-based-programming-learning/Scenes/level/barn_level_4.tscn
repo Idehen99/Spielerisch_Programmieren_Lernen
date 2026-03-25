@@ -441,6 +441,7 @@ size = Vector2(255, 207)
 
 [node name="BarnLevel4" type="Node2D" unique_id=2064405445 groups=["codelevel"]]
 script = ExtResource("1_xfn32")
+levelsFinished = 2
 
 [node name="Node" type="Node" parent="." unique_id=157838823]
 

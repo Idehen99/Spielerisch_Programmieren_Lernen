@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cewa3hodo3d01"]
 
 [ext_resource type="Texture2D" uid="uid://dyjkfo3kytyjf" path="res://Assets/Farm RPG - Tiny Asset Pack - (All in One)/Interior/Xmas.png" id="1_2kjmh"]
+[ext_resource type="Script" uid="uid://olpiqyjxxqoe" path="res://Scripts/interactives/chicken_wings.gd" id="1_aqlrw"]
 [ext_resource type="Texture2D" uid="uid://dr8btfgxpi2hj" path="res://Assets/Farm RPG - Tiny Asset Pack - (All in One)/Farm Animals/Chicken/Chicken White.png" id="2_aqlrw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n0qnb"]
@@ -145,9 +146,26 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2kjmh"]
+
 [node name="ChickenWings" type="Node2D" unique_id=1922860853]
+z_index = 4
+script = ExtResource("1_aqlrw")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=199221781]
 sprite_frames = SubResource("SpriteFrames_lc7k8")
-animation = &"picking"
-frame_progress = 0.7441026
+animation = &"sit"
+autoplay = "sit"
+frame_progress = 0.5587632
+
+[node name="Area2D" type="Area2D" parent="." unique_id=393827829]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=859037134]
+scale = Vector2(2, 2)
+shape = SubResource("RectangleShape2D_2kjmh")
+
+[node name="Timer" type="Timer" parent="." unique_id=2052955263]
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

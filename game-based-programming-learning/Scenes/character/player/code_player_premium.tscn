@@ -2471,12 +2471,12 @@ radius = 2.0
 height = 4.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vss77"]
-radius = 4.0
-height = 8.0
+radius = 3.0
+height = 6.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_howwv"]
-radius = 4.0
-height = 8.0
+radius = 3.0
+height = 6.0
 
 [node name="codePlayer" type="CharacterBody2D" unique_id=1051168559 groups=["player"]]
 z_index = 10
@@ -2546,18 +2546,14 @@ debug_color = Color(1, 0, 1, 0.41960785)
 [node name="AreaDown" type="Area2D" parent="." unique_id=631118293]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaDown" unique_id=1990052066]
-position = Vector2(0, 14)
+position = Vector2(0, 16)
 shape = SubResource("CapsuleShape2D_howwv")
 debug_color = Color(1, 1, 1, 0.41960785)
 
 [node name="Timer" type="Timer" parent="." unique_id=908491544]
 
 [connection signal="body_entered" from="AreaLeft" to="." method="_on_area_left_body_entered"]
-[connection signal="body_exited" from="AreaLeft" to="." method="_on_area_left_body_exited"]
 [connection signal="body_entered" from="AreaRight" to="." method="_on_area_right_body_entered"]
-[connection signal="body_exited" from="AreaRight" to="." method="_on_area_right_body_exited"]
 [connection signal="body_entered" from="AreaUp" to="." method="_on_area_up_body_entered"]
-[connection signal="body_exited" from="AreaUp" to="." method="_on_area_up_body_exited"]
 [connection signal="body_entered" from="AreaDown" to="." method="_on_area_down_body_entered"]
-[connection signal="body_exited" from="AreaDown" to="." method="_on_area_down_body_exited"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

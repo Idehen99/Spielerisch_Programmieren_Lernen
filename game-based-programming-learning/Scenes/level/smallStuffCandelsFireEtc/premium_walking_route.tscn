@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://bsh3l6lbjkklj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jiuse"]
+
+[node name="Node2D" type="Node2D" unique_id=2080133503 groups=["free"]]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=207971845 groups=["free"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1505845526]
+shape = SubResource("RectangleShape2D_jiuse")

@@ -49,6 +49,8 @@
 [ext_resource type="Texture2D" uid="uid://dg00ggsb0j8h8" path="res://Assets/Farm RPG - Tiny Asset Pack - (All in One)/Farm/Tileset/Modular/Extra Village Tilesets.png" id="44_nnhtq"]
 [ext_resource type="PackedScene" uid="uid://cguwmvmbmn0bi" path="res://Scenes/level/change_scene.tscn" id="46_3objl"]
 [ext_resource type="PackedScene" uid="uid://bgqiqclykyj7l" path="res://Scenes/level/smallStuffCandelsFireEtc/cornsack.tscn" id="49_a2ksn"]
+[ext_resource type="PackedScene" uid="uid://bsh3l6lbjkklj" path="res://Scenes/level/smallStuffCandelsFireEtc/premium_walking_route.tscn" id="50_srvvp"]
+[ext_resource type="PackedScene" uid="uid://63csupi0rdbt" path="res://Scenes/control/texttrigger.tscn" id="51_q6kta"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o6v3s"]
 texture = ExtResource("1_x6dfb")
@@ -9314,11 +9316,14 @@ sources/0 = SubResource("TileSetAtlasSource_s8nyk")
 size = Vector2(16, 14)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jmtan"]
-size = Vector2(255, 207)
+size = Vector2(342, 279.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_srvvp"]
+size = Vector2(16, 16)
 
 [node name="BarnLevel6" type="Node2D" unique_id=246111402 groups=["codeLevelPremium", "codelevel"]]
 script = ExtResource("1_3objl")
-levelsFinished = 3
+levelsFinished = 4
 
 [node name="Node" type="Node" parent="." unique_id=65616903]
 
@@ -9394,7 +9399,7 @@ shape = SubResource("RectangleShape2D_6f1wm")
 [node name="Timer" type="Timer" parent="CameraArea2D" unique_id=1558677556]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CameraArea2D" unique_id=556634767]
-position = Vector2(592, 301)
+position = Vector2(591, 264.75)
 shape = SubResource("RectangleShape2D_jmtan")
 
 [node name="ChangeSceneArea" parent="." unique_id=1149694649 instance=ExtResource("46_3objl")]
@@ -9404,9 +9409,304 @@ new_position_for_player = Vector2(981, 151)
 angeschaltet = false
 
 [node name="Cornsack" parent="." unique_id=2130974939 instance=ExtResource("49_a2ksn")]
-position = Vector2(1720, 1031)
+position = Vector2(1703, 1016)
 
 [node name="Cornsack2" parent="." unique_id=1055875448 instance=ExtResource("49_a2ksn")]
-position = Vector2(1818, 1047)
+position = Vector2(1864, 1014)
+
+[node name="walkingRoute" type="Node" parent="." unique_id=91937725]
+
+[node name="Node2D" parent="walkingRoute" unique_id=2080133503 instance=ExtResource("50_srvvp")]
+z_index = 4
+position = Vector2(1768, 1048)
+scale = Vector2(0.6, 0.6)
+
+[node name="Node2D2" parent="walkingRoute" unique_id=1579968389 instance=ExtResource("50_srvvp")]
+z_index = 4
+position = Vector2(1752, 1048)
+scale = Vector2(0.6, 0.6)
+
+[node name="Node2D3" parent="walkingRoute" unique_id=2062543529 instance=ExtResource("50_srvvp")]
+z_index = 4
+position = Vector2(1737, 1048.0001)
+scale = Vector2(0.6, 0.6)
+
+[node name="Node2D4" parent="walkingRoute" unique_id=205252263 instance=ExtResource("50_srvvp")]
+z_index = 4
+position = Vector2(1704, 1017)
+scale = Vector2(0.6, 0.6)
+
+[node name="Node2D5" parent="walkingRoute" unique_id=1264039721 instance=ExtResource("50_srvvp")]
+z_index = 4
+position = Vector2(1785, 1048)
+scale = Vector2(0.6, 0.6)
+
+[node name="Node2D6" parent="walkingRoute" unique_id=608829883 instance=ExtResource("50_srvvp")]
+z_index = 4
+position = Vector2(1719, 1017)
+scale = Vector2(0.6, 0.6)
+
+[node name="Node2D7" parent="walkingRoute" unique_id=124760306 instance=ExtResource("50_srvvp")]
+z_index = 4
+position = Vector2(1720, 1033)
+scale = Vector2(0.6, 0.6)
+
+[node name="Node2D8" parent="walkingRoute" unique_id=579468072 instance=ExtResource("50_srvvp")]
+z_index = 4
+position = Vector2(1721, 1048)
+scale = Vector2(0.6, 0.6)
+
+[node name="Node2D9" parent="walkingRoute" unique_id=1051386322 instance=ExtResource("50_srvvp")]
+z_index = 4
+position = Vector2(1832, 1048)
+scale = Vector2(0.6, 0.6)
+
+[node name="Node2D10" parent="walkingRoute" unique_id=2116023146 instance=ExtResource("50_srvvp")]
+z_index = 4
+position = Vector2(1816, 1048)
+scale = Vector2(0.6, 0.6)
+
+[node name="Node2D11" parent="walkingRoute" unique_id=1623674854 instance=ExtResource("50_srvvp")]
+z_index = 4
+position = Vector2(1800, 1048)
+scale = Vector2(0.6, 0.6)
+
+[node name="Node2D12" parent="walkingRoute" unique_id=1485652894 instance=ExtResource("50_srvvp")]
+z_index = 4
+position = Vector2(1849, 1049)
+scale = Vector2(0.6, 0.6)
+
+[node name="Node2D13" parent="walkingRoute" unique_id=869550192 instance=ExtResource("50_srvvp")]
+z_index = 4
+position = Vector2(1864, 1049)
+scale = Vector2(0.6, 0.6)
+
+[node name="Node2D14" parent="walkingRoute" unique_id=1857537195 instance=ExtResource("50_srvvp")]
+z_index = 4
+position = Vector2(1880, 1049)
+scale = Vector2(0.6, 0.6)
+
+[node name="Node2D15" parent="walkingRoute" unique_id=509933143 instance=ExtResource("50_srvvp")]
+z_index = 4
+position = Vector2(1879, 1032)
+scale = Vector2(0.6, 0.6)
+
+[node name="Node2D16" parent="walkingRoute" unique_id=4140746 instance=ExtResource("50_srvvp")]
+z_index = 4
+position = Vector2(1880, 1016)
+scale = Vector2(0.6, 0.6)
+
+[node name="Node2D17" parent="walkingRoute" unique_id=143485060 instance=ExtResource("50_srvvp")]
+z_index = 4
+position = Vector2(1864, 1016)
+scale = Vector2(0.6, 0.6)
+
+[node name="Node2D18" parent="walkingRoute" unique_id=939134928 instance=ExtResource("50_srvvp")]
+z_index = 4
+position = Vector2(1849, 1016)
+scale = Vector2(0.6, 0.6)
+
+[node name="Node2D19" parent="walkingRoute" unique_id=249787237 instance=ExtResource("50_srvvp")]
+z_index = 4
+position = Vector2(1832, 1016)
+scale = Vector2(0.6, 0.6)
+
+[node name="Node2D20" parent="walkingRoute" unique_id=1127883811 instance=ExtResource("50_srvvp")]
+z_index = 4
+position = Vector2(1816, 1016)
+scale = Vector2(0.6, 0.6)
+
+[node name="Node2D21" parent="walkingRoute" unique_id=104196663 instance=ExtResource("50_srvvp")]
+z_index = 4
+position = Vector2(1801, 1016)
+scale = Vector2(0.6, 0.6)
+
+[node name="Node2D22" parent="walkingRoute" unique_id=25646755 instance=ExtResource("50_srvvp")]
+z_index = 4
+position = Vector2(1784, 1016)
+scale = Vector2(0.6, 0.6)
+
+[node name="Node2D23" parent="walkingRoute" unique_id=226943277 instance=ExtResource("50_srvvp")]
+z_index = 4
+position = Vector2(1880, 983)
+scale = Vector2(0.6, 0.6)
+
+[node name="Node2D24" parent="walkingRoute" unique_id=2082284419 instance=ExtResource("50_srvvp")]
+z_index = 4
+position = Vector2(1864, 984)
+scale = Vector2(0.6, 0.6)
+
+[node name="Node2D25" parent="walkingRoute" unique_id=1825970382 instance=ExtResource("50_srvvp")]
+z_index = 4
+position = Vector2(1849, 984)
+scale = Vector2(0.6, 0.6)
+
+[node name="Node2D26" parent="walkingRoute" unique_id=415129308 instance=ExtResource("50_srvvp")]
+z_index = 4
+position = Vector2(1832, 984)
+scale = Vector2(0.6, 0.6)
+
+[node name="Node2D27" parent="walkingRoute" unique_id=425754481 instance=ExtResource("50_srvvp")]
+z_index = 4
+position = Vector2(1816, 984)
+scale = Vector2(0.6, 0.6)
+
+[node name="Node2D28" parent="walkingRoute" unique_id=1628494127 instance=ExtResource("50_srvvp")]
+z_index = 4
+position = Vector2(1800, 983)
+scale = Vector2(0.6, 0.6)
+
+[node name="Node2D29" parent="walkingRoute" unique_id=1881449827 instance=ExtResource("50_srvvp")]
+z_index = 4
+position = Vector2(1784, 983)
+scale = Vector2(0.6, 0.6)
+
+[node name="Node2D30" parent="walkingRoute" unique_id=1873160023 instance=ExtResource("50_srvvp")]
+z_index = 4
+position = Vector2(1784, 1000)
+scale = Vector2(0.6, 0.6)
+
+[node name="Node2D31" parent="walkingRoute" unique_id=1323198664 instance=ExtResource("50_srvvp")]
+z_index = 4
+position = Vector2(1864, 888)
+scale = Vector2(0.6, 0.6)
+
+[node name="Node" type="Node" parent="walkingRoute" unique_id=184117035]
+
+[node name="Node2D" parent="walkingRoute/Node" unique_id=439021785 instance=ExtResource("50_srvvp")]
+z_index = 4
+position = Vector2(1848, 888.00006)
+scale = Vector2(0.6, 0.6)
+
+[node name="Node2D31" parent="walkingRoute/Node" unique_id=2127723397 instance=ExtResource("50_srvvp")]
+z_index = 4
+position = Vector2(1833, 888.00006)
+scale = Vector2(0.6, 0.6)
+
+[node name="Node2D32" parent="walkingRoute/Node" unique_id=791036455 instance=ExtResource("50_srvvp")]
+z_index = 4
+position = Vector2(1816, 888.00006)
+scale = Vector2(0.6, 0.6)
+
+[node name="Node2D33" parent="walkingRoute/Node" unique_id=1037405911 instance=ExtResource("50_srvvp")]
+z_index = 4
+position = Vector2(1800, 888.00006)
+scale = Vector2(0.6, 0.6)
+
+[node name="Node2D34" parent="walkingRoute/Node" unique_id=224819143 instance=ExtResource("50_srvvp")]
+z_index = 4
+position = Vector2(1784, 888.00006)
+scale = Vector2(0.6, 0.6)
+
+[node name="Node2D35" parent="walkingRoute/Node" unique_id=2036537354 instance=ExtResource("50_srvvp")]
+z_index = 4
+position = Vector2(1768, 889.00006)
+scale = Vector2(0.6, 0.6)
+
+[node name="Node2D36" parent="walkingRoute/Node" unique_id=1125693218 instance=ExtResource("50_srvvp")]
+z_index = 4
+position = Vector2(1753, 889.00006)
+scale = Vector2(0.6, 0.6)
+
+[node name="Node2D37" parent="walkingRoute/Node" unique_id=1512867317 instance=ExtResource("50_srvvp")]
+z_index = 4
+position = Vector2(1736, 888.00006)
+scale = Vector2(0.6, 0.6)
+
+[node name="Node2D38" parent="walkingRoute/Node" unique_id=1932989231 instance=ExtResource("50_srvvp")]
+z_index = 4
+position = Vector2(1720, 888.00006)
+scale = Vector2(0.6, 0.6)
+
+[node name="Node2D39" parent="walkingRoute/Node" unique_id=1614742738 instance=ExtResource("50_srvvp")]
+z_index = 4
+position = Vector2(1720, 904.00006)
+scale = Vector2(0.6, 0.6)
+
+[node name="Node2D40" parent="walkingRoute/Node" unique_id=338008345 instance=ExtResource("50_srvvp")]
+z_index = 4
+position = Vector2(1720, 920)
+scale = Vector2(0.6, 0.6)
+
+[node name="Node2D41" parent="walkingRoute/Node" unique_id=1385966783 instance=ExtResource("50_srvvp")]
+z_index = 4
+position = Vector2(1704, 920)
+scale = Vector2(0.6, 0.6)
+
+[node name="Node2D42" parent="walkingRoute/Node" unique_id=1095570803 instance=ExtResource("50_srvvp")]
+z_index = 4
+position = Vector2(1688.0001, 920)
+scale = Vector2(0.6, 0.6)
+
+[node name="Node2D43" parent="walkingRoute/Node" unique_id=900457874 instance=ExtResource("50_srvvp")]
+z_index = 4
+position = Vector2(1720, 952)
+scale = Vector2(0.6, 0.6)
+
+[node name="Node2D44" parent="walkingRoute/Node" unique_id=1689705376 instance=ExtResource("50_srvvp")]
+z_index = 4
+position = Vector2(1705, 952)
+scale = Vector2(0.6, 0.6)
+
+[node name="Node2D45" parent="walkingRoute/Node" unique_id=484127467 instance=ExtResource("50_srvvp")]
+z_index = 4
+position = Vector2(1688, 936)
+scale = Vector2(0.6, 0.6)
+
+[node name="Node2D46" parent="walkingRoute/Node" unique_id=1201727482 instance=ExtResource("50_srvvp")]
+z_index = 4
+position = Vector2(1688.0001, 952.00006)
+scale = Vector2(0.6, 0.6)
+
+[node name="Node2D47" parent="walkingRoute/Node" unique_id=514798958 instance=ExtResource("50_srvvp")]
+z_index = 4
+position = Vector2(1719, 968)
+scale = Vector2(0.6, 0.6)
+
+[node name="Node2D48" parent="walkingRoute/Node" unique_id=1774425467 instance=ExtResource("50_srvvp")]
+z_index = 4
+position = Vector2(1720, 984)
+scale = Vector2(0.6, 0.6)
+
+[node name="Node2D49" parent="walkingRoute/Node" unique_id=631424354 instance=ExtResource("50_srvvp")]
+z_index = 4
+position = Vector2(1705, 984)
+scale = Vector2(0.6, 0.6)
+
+[node name="Node2D50" parent="walkingRoute/Node" unique_id=2000927300 instance=ExtResource("50_srvvp")]
+z_index = 4
+position = Vector2(1688, 984)
+scale = Vector2(0.6, 0.6)
+
+[node name="Node2D51" parent="walkingRoute/Node" unique_id=130757079 instance=ExtResource("50_srvvp")]
+z_index = 4
+position = Vector2(1688, 1000)
+scale = Vector2(0.6, 0.6)
+
+[node name="Node2D52" parent="walkingRoute/Node" unique_id=1128945958 instance=ExtResource("50_srvvp")]
+z_index = 4
+position = Vector2(1688, 1016)
+scale = Vector2(0.6, 0.6)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="walkingRoute" unique_id=1903842480 groups=["Blockade"]]
+position = Vector2(1769, 1064)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="walkingRoute/StaticBody2D" unique_id=1640985018]
+shape = SubResource("RectangleShape2D_srvvp")
+
+[node name="Texttrigger" parent="." unique_id=1997264463 instance=ExtResource("51_q6kta")]
+position = Vector2(1769, 1048)
+text = "Bitte Sammel die beiden Säcke ein. Und dann lass uns zu den Hühnern gehen."
+ab_wann = 3
+
+[node name="Texttrigger3" parent="." unique_id=5416514 instance=ExtResource("51_q6kta")]
+position = Vector2(1862, 1015)
+text = "Und jetzt zum Hühnerstall"
+ab_wann = 4
+
+[node name="Texttrigger2" parent="." unique_id=1719653805 instance=ExtResource("51_q6kta")]
+position = Vector2(1702, 1017)
+text = "Und jetzt zum Hühnerstall"
+ab_wann = 4
 
 [connection signal="timeout" from="CameraArea2D/Timer" to="CameraArea2D" method="_on_timer_timeout"]

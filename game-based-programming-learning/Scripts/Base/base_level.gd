@@ -15,6 +15,7 @@ func _ready() -> void:
 		player.add_to_group("player")
 	Settings.current_scene = scene_file_path
 	fire()
+	print(Settings.levelFinished)
 
 
 func fire():
@@ -50,8 +51,9 @@ func _on_timer_timeout() -> void:
 
 func _finished_level():
 	finished_level(levelsFinished)
-	print(levelsFinished,Settings.levelFinished)
+	
 
 func finished_level(levelGotFinished):
 	if Settings.levelFinished < levelGotFinished:
 		Settings.levelFinished = levelGotFinished
+	print(levelsFinished, levelGotFinished, Settings.levelFinished)

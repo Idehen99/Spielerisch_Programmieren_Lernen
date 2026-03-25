@@ -24,6 +24,7 @@ var free_to_walk = false
 ]
 
 var axeCounter = 0
+var cornCounter = 0
 
 func _ready() -> void:
 	if Settings.saveData.has("new") and !Settings.saveData["new"]:
@@ -104,6 +105,12 @@ func _process(_delta):
 		move_and_slide()
 	update_animation()
 
+func cornstar():
+	cornCounter+=1
+	if cornCounter>=2 and get_tree().get_first_node_in_group("codeLevelPremium"):
+		get_tree().get_first_node_in_group("codeLevelPremium")._finished_level()
+		print("hell yeah")
+
 
 func _free_him():
 	free_to_walk = !free_to_walk
@@ -179,7 +186,16 @@ func move_step(direction: Vector2):
 	var target_pos = global_position + (direction * step_size)
 	
 	# Bewegt den Player in 0.3 Sekunden zum Ziel
-	tween.tween_property(self, "global_position", target_pos, 0.3).set_trans(Tween.TRANS_SINE)
+	$AreaLeft.monitoring = false
+	$AreaRight.monitoring = false
+	$AreaUp.monitoring = false
+	$AreaDown.monitoring = false
+	$AreaLeft.monitoring = true
+	$AreaRight.monitoring = true
+	$AreaUp.monitoring = true
+	$AreaDown.monitoring = true
+	tween.tween_property(self, "global_position", target_pos, 1).set_trans(Tween.TRANS_SINE)
+	
 	
 	# Wir warten, bis die Animation fertig ist
 	await tween.finished
@@ -242,6 +258,10 @@ func _on_area_down_body_exited(body: Node2D) -> void:
 
 
 func _on_timer_timeout() -> void:
+	$AreaLeft.monitoring = false
+	$AreaRight.monitoring = false
+	$AreaUp.monitoring = false
+	$AreaDown.monitoring = false
 	$AreaLeft.monitoring =  true #!$AreaLeft.monitoring
 	$AreaRight.monitoring = true #!$AreaRight.monitoring
 	$AreaUp.monitoring = true #!$AreaUp.monitoring
